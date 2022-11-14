@@ -1,38 +1,205 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #0D0D0D;
+  overflow-X: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Hero */
+
+.hero {
+  height: 120vh;
+  overflow: hidden;
+  position: relative;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.heroWrapper {
+  background-color: #EEE3D3;
+  color: #0D0D0D;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  width: 100%;
+  height: 120vh;
+}
+
+.heroClipper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+  background-color: #0D0D0D;
+  color: #EEE3D3;
+  width: 100%;
+  height: 120vh;
+  z-index: 2;
+}
+
+.heroWrapper.clip {
+  background-color: #0D0D0D;
+  color: #EEE3D3;
+
+}
+
+.navbar {
+  justify-content: space-between;
   align-items: center;
+  width: 90%;
+  margin-inline: auto;
+  padding-top: 2rem;
+}
+
+.greet {
+  background-color: #232323;
+  align-items: center;
+  border-radius: 40px;
+  padding-inline: 1rem;
+  padding-block: 0.3rem;
+}
+
+.ham {
+  background: #232323;
+  border-radius: 50%;
+  padding: 1rem;
+}
+
+.hams {
+  width: 16px;
+  height: 1px;
+  border-radius: 1.2rem;
+  margin-top: 0.2rem;
+  background: #EEE3D3;
+  border: 0.5px solid #EEE3D3;
+}
+
+.one {
+  transform: translateY(-100%);
+}
+
+.three {
+  transform: translateY(100%);
+}
+
+.heading {
+  font-weight: 600;
+  font-size: 4rem;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  margin-top: 4rem;
 }
 
-.App-link {
-  color: #61dafb;
+.subHeading {
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  margin-inline: auto;
+  font-size: 1.6rem;
+  text-align: center;
+  margin-top: 2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.carousel {
+  margin-block: 3rem;
+  width: max-content;
+  /* animation: marquee 80s infinite; */
+}
+
+.caroItem {
+  width: 18rem;
+  border-radius: 24px;
+  margin-inline: 1.2rem;
+  height: 24rem;
+  transition: all 0.3s ease;
+}
+
+.caroItem.inactive {
+  filter: grayscale();
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
   }
-  to {
-    transform: rotate(360deg);
+
+  100% {
+    transform: translateX(-100%);
   }
+}
+
+
+/* Case Study Page */
+
+.container {
+  background-color: #0D0D0D;
+  color: #EEE3D3;
+  padding-left: 3rem;
+}
+
+.caseHead {
+  padding-top: 6rem;
+  width: 40%;
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.caseInfo {
+  margin-top: 3rem;
+  width: 90%;
+  padding-bottom: 6rem;
+}
+
+.head {
+  font-weight: 500;
+  font-size: 0.7rem;
+}
+
+.name {
+  font-size: 1.6rem;
+}
+
+.aboutVision {
+  margin-top: 3rem;
+}
+
+.info {
+  margin-top: 1rem;
+  width: 90%;
+}
+
+.stickyTop {
+  position: sticky;
+  top: 150px;
+  overflow: visible;
+  padding-top: 7vw;
+  padding-bottom: 20vw;
+}
+
+.navList {
+  padding-block: 1rem;
+}
+
+.nav {
+  padding-left: 0;
+  margin-top: 0rem;
+  color: #bcbcbc;
+}
+
+.sectionHeading {
+  padding-top: 5vw;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+.solution {
+  margin-top: 3rem;
 }
