@@ -10,11 +10,34 @@ function Hero() {
     let subHeading = useRef(null)
     let subHeadingBack = useRef(null)
     let headingBack = useRef(null)
+    let wrapper = useRef(null)
     const [items, setItems] = useState(Array.from(document.getElementsByClassName('caroItem')))
+    const [mousePos, setMousePos] = useState({});
+
+    useEffect(() => {
+        const handleMouseMove = (event) => {
+            setMousePos({ x: event.clientX, y: event.clientY });
+        };
+
+        window.addEventListener('mousemove', handleMouseMove);
+        
+
+        return () => {
+            window.removeEventListener(
+                'mousemove',
+                handleMouseMove
+            );
+        };
+    }, []);
+    useEffect(()=>{
+        wrapper.style.width = `${mousePos.x}px`
+    })
     useEffect(() => {
         // updateText("Super pumped","My eyes glowed when I was in the 7th standard, I wanted to be in the ecosystem.")
         setItems(Array.from(document.getElementsByClassName('caroItem')))
+
     }, [])
+
     function updateText(head, subHead) {
         heading.innerText = head;
         subHeading.innerText = subHead;
@@ -59,27 +82,27 @@ function Hero() {
                     {cards}
                 </Flex>
             </Box>
-            <Box className='heroClipper'>
-            <Box className='heroWrapper clip'>
-                <Flex className='navbar'>
-                    <Flex className='greet'><Image w="25%" display={"inline"} mr="0.4rem" src={Globe} />  <Box color={"#EEE3D3"}>Good evening <br /> from Bangalore.</Box></Flex>
-                    <Box className='ham'>
-                        <Box className='hams one'></Box>
-                        <Box className='hams two'></Box>
-                        <Box className='hams three'></Box>
-                    </Box>
+            <Box ref={el => wrapper = el} className='heroClipper'>
+                <Box  className='heroWrapper clip'>
+                    <Flex className='navbar'>
+                        <Flex className='greet'><Image w="25%" display={"inline"} mr="0.4rem" src={Globe} />  <Box color={"#EEE3D3"}>Good evening <br /> from Bangalore.</Box></Flex>
+                        <Box className='ham'>
+                            <Box className='hams one'></Box>
+                            <Box className='hams two'></Box>
+                            <Box className='hams three'></Box>
+                        </Box>
 
-                </Flex>
-                <Flex ref={el => headingBack = el} className="heading">
-                    Hey, I'm Rahul
-                </Flex>
-                <Flex ref={el => subHeadingBack = el} className='subHeading'>
-                    I am a designer, story teller and a lover of airplane window seats ✈️
-                </Flex>
-                <Flex className='carousel'>
-                    {cards}
-                </Flex>
-            </Box>
+                    </Flex>
+                    <Flex ref={el => headingBack = el} className="heading">
+                        Hey, I'm Rahul
+                    </Flex>
+                    <Flex ref={el => subHeadingBack = el} className='subHeading'>
+                        I am a designer, story teller and a lover of airplane window seats ✈️
+                    </Flex>
+                    <Flex className='carousel'>
+                        {cards}
+                    </Flex>
+                </Box>
             </Box>
         </Box>
     )
