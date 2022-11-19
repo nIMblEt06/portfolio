@@ -70,6 +70,8 @@ body {
   background: #232323;
   border-radius: 50%;
   padding: 1rem;
+  position: relative;
+  cursor: pointer;
 }
 
 .hams {
@@ -78,7 +80,28 @@ body {
   border-radius: 1.2rem;
   margin-top: 0.2rem;
   background: #EEE3D3;
+  transition: transform 0.3s ease;
   border: 0.5px solid #EEE3D3;
+}
+.menu{
+  position: absolute;
+  top: 4rem;
+  right: 1rem;
+  padding: 0.4rem;
+  border-radius: 1rem;
+  transition: all 0.3s ease-in;
+  background-color: #373737;
+  color: rgb(237, 237, 237);
+}
+.menu>div{
+  border-radius: 0.5rem;
+  padding-right: 4rem;
+  padding-left: 0.7rem;
+  padding-block: 0.6rem;
+  transition: all 0.1s ease-in;
+}
+.menu>div:hover{
+  background-color: #707070;
 }
 
 .one {
@@ -107,9 +130,8 @@ body {
   margin-top: 2rem;
 }
 
-.carousel {
+.slick-slider {
   margin-block: 3rem;
-  width: max-content;
   /* animation: marquee 80s infinite; */
 }
 
@@ -142,6 +164,7 @@ body {
   background-color: #0D0D0D;
   color: #EEE3D3;
   padding-left: 3rem;
+  padding-bottom: 3rem;
 }
 
 .caseHead {
@@ -202,4 +225,69 @@ body {
 
 .solution {
   margin-top: 3rem;
+}
+
+/* ChatBot */
+#chatBot{
+  width: 40%;
+  color: #333;
+  background-color: #ffffff;
+  overflow: hidden;
+  border-radius: 20px;
+  margin: 2rem;
+}
+.chatName{
+  color:#807f7f;
+}
+.awayText{
+  padding: 0.8rem;
+  margin: 0.2rem;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.ownText{
+  padding: 0.8rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.chatName{
+  font-weight: 500;
+}
+.chatText{
+  background-color: #e9e9eb;
+  width: fit-content;
+  color: #000;
+  border-radius: 20px;
+  padding: 0.8rem;
+}
+.chatText.own{
+  color: #e9e9eb;
+  background-color: #0078ff;
+}
+.lowerBox{
+  display: flex;
+  margin-inline: 1rem;
+  margin-block: 0.6rem;
+}
+.logo{
+  width: 2rem;
+  cursor: pointer;
+  margin-inline: 0.4rem;
+}
+.messageForm{
+  width: -webkit-fill-available;
+}
+.upperBox{
+  overflow: hidden;
+  height: 11rem;
+}
+.textContainer{
+  transition: all 0.4s ease;
+}
+#subject, #phone, #email{
+  display: none;
+  opacity: 0;
 }
