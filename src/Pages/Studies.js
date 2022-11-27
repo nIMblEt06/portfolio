@@ -2,7 +2,6 @@ import { Box, Flex, Grid, GridItem, Image, ListItem, UnorderedList } from '@chak
 import React from 'react'
 import nftImage from "../Assets/NFT.svg"
 import nft from "../Assets/image.svg"
-import ChatBot from '../Components/ChatBot'
 function Studies() {
   return (
     <Box className='container'>
@@ -165,7 +164,6 @@ function Studies() {
           </Flex>
         </GridItem>
       </Grid>
-      <ChatBot/>
     </Box>
   )
 }

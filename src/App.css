@@ -232,12 +232,13 @@ body {
 
 /* ChatBot */
 #chatBot {
-  width: 40%;
+  width: 60%;
   color: #333;
   background: #121212;
   overflow: hidden;
   border-radius: 20px;
-  margin: 2rem;
+  margin-inline: auto;
+  margin-top: 2rem;
 }
 
 .chatName {
@@ -251,10 +252,12 @@ body {
   align-items: flex-start;
   flex-direction: column;
   justify-content: flex-start;
+  font-weight: 500;
 }
 
 .ownText {
   padding: 0.8rem;
+  font-weight: 500;
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
@@ -292,7 +295,9 @@ body {
 .messageForm {
   width: -webkit-fill-available;
 }
-
+.messageContainer input{
+  color: white;
+}
 .upperBox {
   overflow: hidden;
   height: 11rem;

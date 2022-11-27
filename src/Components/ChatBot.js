@@ -1,5 +1,7 @@
 import { Box, Flex, FormControl, Image, Input } from '@chakra-ui/react'
 import React, { useRef, useState } from 'react'
+import {AiOutlineArrowUp} from 'react-icons/ai'
+
 
 function ChatBot() {
 
@@ -36,7 +38,7 @@ function ChatBot() {
   }
   function handleSubmit(e) {
     console.log(e);
-    upper.style.transform = `translateY(-${9.2 * count}rem)`
+    upper.style.transform = `translateY(-${9.5 * count}rem)`  
     if (count == 2) {
       // upper.style.transform = `translateY(-${9*count}rem)`
       name.style.display = "none"
@@ -107,7 +109,7 @@ function ChatBot() {
               <Input ref={el => subject = el} id="subject" name="subject" onChange={handleChange} placeholder='iMessage'></Input>
               <Input ref={el => phone = el} id="phone" name="phone" onChange={handleChange} placeholder='iMessage'></Input>
               <Input ref={el => email = el} id="email" name="email" onChange={handleChange} placeholder='iMessage'></Input>
-              <Image className='logo' onClick={handleSubmit} src={"https://uploads-ssl.webflow.com/62c89bdb7c26b515f632de67/62f5dd67764027734d11104e_imessage-send.svg"} />
+              <Flex onClick={handleSubmit} ml="1rem" justifyContent={"center"} alignItems="center" bgColor={"#EEE3D3"} w="2.5rem" h="2.5rem" borderRadius={"50%"}><AiOutlineArrowUp fontSize={"1.4rem"}/></Flex>
             </Flex>
           </FormControl>
         </Box>
