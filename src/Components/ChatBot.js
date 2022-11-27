@@ -50,7 +50,7 @@ function ChatBot() {
       phone.style.display = "block"
       phone.style.opacity = 1
     }
-    else if(count==4){
+    else if (count == 4) {
       phone.style.display = "none"
       phone.style.opacity = 0
       email.style.display = "block"
@@ -98,7 +98,11 @@ function ChatBot() {
         <Image className='logo' src={"https://uploads-ssl.webflow.com/62c89bdb7c26b515f632de67/62f5dbe10a419234e527d174_twitter-contact-icon.svg"} />
         <Box className='messageForm'>
           <FormControl>
-            <Flex className='messageContainer'>
+            <Flex className='messageContainer' onKeyPress={e => {
+              if (e.key === 'Enter') {
+                handleSubmit()
+              }
+            }}>
               <Input ref={el => name = el} id="name" name="name" onChange={handleChange} placeholder='iMessage'></Input>
               <Input ref={el => subject = el} id="subject" name="subject" onChange={handleChange} placeholder='iMessage'></Input>
               <Input ref={el => phone = el} id="phone" name="phone" onChange={handleChange} placeholder='iMessage'></Input>

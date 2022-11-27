@@ -14,6 +14,7 @@ function Hero() {
     let subHeadingBack = useRef(null)
     let headingBack = useRef(null)
     let wrapper = useRef(null)
+    let hero = useRef(null)
     let ham1 = useRef(null)
     let ham2 = useRef(null)
     let ham3 = useRef(null)
@@ -28,11 +29,14 @@ function Hero() {
 
     useEffect(() => {
         const handleMouseMove = (event) => {
+            // if(event.offsetY < 1000){
             setMousePos({ x: event.clientX, y: event.clientY });
+            // }
+
+
         };
-
+        // hero.addEventListener('mouseover',handleMouseMove)
         window.addEventListener('mousemove', handleMouseMove);
-
 
         return () => {
             window.removeEventListener(
@@ -59,7 +63,6 @@ function Hero() {
 
     function updateClass() {
         items.forEach(item => {
-            console.log('done');
             item.classList.add('inactive')
         })
     }
@@ -115,7 +118,7 @@ function Hero() {
     };
 
     return (
-        <Box className='hero'>
+        <Box ref={el => hero = el} className='hero'>
             <Box className='heroWrapper'>
                 <Flex className='navbar'>
                     <Flex className='greet'><Image w="25%" display={"inline"} mr="0.4rem" src={Globe} />  <Box color={"#EEE3D3"}>Good evening <br /> from Bangalore.</Box></Flex>
@@ -138,8 +141,8 @@ function Hero() {
                     I am a designer, story teller and a lover of airplane window seats ✈️
                 </Flex>
                 <Slider {...settings}>
-                        {cards}
-                    </Slider>
+                    {cards}
+                </Slider>
             </Box>
             <Box ref={el => wrapper = el} className='heroClipper'>
                 <Box className='heroWrapper clip'>

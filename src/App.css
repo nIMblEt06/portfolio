@@ -83,7 +83,8 @@ body {
   transition: transform 0.3s ease;
   border: 0.5px solid #EEE3D3;
 }
-.menu{
+
+.menu {
   position: absolute;
   top: 4rem;
   right: 1rem;
@@ -93,14 +94,16 @@ body {
   background-color: #373737;
   color: rgb(237, 237, 237);
 }
-.menu>div{
+
+.menu>div {
   border-radius: 0.5rem;
   padding-right: 4rem;
   padding-left: 0.7rem;
   padding-block: 0.6rem;
   transition: all 0.1s ease-in;
 }
-.menu>div:hover{
+
+.menu>div:hover {
   background-color: #707070;
 }
 
@@ -228,18 +231,20 @@ body {
 }
 
 /* ChatBot */
-#chatBot{
+#chatBot {
   width: 40%;
   color: #333;
-  background-color: #ffffff;
+  background: #121212;
   overflow: hidden;
   border-radius: 20px;
   margin: 2rem;
 }
-.chatName{
-  color:#807f7f;
+
+.chatName {
+  color: #807f7f;
 }
-.awayText{
+
+.awayText {
   padding: 0.8rem;
   margin: 0.2rem;
   display: flex;
@@ -247,47 +252,107 @@ body {
   flex-direction: column;
   justify-content: flex-start;
 }
-.ownText{
+
+.ownText {
   padding: 0.8rem;
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
 }
-.chatName{
+
+.chatName {
   font-weight: 500;
 }
-.chatText{
+
+.chatText {
   background-color: #e9e9eb;
   width: fit-content;
   color: #000;
   border-radius: 20px;
   padding: 0.8rem;
 }
-.chatText.own{
+
+.chatText.own {
   color: #e9e9eb;
   background-color: #0078ff;
 }
-.lowerBox{
+
+.lowerBox {
   display: flex;
   margin-inline: 1rem;
   margin-block: 0.6rem;
 }
-.logo{
+
+.logo {
   width: 2rem;
   cursor: pointer;
   margin-inline: 0.4rem;
 }
-.messageForm{
+
+.messageForm {
   width: -webkit-fill-available;
 }
-.upperBox{
+
+.upperBox {
   overflow: hidden;
   height: 11rem;
 }
-.textContainer{
+
+.textContainer {
   transition: all 0.4s ease;
 }
-#subject, #phone, #email{
+
+#subject,
+#phone,
+#email {
   display: none;
   opacity: 0;
+}
+
+
+/* Case Study Section */
+
+.studyCont {
+  background-color: #0D0D0D;
+  padding-block: 3rem;
+}
+
+.wideStudy {
+  background: #121212;
+  color: #EEE3D3;
+  overflow: hidden;
+  border-radius: 28px;
+  transition: all 0.2s ease-in;
+}
+.wideStudy:hover{
+  background: #383838;
+  box-shadow: rgb(45, 45, 45) 0px 0px 10px 2px;
+  scale: 1.05;
+}
+
+.caseHeading{
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.caseText{
+  font-size: 1.2rem;
+}
+
+.studyText {
+  margin: 2rem;
+}
+
+.redirect {
+  background: #EEE3D3 !important;
+  border-radius: 20px;
+  margin-top: 2rem !important;
+  color: #000;
+}
+/* Case Study Carousel */
+
+.carousel-root{
+  height: 100%;
+}
+.slide, .carousel, .slider, .slider-wrapper{
+  height: 100% !important;
 }
