@@ -273,8 +273,8 @@ body {
 }
 
 .chatText.own {
-  color: #e9e9eb;
-  background-color: #0078ff;
+  color: #000;
+  background-color: #EEE3D3;
 }
 
 .lowerBox {

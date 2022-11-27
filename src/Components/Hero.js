@@ -9,42 +9,41 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick'
 
 function Hero() {
-    let heading = useRef(null)
-    let subHeading = useRef(null)
+    // let heading = useRef(null)
+    // let subHeading = useRef(null)
     let subHeadingBack = useRef(null)
     let headingBack = useRef(null)
     let wrapper = useRef(null)
-    let hero = useRef(null)
-    let ham1 = useRef(null)
-    let ham2 = useRef(null)
-    let ham3 = useRef(null)
+    // let ham1 = useRef(null)
+    // let ham2 = useRef(null)
+    // let ham3 = useRef(null)
     let ham4 = useRef(null)
     let ham5 = useRef(null)
     let ham6 = useRef(null)
-    let menu1 = useRef(null)
+    // let menu1 = useRef(null)
     let menu2 = useRef(null)
     const [showMenu, setShowMenu] = useState(false)
     const [items, setItems] = useState(Array.from(document.getElementsByClassName('caroItem')))
     const [mousePos, setMousePos] = useState({});
 
-    useEffect(() => {
-        const handleMouseMove = (event) => {
-            // if(event.offsetY < 1000){
-            setMousePos({ x: event.clientX, y: event.clientY });
-            // }
+    // useEffect(() => {
+    //     const handleMouseMove = (event) => {
+    //         // if(event.offsetY < 1000){
+    //         setMousePos({ x: event.clientX, y: event.clientY });
+    //         // }
 
 
-        };
-        // hero.addEventListener('mouseover',handleMouseMove)
-        window.addEventListener('mousemove', handleMouseMove);
+    //     };
+    //     // hero.addEventListener('mouseover',handleMouseMove)
+    //     window.addEventListener('mousemove', handleMouseMove);
 
-        return () => {
-            window.removeEventListener(
-                'mousemove',
-                handleMouseMove
-            );
-        };
-    }, []);
+    //     return () => {
+    //         window.removeEventListener(
+    //             'mousemove',
+    //             handleMouseMove
+    //         );
+    //     };
+    // }, []);
     useEffect(() => {
         wrapper.style.width = `${mousePos.x}px`
     })
@@ -55,8 +54,8 @@ function Hero() {
     }, [])
 
     function updateText(head, subHead) {
-        heading.innerText = head;
-        subHeading.innerText = subHead;
+        // heading.innerText = head;
+        // subHeading.innerText = subHead;
         subHeadingBack.innerText = subHead;
         headingBack.innerText = head;
     }
@@ -71,25 +70,25 @@ function Hero() {
     }
     useEffect(() => {
         if (showMenu) {
-            ham1.style.transform = "rotate(45deg) translate(4px, 4px)"
+            // ham1.style.transform = "rotate(45deg) translate(4px, 4px)"
             ham4.style.transform = "rotate(45deg) translate(4px, 4px)"
-            ham3.style.transform = "rotate(-45deg) translate(3px, -3px)"
+            // ham3.style.transform = "rotate(-45deg) translate(3px, -3px)"
             ham6.style.transform = "rotate(-45deg) translate(3px, -3px)"
-            ham2.style.opacity = 0
+            // ham2.style.opacity = 0
             ham5.style.opacity = 0
             // menu1.style.display = "block"
-            menu1.style.opacity = 1
+            // menu1.style.opacity = 1
             menu2.style.opacity = 1
             // menu2.style.display = "block"
         }
         else {
-            ham1.style.transform = "rotate(0deg)"
-            ham3.style.transform = "rotate(0deg)"
-            ham2.style.opacity = 1
+            // ham1.style.transform = "rotate(0deg)"
+            // ham3.style.transform = "rotate(0deg)"
+            // ham2.style.opacity = 1
             ham4.style.transform = "rotate(0deg)"
             ham6.style.transform = "rotate(0deg)"
             ham5.style.opacity = 1
-            menu1.style.opacity = 0
+            // menu1.style.opacity = 0
             menu2.style.opacity = 0
             // menu1.style.display = "none"
             // menu2.style.display = "none"
@@ -118,8 +117,8 @@ function Hero() {
     };
 
     return (
-        <Box ref={el => hero = el} className='hero'>
-            <Box className='heroWrapper'>
+        <Box className='hero'>
+            {/* <Box className='heroWrapper'>
                 <Flex className='navbar'>
                     <Flex className='greet'><Image w="25%" display={"inline"} mr="0.4rem" src={Globe} />  <Box color={"#EEE3D3"}>Good evening <br /> from Bangalore.</Box></Flex>
                     <Box className='ham' onClick={toggleMenu}>
@@ -143,7 +142,7 @@ function Hero() {
                 <Slider {...settings}>
                     {cards}
                 </Slider>
-            </Box>
+            </Box> */}
             <Box ref={el => wrapper = el} className='heroClipper'>
                 <Box className='heroWrapper clip'>
                     <Flex className='navbar'>
