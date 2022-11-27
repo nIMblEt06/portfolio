@@ -13,7 +13,7 @@ body {
 /* Hero */
 
 .hero {
-  height: 120vh;
+  height: 110vh;
   overflow: hidden;
   position: relative;
 }
@@ -321,10 +321,10 @@ body {
   background: #121212;
   color: #EEE3D3;
   overflow: hidden;
-  border-radius: 28px;
   transition: all 0.2s ease-in;
 }
 .wideStudy:hover{
+  border-radius: 28px;
   background: #383838;
   box-shadow: rgb(45, 45, 45) 0px 0px 10px 2px;
   scale: 1.05;
