@@ -113,7 +113,7 @@ function Hero() {
         speed: 4000,
         autoplaySpeed: 4000,
         cssEase: "linear",
-        // pauseOnHover: true
+        pauseOnHover: true
     };
 
     return (
