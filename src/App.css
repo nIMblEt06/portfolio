@@ -10,19 +10,21 @@ body {
   overflow-X: hidden;
 }
 
-body::-webkit-scrollbar
-{
-	width: 10px;
-	background-color: #000;
+body::-webkit-scrollbar {
+  width: 10px;
+  background-color: #000;
 }
 
-body::-webkit-scrollbar-thumb
-{
-	background-color: #000;
-	
-	background-image: -webkit-gradient(linear, 0 0, 0 100%,
-	                   color-stop(.5, rgba(255, 255, 255, .2)),
-					   color-stop(.5, transparent), to(transparent));
+body::-webkit-scrollbar-thumb {
+  background-color: #000;
+
+  background-image: -webkit-gradient(linear, 0 0, 0 100%,
+      color-stop(.5, rgba(255, 255, 255, .2)),
+      color-stop(.5, transparent), to(transparent));
+}
+
+svg{
+  display: inline !important;
 }
 
 /* Hero */
@@ -310,11 +312,13 @@ body::-webkit-scrollbar-thumb
 .messageForm {
   width: -webkit-fill-available;
 }
-.messageContainer input{
+
+.messageContainer input {
   color: white;
   border: 2.01838px solid rgba(84, 84, 88, 0.65);
-border-radius: 61.835px;
+  border-radius: 61.835px;
 }
+
 .upperBox {
   overflow: hidden;
   height: 11rem;
@@ -345,18 +349,20 @@ border-radius: 61.835px;
   overflow: hidden;
   transition: all 0.2s ease-in;
 }
-.wideStudy:hover{
+
+.wideStudy:hover {
   border-radius: 28px;
   background: #383838;
   box-shadow: rgb(45, 45, 45) 0px 0px 10px 2px;
   scale: 1.05;
 }
 
-.caseHeading{
+.caseHeading {
   font-size: 1.6rem;
   font-weight: 600;
 }
-.caseText{
+
+.caseText {
   font-size: 1.2rem;
 }
 
@@ -370,11 +376,16 @@ border-radius: 61.835px;
   margin-top: 2rem !important;
   color: #000;
 }
+
 /* Case Study Carousel */
 
-.carousel-root{
+.carousel-root {
   height: 100%;
 }
-.slide, .carousel, .slider, .slider-wrapper{
+
+.slide,
+.carousel,
+.slider,
+.slider-wrapper {
   height: 100% !important;
 }
