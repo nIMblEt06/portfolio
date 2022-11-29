@@ -20,9 +20,9 @@ export const studies = [
     "Education1":"The News & Learn section introduces an increasing variety of new information sources, allowing investors to make informed decision while they are trading.",
     "Education2":"With the aid of deposit guide, you can make crypto transfers very easily by selecting the most suitable option and without any difficulty.",
     "Education3":"Education via tooltips and bottom sheet that explain jargon like “gas fees” and “staking”.",
-    "Education4":"Enabling two factor authentication, so we know it’s you when you initiate a transfer, and transaction checks to understand better the risk of where coins are being sent.",
-    "Education5":"To reduce the risk of phishing and identity theft in these times, we’ve created different social proofing touch points in the user journey to ensure trust and security.",
-    "Education6":'Always make sure to obtain consent for acknowledgment before you start your investment.',
+    "Security1":"Enabling two factor authentication, so we know it’s you when you initiate a transfer, and transaction checks to understand better the risk of where coins are being sent.",
+    "Security2":"To reduce the risk of phishing and identity theft in these times, we’ve created different social proofing touch points in the user journey to ensure trust and security.",
+    "Security3":'Always make sure to obtain consent for acknowledgment before you start your investment.',
     "Reflection1":"How did I feel working on the product?",
     "Reflection1Text":"I learned a lot about the opportunities in cryptocurrency and passive income. Being with people who are interested in learning about this new way to make money was great. I enjoyed the experience tremendously, especially since it was such a new concept for me."
 },

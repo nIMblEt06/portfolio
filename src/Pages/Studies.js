@@ -8,23 +8,45 @@ function Studies() {
   const params = useParams();
   const name = params.study;
   const navigate = useNavigate();
+  const contents = document.querySelectorAll('.navList')
+  const secHead = Array.from(document.querySelectorAll('.sectionHeading'))
   const [study, setStudy] = useState({})
-  useEffect(()=>{
-    window.scrollTo(0,0)
-    if(name==='flint'){
+  const [counter, setCounter] = useState(0)
+  let offsets = []
+  secHead.forEach(heading => {
+    offsets.push(heading.getBoundingClientRect().top)
+  });
+
+  useEffect(() => {
+    contents.forEach(element => {
+      element.classList.remove('active')
+    });
+    contents[counter].classList.add('active')
+
+  }, [counter])
+
+
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+
+
+
+    if (name === 'flint') {
       setStudy(studies[0])
     }
-    else if(name=='netflix'){
+    else if (name == 'netflix') {
       setStudy(studies[1])
     }
-    else if(name=='gaming'){
+    else if (name == 'gaming') {
       setStudy(studies[2])
     }
-    else{
+    else {
       navigate('/')
-      }
-  },[])
-  
+    }
+  }, [])
+
+
   return (
     <Box className='container'>
       <Box className='caseHead'>
@@ -73,14 +95,14 @@ function Studies() {
         </GridItem>
       </Grid>
       <Box className='stickyTop'>
-          <Box className='head'>CONTENTS</Box>
-          <UnorderedList className='nav' listStyleType={"none"} marginInlineStart={0}>
-            <ListItem className='navList'>OVERVIEW</ListItem>
-            <ListItem className='navList'>CONTEXT</ListItem>
-            <ListItem className='navList'>RESEARCH</ListItem>
-            <ListItem className='navList'>REFLECTION</ListItem>
-          </UnorderedList>
-        </Box>
+        <Box className='head'>CONTENTS</Box>
+        <UnorderedList className='nav' listStyleType={"none"} marginInlineStart={0}>
+          <ListItem className='navList'>OVERVIEW</ListItem>
+          <ListItem className='navList'>CONTEXT</ListItem>
+          <ListItem className='navList'>RESEARCH</ListItem>
+          <ListItem className='navList'>REFLECTION</ListItem>
+        </UnorderedList>
+      </Box>
       <Grid marginLeft={"16rem"} className='caseInfo'
         templateColumns='repeat(4, 1fr)'
         gap={6}
@@ -140,7 +162,7 @@ function Studies() {
             <Box className='name'>{study.ResearchHead}</Box>
             <Box className='head'>SETTING STANDARDS</Box>
             <Box className='info'>{study.Research1} <br /> <br />
-            {study.Research2}</Box>
+              {study.Research2}</Box>
           </Box>
           <Flex className="aboutVision">
             <Box className="vision">
@@ -167,8 +189,14 @@ function Studies() {
                 <ListItem>{study.Education1}</ListItem>
                 <ListItem>{study.Education2}</ListItem>
                 <ListItem>{study.Education3}</ListItem>
-                <ListItem>{study.Education4}</ListItem>
-                <ListItem>{study.Education5}</ListItem>
+              </UnorderedList>
+            </Box>
+            <Box className="vision">
+              <Box className='name'>Security</Box>
+              <UnorderedList width={"90%"} marginBlock="1rem">
+                <ListItem>{study.Security1}</ListItem>
+                <ListItem>{study.Security2}</ListItem>
+                <ListItem>{study.Security3}</ListItem>
               </UnorderedList>
             </Box>
           </Flex>
@@ -181,12 +209,12 @@ function Studies() {
               <Box className='name'>{study.Reflection1}</Box>
               <Box className='info'>{study.Reflection1Text}</Box>
             </Box>
-            <Box className="vision">
+            {/* <Box className="vision">
               <Box className='name'>What would I have done differently?</Box>
               <Box className='info'>I wouldn’t have overworked myself. We likely would have completed this project faster if I hadn’t pulled all-nighters on the first two days. Also, we were pretty scattered with our research plan, mainly owing to our lack of experience doing such an expansive project. Moving forward, I believe we have a solid basis for Crypto research and case study presentation.</Box>
-            </Box>
+            </Box> */}
           </Flex>
-          <Flex className="aboutVision">
+          {/* <Flex className="aboutVision">
             <Box className="vision">
               <Box className='name'>What did I learn about each other from this project?</Box>
               <Box className='info'>I felt invigorated working on such an exciting, impactful project. We were overwhelmed with the amount of work we had ahead of us. And, at times, I even overworked myself to the point of suffering from COVID for an entire week. Nonetheless, I’m incredibly proud to have made an entire case study encompassing a whole app design and supporting research.</Box>
@@ -195,7 +223,7 @@ function Studies() {
               <Box className='name'>What did I learn about myself from this project?</Box>
               <Box className='info'>I wouldn’t have overworked myself. We likely would have completed this project faster if I hadn’t pulled all-nighters on the first two days. Also, we were pretty scattered with our research plan, mainly owing to our lack of experience doing such an expansive project. Moving forward, I believe we have a solid basis for Crypto research and case study presentation.</Box>
             </Box>
-          </Flex>
+          </Flex> */}
         </GridItem>
       </Grid>
     </Box>

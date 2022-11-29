@@ -170,12 +170,15 @@ svg {
 }
 .caroItem svg{
   position: absolute;
-  top: -20px;
+  top: -65px;
+  transform: rotate(-20deg) !important;
+  width: 10rem !important;
+  height: 10rem !important;
   left: -2rem;
   fill: transparent;
   stroke: black;
   stroke-width: 3;
-  opacity: 0;
+  opacity: 1;
   stroke-dasharray: 4000;
   transition: 0.9s ease-out;
 }
@@ -237,6 +240,24 @@ svg {
 
 .navList {
   padding-block: 1rem;
+  transition: all 0.4s ease;
+}
+.navList.active{
+  color: white; 
+  position: relative;
+  font-size: 1.3rem;
+  margin-left: 2rem;
+}
+.navList.active::before{
+  content: '';
+  position: absolute;
+  left: -50px;
+  top: 30px;
+  width: 40px;
+  height: 2px;
+  background-color: white;
+  border-radius: 40px;
+  transform-origin: left;
 }
 
 .nav {
