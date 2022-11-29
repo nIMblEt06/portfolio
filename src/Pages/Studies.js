@@ -36,10 +36,10 @@ function Studies() {
       setStudy(studies[0])
     }
     else if (name == 'netflix') {
-      setStudy(studies[1])
-    }
-    else if (name == 'gaming') {
       setStudy(studies[2])
+    }
+    else if (name == 'tournafest') {
+      setStudy(studies[1])
     }
     else {
       navigate('/')
@@ -100,6 +100,7 @@ function Studies() {
           <ListItem className='navList'>OVERVIEW</ListItem>
           <ListItem className='navList'>CONTEXT</ListItem>
           <ListItem className='navList'>RESEARCH</ListItem>
+          <ListItem className='navList'>FEATURES</ListItem>
           <ListItem className='navList'>REFLECTION</ListItem>
         </UnorderedList>
       </Box>
@@ -132,11 +133,11 @@ function Studies() {
           {/* Context */}
           <Box className='sectionHeading'>Context</Box>
 
-          <Box className="about">
+          {study.Background && <Box className="about">
             <Box className='name'>Background</Box>
             <Box className='head'>WHAT'S GOING ON?</Box>
             <Box className='info'>{study.Background}</Box>
-          </Box>
+          </Box>}
           <Flex className="aboutVision">
             <Box className="vision">
               <Box className='name'>Problem</Box>
@@ -160,46 +161,61 @@ function Studies() {
 
           <Box className="about">
             <Box className='name'>{study.ResearchHead}</Box>
-            <Box className='head'>SETTING STANDARDS</Box>
-            <Box className='info'>{study.Research1} <br /> <br />
-              {study.Research2}</Box>
+            <Box className='info'>{study.Research1} <br />
+              {study.ResearchCont}</Box>
+            {study.Research2 && <Box className='name'>{study.ResearchHead2}</Box>}
+            {study.Research2 && <Box className='info'>{study.Research2}</Box>}
+            {study.Research3 && <Box className='name'>{study.ResearchHead3}</Box>}
+            {study.Research3 && <Box className='info'>{study.Research3}</Box>}
           </Box>
           <Flex className="aboutVision">
-            <Box className="vision">
-              <Box className='name'>Discoverability</Box>
+            {study.Head1 && <Box className="vision">
+              <Box className='name'>{study.Head1}</Box>
               <UnorderedList width={"90%"} marginBlock="1rem">
                 <ListItem>{study.Discover1}</ListItem>
                 <ListItem>{study.Discover2}</ListItem>
                 <ListItem>{study.Discover3}</ListItem>
               </UnorderedList>
-            </Box>
-            <Box className="vision">
-              <Box className='name'>Minimalism</Box>
+            </Box>}
+            {study.Head2 && <Box className="vision">
+              <Box className='name'>{study.Head2}</Box>
               <UnorderedList width={"90%"} marginBlock="1rem">
                 <ListItem>{study.Minimal1}</ListItem>
                 <ListItem>{study.Minimal2}</ListItem>
                 <ListItem>{study.Minimal3}</ListItem>
               </UnorderedList>
-            </Box>
+            </Box>}
           </Flex>
           <Flex className="aboutVision">
-            <Box className="vision">
-              <Box className='name'>Education</Box>
+            {study.Head3 && <Box className="vision">
+              <Box className='name'>{study.Head3}</Box>
               <UnorderedList width={"90%"} marginBlock="1rem">
                 <ListItem>{study.Education1}</ListItem>
                 <ListItem>{study.Education2}</ListItem>
                 <ListItem>{study.Education3}</ListItem>
               </UnorderedList>
-            </Box>
-            <Box className="vision">
-              <Box className='name'>Security</Box>
+            </Box>}
+            {study.Head4 && <Box className="vision">
+              <Box className='name'>{study.Head4}</Box>
               <UnorderedList width={"90%"} marginBlock="1rem">
                 <ListItem>{study.Security1}</ListItem>
                 <ListItem>{study.Security2}</ListItem>
                 <ListItem>{study.Security3}</ListItem>
               </UnorderedList>
-            </Box>
+            </Box>}
           </Flex>
+
+          {/* Features */}
+          {study.Features && <Box className='sectionHeading'>Features</Box>}
+          {study.Features && <Box className="about">
+            <Box className='name'>{study.FeatureHead}</Box>
+            <Box className='info'>{study.Feature1} <br /> <br />
+              {study.ResearchCont}</Box>
+            {study.Feature2 && <Box className='name'>{study.FeatureHead2}</Box>}
+            {study.Feature2 && <Box className='info'>{study.Feature2}</Box>}
+            {study.Feature3 && <Box className='name'>{study.FeatureHead3}</Box>}
+            {study.Feature3 && <Box className='info'>{study.Feature3}</Box>}
+          </Box>}
 
           {/* REFLECTION */}
           <Box className='sectionHeading'>Reflection</Box>

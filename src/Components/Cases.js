@@ -21,7 +21,7 @@ function Cases() {
         navigate(`/studies/netflix`)
     }
     function goToGaming(){
-        navigate(`/studies/gaming`)
+        navigate(`/studies/tournafest`)
     }
     return (
         <Box className='studyCont'>
