@@ -232,8 +232,7 @@ svg {
   position: sticky;
   top: 150px;
   overflow: visible;
-  padding-top: 7vw;
-  padding-bottom: 20vw;
+  margin-bottom: -15vw;
 }
 
 .navList {

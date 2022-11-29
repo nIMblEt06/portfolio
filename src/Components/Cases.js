@@ -14,8 +14,14 @@ import { useNavigate } from 'react-router-dom'
 function Cases() {
     const navigate = useNavigate();
     const [isSmallerThan1200] = useMediaQuery('(max-width:1200px)')
-    function goToStudy(){
-        navigate('/studies')
+    function goToFlint(){
+        navigate(`/studies/flint`)
+    }
+    function goToNetflix(){
+        navigate(`/studies/netflix`)
+    }
+    function goToGaming(){
+        navigate(`/studies/gaming`)
     }
     return (
         <Box className='studyCont'>
@@ -26,7 +32,7 @@ function Cases() {
                             <Image w="2rem" src={flint} />
                             <Box className='caseHeading'>Crypto Native</Box>
                             <Box className='caseText'>A case study about the crypto natives their behavior and understanding</Box>
-                            <Button onClick={goToStudy} className='redirect'>Read case study &nbsp; <AiOutlineArrowRight /></Button>
+                            <Button onClick={goToFlint} className='redirect'>Read case study &nbsp; <AiOutlineArrowRight /></Button>
                         </VStack>
                         <Flex alignItems={"flex-end"} mr="3rem">
                             <Image w="14rem" src={phone} />
@@ -39,7 +45,7 @@ function Cases() {
                             <Image w="2rem" src={netflix} />
                             <Box className='caseHeading'>Netflix Documentary</Box>
                             <Box className='caseText'>A Netflix case study</Box>
-                            <Button onClick={goToStudy} className='redirect'>See the docket &nbsp; <AiOutlineArrowRight /></Button>
+                            <Button onClick={goToNetflix} className='redirect'>See the docket &nbsp; <AiOutlineArrowRight /></Button>
                         </VStack>
                     </Flex>
                 </GridItem>
@@ -55,7 +61,7 @@ function Cases() {
                             <Image w="4rem" src={gaming} />
                             <Box className='caseHeading'>Gaming Arena</Box>
                             <Box className='caseText'>A case study about the crypto natives their behavior and understanding</Box>
-                            <Button onClick={goToStudy} className='redirect'>Read case study &nbsp; <AiOutlineArrowRight /></Button>
+                            <Button onClick={goToGaming} className='redirect'>Read case study &nbsp; <AiOutlineArrowRight /></Button>
                         </VStack>
                         <Flex alignItems={"flex-end"}>
                             <Image w="25rem" src={phone2} />

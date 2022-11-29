@@ -1,17 +1,34 @@
 import { Box, Flex, Grid, GridItem, Image, ListItem, UnorderedList } from '@chakra-ui/react'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import nftImage from "../Assets/NFT.svg"
 import nft from "../Assets/image.svg"
+import { studies } from '../studyContent'
+import { useNavigate, useParams } from 'react-router-dom';
 function Studies() {
-
+  const params = useParams();
+  const name = params.study;
+  const navigate = useNavigate();
+  const [study, setStudy] = useState({})
   useEffect(()=>{
     window.scrollTo(0,0)
+    if(name==='flint'){
+      setStudy(studies[0])
+    }
+    else if(name=='netflix'){
+      setStudy(studies[1])
+    }
+    else if(name=='gaming'){
+      setStudy(studies[2])
+    }
+    else{
+      navigate('/')
+      }
   },[])
   
   return (
     <Box className='container'>
       <Box className='caseHead'>
-        Template Case Study
+        {study.Name}
       </Box>
       <Grid className='caseInfo'
         templateRows='repeat(2, 1fr)'
@@ -55,11 +72,7 @@ function Studies() {
           </Box>
         </GridItem>
       </Grid>
-      <Grid className='caseInfo'
-        templateColumns='repeat(4, 1fr)'
-        gap={6}
-      >
-        <GridItem className='stickyTop' colSpan={1}>
+      <Box className='stickyTop'>
           <Box className='head'>CONTENTS</Box>
           <UnorderedList className='nav' listStyleType={"none"} marginInlineStart={0}>
             <ListItem className='navList'>OVERVIEW</ListItem>
@@ -67,7 +80,11 @@ function Studies() {
             <ListItem className='navList'>RESEARCH</ListItem>
             <ListItem className='navList'>REFLECTION</ListItem>
           </UnorderedList>
-        </GridItem>
+        </Box>
+      <Grid marginLeft={"16rem"} className='caseInfo'
+        templateColumns='repeat(4, 1fr)'
+        gap={6}
+      >
         <GridItem colSpan={3}>
           {/* Overview */}
           <Box className='sectionHeading'>Overview</Box>
@@ -75,18 +92,19 @@ function Studies() {
             <Box className="about">
               <Box className='name'>About</Box>
               <Box className='head'>WHAT WAS THIS PROJECT?</Box>
-              <Box className='info'>NFTs, or non-fungible tokens, are digital assets that represent real-world objects like art, music, in-game items, and videos. They are one of a kind and can be bought and sold online using cryptocurrency. Robinhood NFT Marketplace aims to be a peer-to-peer NFT marketplace that makes discovering, selling, buying, and learning about NFTs effortless and enjoyable through beginner-friendly designs.</Box>
+              <Box className='info'>{study.About}</Box>
             </Box>
             <Box className="vision">
               <Box className='name'>Product Vision</Box>
               <Box className='head'>WHAT DID WE IMAGINE?</Box>
-              <Box className='info'>Robinhood NFT Marketplace aims to bring down barriers for non-technical users to interact with blockchain technologies and explore new forms of investments with user-friendly and familiar interfaces. Our product vision aligns with Robinhood’s overarching mission statement to democratize finance for all and facilitate creator economies' expansion.</Box>
+              <Box className='info'>{study.Vision}</Box>
+              <Box className='info'>{study.Vision2}</Box>
             </Box>
           </Flex>
           <Box className="solution">
             <Box className='name'>Solution </Box>
             <Box className='head'>HOW DID WE SOLVE OUR PROBLEM?</Box>
-            <Box fontSize={"3rem"} fontWeight="700" mt="1rem">Make NFT investing user friendly and less intimidating</Box>
+            <Box fontSize={"3rem"} fontWeight="700" mt="1rem">{study.Solution}</Box>
           </Box>
           <Image marginBlock={"3rem"} src={nftImage} />
           {/* Context */}
@@ -95,23 +113,23 @@ function Studies() {
           <Box className="about">
             <Box className='name'>Background</Box>
             <Box className='head'>WHAT'S GOING ON?</Box>
-            <Box className='info'>Non-fungible tokens play a crucial role in helping people achieve increased economic freedom by enabling creators and artists to explore novel ways of establishing creativity and ownership. Although they have been around for years, NFTs exploded in popularity in 2021, and their global market valuation reached a whopping $52 billion (according to crypto.com).</Box>
+            <Box className='info'>{study.Background}</Box>
           </Box>
           <Flex className="aboutVision">
             <Box className="vision">
               <Box className='name'>Problem</Box>
               <Box className='head'>WHAT DID WE IMAGINE?</Box>
-              <Box className='info'>Robinhood NFT Marketplace aims to bring down barriers for non-technical users to interact with blockchain technologies and explore new forms of investments with user-friendly and familiar interfaces. Our product vision aligns with Robinhood’s overarching mission statement to democratize finance for all and facilitate creator economies' expansion.</Box>
+              <Box className='info'>{study.Problem}</Box>
             </Box>
             <Box className="vision">
-              <Box className='name'>Problem</Box>
-              <Box className='head'>WHAT DID WE IMAGINE?</Box>
-              <Box className='info'>Robinhood NFT Marketplace aims to bring down barriers for non-technical users to interact with blockchain technologies and explore new forms of investments with user-friendly and familiar interfaces. Our product vision aligns with Robinhood’s overarching mission statement to democratize finance for all and facilitate creator economies' expansion.</Box>
+              <Box className='name'>Opportunity</Box>
+              <Box className='head'>WHERE CAN WE GO TO?</Box>
+              <Box className='info'>{study.Opportunity}</Box>
             </Box>
           </Flex>
           <Box className="solution">
             <Box className='name'>Challenge </Box>
-            <Box fontSize={"3rem"} fontWeight="700" mt="1rem">How might we help investors confidently and effortlessly invest in NFT’s on Robinhood ?</Box>
+            <Box fontSize={"3rem"} fontWeight="700" mt="1rem">{study.Challenge}</Box>
           </Box>
           <Image marginBlock={"3rem"} src={nft} />
 
@@ -119,27 +137,38 @@ function Studies() {
           <Box className='sectionHeading'>Research</Box>
 
           <Box className="about">
-            <Box className='name'>Design Goal for Blockchain</Box>
+            <Box className='name'>{study.ResearchHead}</Box>
             <Box className='head'>SETTING STANDARDS</Box>
-            <Box className='info'>Blockchain's user experience issues need to be addressed. As is often with technology, jargon creates friction for the user experience and can lead to wasted funds and time, leaving new investors confused and frustrated. Experiencing high commission fees and slow transaction speed discourages investors from trading or using the platform often. Address names are unnecessarily complex and usually not customized by their holder. <br /> <br />
-
-              Blockchain’s famed transparency is hardly usable for people unfamiliar with technology. Overall, the current state of blockchain causes it to be used by a small group of users, who are forced to deal with relatively high entry barriers and numerous questions and problems than meeting user needs. Keeping these pain points in mind, we came up with four key design goals to follow during this redesign process: Discoverability, Awareness, Education, and Security.</Box>
+            <Box className='info'>{study.Research1} <br /> <br />
+            {study.Research2}</Box>
           </Box>
           <Flex className="aboutVision">
             <Box className="vision">
               <Box className='name'>Discoverability</Box>
               <UnorderedList width={"90%"} marginBlock="1rem">
-                <ListItem>Enable users to explore newly added, featured, and trending creators and creations through a variety of filtering options</ListItem>
-                <ListItem>Enable users to explore newly added, featured, and trending creators and creations through a variety of filtering options</ListItem>
-                <ListItem>Enable users to explore newly added, featured, and trending creators and creations through a variety of filtering options</ListItem>
+                <ListItem>{study.Discover1}</ListItem>
+                <ListItem>{study.Discover2}</ListItem>
+                <ListItem>{study.Discover3}</ListItem>
               </UnorderedList>
             </Box>
             <Box className="vision">
-              <Box className='name'>Awareness</Box>
+              <Box className='name'>Minimalism</Box>
               <UnorderedList width={"90%"} marginBlock="1rem">
-                <ListItem>Enable users to explore newly added, featured, and trending creators and creations through a variety of filtering options</ListItem>
-                <ListItem>Enable users to explore newly added, featured, and trending creators and creations through a variety of filtering options</ListItem>
-                <ListItem>Enable users to explore newly added, featured, and trending creators and creations through a variety of filtering options</ListItem>
+                <ListItem>{study.Minimal1}</ListItem>
+                <ListItem>{study.Minimal2}</ListItem>
+                <ListItem>{study.Minimal3}</ListItem>
+              </UnorderedList>
+            </Box>
+          </Flex>
+          <Flex className="aboutVision">
+            <Box className="vision">
+              <Box className='name'>Education</Box>
+              <UnorderedList width={"90%"} marginBlock="1rem">
+                <ListItem>{study.Education1}</ListItem>
+                <ListItem>{study.Education2}</ListItem>
+                <ListItem>{study.Education3}</ListItem>
+                <ListItem>{study.Education4}</ListItem>
+                <ListItem>{study.Education5}</ListItem>
               </UnorderedList>
             </Box>
           </Flex>
@@ -149,8 +178,8 @@ function Studies() {
 
           <Flex className="aboutVision">
             <Box className="vision">
-              <Box className='name'>How did I feel when working on the design challenge?</Box>
-              <Box className='info'>I felt invigorated working on such an exciting, impactful project. We were overwhelmed with the amount of work we had ahead of us. And, at times, I even overworked myself to the point of suffering from COVID for an entire week. Nonetheless, I’m incredibly proud to have made an entire case study encompassing a whole app design and supporting research.</Box>
+              <Box className='name'>{study.Reflection1}</Box>
+              <Box className='info'>{study.Reflection1Text}</Box>
             </Box>
             <Box className="vision">
               <Box className='name'>What would I have done differently?</Box>
