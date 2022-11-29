@@ -21,7 +21,7 @@ function Studies() {
     contents.forEach(element => {
       element.classList.remove('active')
     });
-    contents[counter].classList.add('active')
+    // contents[counter].classList.add('active')
 
   }, [counter])
 
