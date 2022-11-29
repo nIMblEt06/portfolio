@@ -1,19 +1,25 @@
-import { Box, Image } from '@chakra-ui/react'
+import { Box, Flex, Image, Link } from '@chakra-ui/react'
 import React from 'react'
 import rahulImage from "../Assets/rahulImage.png" 
 import pins from "../Assets/pins.png" 
+import linkedin from "../Assets/linkedin.png" 
+import twitter from "../Assets/twitter.png" 
+import { BsDot } from 'react-icons/bs'
 
 
-function TestimonialCard() {
+function TestimonialCard(props) {
   return (
-    <Box marginInline={"1rem"} position={"relative"} bgColor="#EEE3D3" padding="1.2rem" borderRadius={"24px"} w="20rem">
-        <Image src={rahulImage} w="5rem" h="5rem"/>
-        <Image src={pins} position="absolute" w="0.4rem" top="0" right="25%" />
-        <Image src={pins} position="absolute" w="0.4rem" top="0" right="22%" />
+    <Box marginInline={"1rem"} position={"relative"} bgColor="#121212" color= "#EEE3D3" padding="1.2rem" borderRadius={"24px"} w="20rem">
+        <Image src={props.img} w="5rem" h="5rem"/>
+        <Box mt="0.6rem" fontWeight="600" fontSize={"1.3rem"}>{props.name}</Box>
+        <Flex fontSize={"0.7rem"} alignItems="center">{props.post} <BsDot fontSize="1.6rem"/> {props.company}</Flex>
         <Box mt="1.2rem" fontWeight="500" fontSize={"0.9rem"} fontStyle="italic">
-        Rahul is a self-motivated designer, full of energy! His love and passion for his craft is evidently seen in all his work, be it UX Design, podcasting or Video making Ansh simply nails it.
+       {props.text}
         </Box>
-        <Box mt="1.2rem" fontWeight="600">Akshit Bordia, CEO at Flint</Box>
+        <Flex mt="1.4rem">
+          <Link target={"_blank"} href='https://linkedin.com'><Image w="1.6rem" marginRight={"0.6rem"} src={linkedin}/></Link>
+          <Link target={"_blank"} href='https://twitter.com'><Image w="1.6rem" src={twitter}/></Link>
+        </Flex>
     </Box>
   )
 }

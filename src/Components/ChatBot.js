@@ -37,7 +37,7 @@ function ChatBot() {
     })
   }
   function handleSubmit(e) {
-    console.log(e);
+    // const array = [name, subject, phone, email]
     upper.style.transform = `translateY(-${9.5 * count}rem)`  
     if (count == 2) {
       // upper.style.transform = `translateY(-${9*count}rem)`
@@ -45,18 +45,21 @@ function ChatBot() {
       name.style.opacity = 0
       subject.style.display = "block"
       subject.style.opacity = 1
+      subject.focus()
     }
     else if (count == 3) {
       subject.style.display = "none"
       subject.style.opacity = 0
       phone.style.display = "block"
       phone.style.opacity = 1
+      phone.focus()
     }
     else if (count == 4) {
       phone.style.display = "none"
       phone.style.opacity = 0
       email.style.display = "block"
       email.style.opacity = 1
+      email.focus()
     }
     setCount(count => count + 1);
   }

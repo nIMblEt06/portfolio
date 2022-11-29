@@ -23,14 +23,14 @@ body::-webkit-scrollbar-thumb {
       color-stop(.5, transparent), to(transparent));
 }
 
-svg{
+svg {
   display: inline !important;
 }
 
 /* Hero */
 
 .hero {
-  height: 110vh;
+  min-height: 110vh;
   overflow: hidden;
   position: relative;
 }
@@ -155,10 +155,15 @@ svg{
   /* animation: marquee 80s infinite; */
 }
 
+.heroCarousel {
+  transition: all 3s linear;
+}
+
 .caroItem {
-  width: 18rem;
+  width: 20%;
+  flex-shrink: 0;
   border-radius: 24px;
-  margin-inline: 1.2rem;
+  margin-inline: 2%;
   height: 24rem;
   transition: all 0.3s ease;
 }
@@ -166,17 +171,6 @@ svg{
 .caroItem.inactive {
   filter: grayscale();
 }
-
-@keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
 
 /* Case Study Page */
 
@@ -347,11 +341,11 @@ svg{
   background: #121212;
   color: #EEE3D3;
   overflow: hidden;
+  border-radius: 28px;
   transition: all 0.2s ease-in;
 }
 
 .wideStudy:hover {
-  border-radius: 28px;
   background: #383838;
   box-shadow: rgb(45, 45, 45) 0px 0px 10px 2px;
   scale: 1.05;

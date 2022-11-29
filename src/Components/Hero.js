@@ -14,6 +14,7 @@ function Hero() {
     let subHeadingBack = useRef(null)
     let headingBack = useRef(null)
     let wrapper = useRef(null)
+    let carousel = useRef(null)
     // let ham1 = useRef(null)
     // let ham2 = useRef(null)
     // let ham3 = useRef(null)
@@ -44,9 +45,25 @@ function Hero() {
     //         );
     //     };
     // }, []);
+    // useEffect(() => {
+    //     wrapper.style.width = `${mousePos.x}px`
+    // })
     useEffect(() => {
-        wrapper.style.width = `${mousePos.x}px`
-    })
+        const caro = document.querySelector('.heroCarousel')
+        setInterval(() => {
+            caro.style.transform = "translateX(-24%)"
+        caro.addEventListener('transitionend', () => {
+            caro.appendChild(caro.firstElementChild)
+            caro.style.transition = 'none'
+            caro.style.transform = "translateX(0)"
+            setTimeout(() => {
+                caro.style.transition = 'all 3s linear'
+            })
+        })
+        }, 0);
+    }, [])
+
+
     useEffect(() => {
         // updateText("Super pumped","My eyes glowed when I was in the 7th standard, I wanted to be in the ecosystem.")
         setItems(Array.from(document.getElementsByClassName('caroItem')))
@@ -165,9 +182,12 @@ function Hero() {
                     <Flex ref={el => subHeadingBack = el} className='subHeading'>
                         I am a designer, story teller and a lover of airplane window seats ✈️
                     </Flex>
-                    <Slider {...settings}>
+                    {/* <Slider {...settings}>
                         {cards}
-                    </Slider>
+                    </Slider> */}
+                    <Flex className='heroCarousel' ref={el => carousel = el} mt="4rem">
+                        {cards}
+                    </Flex>
                 </Box>
             </Box>
         </Box>

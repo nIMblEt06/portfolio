@@ -1,8 +1,13 @@
 import { Box, Flex, Grid, GridItem, Image, ListItem, UnorderedList } from '@chakra-ui/react'
-import React from 'react'
+import React, { useEffect } from 'react'
 import nftImage from "../Assets/NFT.svg"
 import nft from "../Assets/image.svg"
 function Studies() {
+
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[])
+  
   return (
     <Box className='container'>
       <Box className='caseHead'>

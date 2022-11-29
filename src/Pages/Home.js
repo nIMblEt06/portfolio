@@ -7,11 +7,13 @@ import Testimonials from '../Components/Testimonials'
 
 function Home() {
   return (
-    <Box bgColor="#0D0D0D;" paddingBottom={"3rem"}>
+    <Box bgColor="#0D0D0D;" paddingBottom={"3rem"} overflowX={"hidden"}>
         <Hero/>
+        <Box width={"80%"} marginInline={"auto"}>
         <Cases/>
         <Testimonials/>
         <ChatBot/>
+        </Box>
     </Box>
   )
 }
