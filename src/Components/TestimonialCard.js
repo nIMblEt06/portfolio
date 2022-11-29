@@ -9,7 +9,7 @@ import { BsDot } from 'react-icons/bs'
 
 function TestimonialCard(props) {
   return (
-    <Box marginInline={"1rem"} position={"relative"} bgColor="#121212" color= "#EEE3D3" padding="1.2rem" borderRadius={"24px"} w="20rem">
+    <Box marginInline={"1rem"} position={"relative"} bgColor="#121212" color= "#EEE3D3" padding="1.2rem" borderRadius={"24px"} w="22rem">
         <Image src={props.img} w="5rem" h="5rem"/>
         <Box mt="0.6rem" fontWeight="600" fontSize={"1.3rem"}>{props.name}</Box>
         <Flex fontSize={"0.7rem"} alignItems="center">{props.post} <BsDot fontSize="1.6rem"/> {props.company}</Flex>

@@ -1,6 +1,6 @@
 import { Box, Flex, FormControl, Image, Input } from '@chakra-ui/react'
-import React, { useRef, useState } from 'react'
-import {AiOutlineArrowUp} from 'react-icons/ai'
+import React, { useEffect, useRef, useState } from 'react'
+import { AiOutlineArrowUp } from 'react-icons/ai'
 
 
 function ChatBot() {
@@ -12,7 +12,9 @@ function ChatBot() {
   let phone = useRef(null)
   let email = useRef(null)
   const [clicked, setClicked] = useState(false)
-  const [count, setCount] = useState(2)
+  const [count, setCount] = useState(1)
+  const [number, setNumber] = useState(0)
+  const [array,setArray] = useState([])
   const [userData, setUserData] = useState({
     name: "",
     subject: "",
@@ -21,10 +23,14 @@ function ChatBot() {
   })
   function check() {
     if (!clicked) {
-      upper.style.transform = "translateY(-7rem)"
+      upper.style.transform = "translateY(-1rem)"
       setClicked(true)
     }
   }
+  useEffect(()=>{
+    setArray([name, subject, phone, email])
+    upper.style.transform = "translateY(6rem)"
+  },[])
 
 
   function handleChange(event) {
@@ -36,32 +42,38 @@ function ChatBot() {
       }
     })
   }
+
   function handleSubmit(e) {
-    // const array = [name, subject, phone, email]
-    upper.style.transform = `translateY(-${9.5 * count}rem)`  
-    if (count == 2) {
-      // upper.style.transform = `translateY(-${9*count}rem)`
-      name.style.display = "none"
-      name.style.opacity = 0
-      subject.style.display = "block"
-      subject.style.opacity = 1
-      subject.focus()
+    // console.log(array[number].value != undefined) 
+    // console.log(array[number].value) 
+    // console.log(number);
+    if (array[number].value != "") {
+      setNumber(prevNumber => prevNumber + 1)
+      upper.style.transform = `translateY(-${11.6 * count}rem)`
+      if (count == 1) {
+        // upper.style.transform = `translateY(-${9*count}rem)`
+        name.style.display = "none"
+        name.style.opacity = 0
+        subject.style.display = "block"
+        subject.style.opacity = 1
+        subject.focus()
+      }
+      else if (count == 2) {
+        subject.style.display = "none"
+        subject.style.opacity = 0
+        phone.style.display = "block"
+        phone.style.opacity = 1
+        phone.focus()
+      }
+      else if (count == 3) {
+        phone.style.display = "none"
+        phone.style.opacity = 0
+        email.style.display = "block"
+        email.style.opacity = 1
+        email.focus()
+      }
+      setCount(count => count + 1);
     }
-    else if (count == 3) {
-      subject.style.display = "none"
-      subject.style.opacity = 0
-      phone.style.display = "block"
-      phone.style.opacity = 1
-      phone.focus()
-    }
-    else if (count == 4) {
-      phone.style.display = "none"
-      phone.style.opacity = 0
-      email.style.display = "block"
-      email.style.opacity = 1
-      email.focus()
-    }
-    setCount(count => count + 1);
   }
 
   return (
@@ -99,8 +111,8 @@ function ChatBot() {
         </Box>
       </Box>
       <Box className='lowerBox'>
-        <Image className='logo' src={"https://uploads-ssl.webflow.com/62c89bdb7c26b515f632de67/62f5dbe13ef14900c4c5e5f5_email-contact-icon.svg"} />
-        <Image className='logo' src={"https://uploads-ssl.webflow.com/62c89bdb7c26b515f632de67/62f5dbe10a419234e527d174_twitter-contact-icon.svg"} />
+        {/* <Image className='logo' src={"https://uploads-ssl.webflow.com/62c89bdb7c26b515f632de67/62f5dbe13ef14900c4c5e5f5_email-contact-icon.svg"} />
+        <Image className='logo' src={"https://uploads-ssl.webflow.com/62c89bdb7c26b515f632de67/62f5dbe10a419234e527d174_twitter-contact-icon.svg"} /> */}
         <Box className='messageForm'>
           <FormControl>
             <Flex className='messageContainer' onKeyPress={e => {
@@ -112,7 +124,7 @@ function ChatBot() {
               <Input ref={el => subject = el} id="subject" name="subject" onChange={handleChange} placeholder='iMessage'></Input>
               <Input ref={el => phone = el} id="phone" name="phone" onChange={handleChange} placeholder='iMessage'></Input>
               <Input ref={el => email = el} id="email" name="email" onChange={handleChange} placeholder='iMessage'></Input>
-              <Flex onClick={handleSubmit} ml="1rem" justifyContent={"center"} alignItems="center" bgColor={"#EEE3D3"} w="2.5rem" h="2.5rem" borderRadius={"50%"}><AiOutlineArrowUp fontSize={"1.4rem"}/></Flex>
+              <Flex onClick={handleSubmit} ml="1rem" justifyContent={"center"} alignItems="center" bgColor={"#EEE3D3"} w="2.5rem" h="2.5rem" borderRadius={"50%"}><AiOutlineArrowUp fontSize={"1.4rem"} /></Flex>
             </Flex>
           </FormControl>
         </Box>

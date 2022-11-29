@@ -48,20 +48,20 @@ function Hero() {
     // useEffect(() => {
     //     wrapper.style.width = `${mousePos.x}px`
     // })
-    useEffect(() => {
-        const caro = document.querySelector('.heroCarousel')
-        setInterval(() => {
-            caro.style.transform = "translateX(-24%)"
-        caro.addEventListener('transitionend', () => {
-            caro.appendChild(caro.firstElementChild)
-            caro.style.transition = 'none'
-            caro.style.transform = "translateX(0)"
-            setTimeout(() => {
-                caro.style.transition = 'all 3s linear'
-            })
-        })
-        }, 0);
-    }, [])
+    // useEffect(() => {
+    //     const caro = document.querySelector('.heroCarousel')
+        // setInterval(() => {
+        //     caro.style.transform = "translateX(-24%)"
+        // caro.addEventListener('transitionend', () => {
+        //     caro.appendChild(caro.firstElementChild)
+        //     caro.style.transition = 'none'
+        //     caro.style.transform = "translateX(0)"
+        //     setTimeout(() => {
+        //         caro.style.transition = 'all 3s linear'
+        //     })
+        // })
+        // }, 0);
+    // }, [])
 
 
     useEffect(() => {
@@ -185,7 +185,7 @@ function Hero() {
                     {/* <Slider {...settings}>
                         {cards}
                     </Slider> */}
-                    <Flex className='heroCarousel' ref={el => carousel = el} mt="4rem">
+                    <Flex className='heroCarousel' ref={el => carousel = el} mt="4vw">
                         {cards}
                     </Flex>
                 </Box>

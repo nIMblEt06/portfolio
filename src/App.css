@@ -44,7 +44,7 @@ svg {
   right: 0;
   z-index: 1;
   width: 100vw;
-  height: 120vh;
+  min-height: 110vh;
 }
 
 .heroClipper {
@@ -137,7 +137,7 @@ svg {
   font-size: 4rem;
   justify-content: center;
   align-items: center;
-  margin-top: 4rem;
+  margin-top: 4vw;
 }
 
 .subHeading {
@@ -147,7 +147,7 @@ svg {
   margin-inline: auto;
   font-size: 1.6rem;
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 3vw;
 }
 
 .slick-slider {
@@ -156,20 +156,36 @@ svg {
 }
 
 .heroCarousel {
+  justify-content: center;
   transition: all 3s linear;
 }
 
 .caroItem {
-  width: 20%;
-  flex-shrink: 0;
+  width: 23rem;
+  /* flex-shrink: 0; */
   border-radius: 24px;
   margin-inline: 2%;
   height: 24rem;
   transition: all 0.3s ease;
 }
+.caroItem svg{
+  position: absolute;
+  top: -20px;
+  left: -2rem;
+  fill: transparent;
+  stroke: black;
+  stroke-width: 3;
+  opacity: 0;
+  stroke-dasharray: 4000;
+  transition: 0.9s ease-out;
+}
 
 .caroItem.inactive {
   filter: grayscale();
+}
+
+.testimonial{
+  transition: all 0.7s ease-out;
 }
 
 /* Case Study Page */
@@ -315,7 +331,7 @@ svg {
 
 .upperBox {
   overflow: hidden;
-  height: 11rem;
+  height: 17rem;
 }
 
 .textContainer {
@@ -352,7 +368,7 @@ svg {
 }
 
 .caseHeading {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 600;
 }
 
