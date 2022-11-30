@@ -129,7 +129,7 @@ function Studies() {
             <Box className='head'>HOW DID WE SOLVE OUR PROBLEM?</Box>
             <Box fontSize={"3rem"} fontWeight="700" mt="1rem">{study.Solution}</Box>
           </Box>
-          <Image marginBlock={"3rem"} src={nftImage} />
+          {study.heroImage && <video src={study.heroImage} loop={true} autoPlay={true} muted={true}></video>}
           {/* Context */}
           <Box className='sectionHeading'>Context</Box>
 

@@ -283,12 +283,19 @@ svg {
   position: sticky;
   top: 150px;
   overflow: visible;
+  width: fit-content;
   margin-bottom: -15vw;
 }
 
 .navList {
   padding-block: 1rem;
   transition: all 0.4s ease;
+}
+.navList:hover{
+  color: white; 
+  position: relative;
+  font-size: 1.3rem;
+  margin-left: 2rem;
 }
 .navList.active{
   color: white; 
