@@ -37,6 +37,9 @@ function MotionDesign() {
         }
     }, [showMenu])
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
 
     return (
         <Box className='motionBox'>

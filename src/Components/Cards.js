@@ -5,12 +5,13 @@ import Lottie from 'lottie-react'
 import scribble from "../Assets/scribble.json"
 
 function Cards(props) {
-  const {heading, subHeading, updateText, updateClass, removeClass} = props;
+  const {heading, subHeading, updateText, updateClass, removeClass, source} = props;
   const [hover, setHover] = useState(false)
   let item = useRef(null)
 
   useEffect(()=>{
-    item.style.background= `url(${Mark})`
+    console.log(source);
+    item.style.background= `url(${source})`
     if(hover){
       updateClass();
       item.classList.remove('inactive')
@@ -32,7 +33,7 @@ function Cards(props) {
   }
 
   return (
-    <Box position={"relative"} onMouseOver={enter} onMouseLeave={leave} ref={el => item = el} className="caroItem">
+    <Box backgroundSize={"cover !important"} backgroundPosition="center !important" backgroundRepeat="no-repeat" position={"relative"} onMouseOver={enter} onMouseLeave={leave} ref={el => item = el} className="caroItem">
     {hover && <Lottie animationData={scribble}/>}
     </Box>
   )

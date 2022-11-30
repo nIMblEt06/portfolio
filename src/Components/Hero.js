@@ -118,7 +118,7 @@ function Hero() {
         })
     }
     const cards = images.map(card => {
-        return <Cards updateText={updateText} removeClass={removeClass} updateClass={updateClass} heading={card.heading} subHeading={card.subHeading} />
+        return <Cards updateText={updateText} removeClass={removeClass} updateClass={updateClass} source={card.source} heading={card.heading} subHeading={card.subHeading} />
     })
 
     const settings = {
