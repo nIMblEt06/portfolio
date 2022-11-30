@@ -6,12 +6,14 @@ import mohit from '../Assets/mohit.jpeg'
 import samrat from '../Assets/samrat.jpeg'
 import himanshu from '../Assets/himanshu.jpeg'
 import chirag from '../Assets/chirag.jpeg'
+import { Carousel } from "react-responsive-carousel"
+import "react-responsive-carousel/lib/styles/carousel.min.css"
 
 function Testimonials() {
   let testimonial = useRef(null)
 
   function moveCarousel() {
-    testimonial.style.transform = "translateX(-25rem)"
+    testimonial.style.transform = "translateX(-30rem)"
   }
   useEffect(() => {
     testimonial.addEventListener('transitionend', () => {
@@ -22,14 +24,11 @@ function Testimonials() {
         testimonial.style.transition = 'all 0.4s ease-out';
       })
     })
-    setInterval(() => {
-      moveCarousel()
-    }, 5000);
   },[testimonial])
 
 
   return (
-    <Flex className='testimonial' cursor={"pointer"} onClick={moveCarousel} ml="7.5rem">
+    <Flex className='testimonial' cursor={"pointer"} onClick={moveCarousel}>
       <Flex className='testWrapper' ref={el => testimonial = el}>
         <TestimonialCard name="Chetan Sahu" img={chetan} post="Product" company="INDMoney" text="I have collaborated with Rahul on multiple projects, and working with him is a delight. 
 Rahul is not someone who would ever build a product just for the sake of design. Instead, his understanding of user behaviour and product design makes him incredibly effective." linkedin="https://www.linkedin.com/in/chetansahu98/" twitter="" />

@@ -1,7 +1,7 @@
 import { Box, Flex, FormControl, Image, Input } from '@chakra-ui/react'
 import React, { useEffect, useRef, useState } from 'react'
 import { AiOutlineArrowUp } from 'react-icons/ai'
-
+import ArrowTop from "./ArrowTop"
 
 function ChatBot() {
 
@@ -14,7 +14,7 @@ function ChatBot() {
   const [clicked, setClicked] = useState(false)
   const [count, setCount] = useState(1)
   const [number, setNumber] = useState(0)
-  const [array,setArray] = useState([])
+  const [array, setArray] = useState([])
   const [userData, setUserData] = useState({
     name: "",
     subject: "",
@@ -27,10 +27,10 @@ function ChatBot() {
       setClicked(true)
     }
   }
-  useEffect(()=>{
+  useEffect(() => {
     setArray([name, subject, phone, email])
     upper.style.transform = "translateY(6rem)"
-  },[])
+  }, [])
 
 
   function handleChange(event) {
@@ -49,7 +49,7 @@ function ChatBot() {
     // console.log(number);
     if (array[number].value != "") {
       setNumber(prevNumber => prevNumber + 1)
-      upper.style.transform = `translateY(-${11.6 * count}rem)`
+      upper.style.transform = `translateY(-${11.9 * count}rem)`
       if (count == 1) {
         // upper.style.transform = `translateY(-${9*count}rem)`
         name.style.display = "none"
@@ -124,7 +124,7 @@ function ChatBot() {
               <Input ref={el => subject = el} id="subject" name="subject" onChange={handleChange} placeholder='iMessage'></Input>
               <Input ref={el => phone = el} id="phone" name="phone" onChange={handleChange} placeholder='iMessage'></Input>
               <Input ref={el => email = el} id="email" name="email" onChange={handleChange} placeholder='iMessage'></Input>
-              <Flex onClick={handleSubmit} ml="1rem" justifyContent={"center"} alignItems="center" bgColor={"#EEE3D3"} w="2.5rem" h="2.5rem" borderRadius={"50%"}><AiOutlineArrowUp fontSize={"1.4rem"} /></Flex>
+              <Box className='sendButton' onClick={handleSubmit}><ArrowTop/></Box>
             </Flex>
           </FormControl>
         </Box>

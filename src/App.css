@@ -260,7 +260,7 @@ svg {
 }
 
 .testimonial {
-  width: 25rem;
+  width: 30rem;
   overflow-x: hidden;
   transition: all 0.4s ease-out;
 }
@@ -372,10 +372,18 @@ svg {
   background: #121212;
   overflow: hidden;
   border-radius: 20px;
-  margin-top: 2rem;
+  padding-top: 7rem;
 }
-
-
+.sendButton{
+  cursor: pointer;
+  position: absolute;
+  border-radius: 50%;
+  top: 7px;
+  right: 9px;
+}
+.sendButton path{
+  transform: translate(-1px, -1px) scale(0.7);
+}
 
 .chatName {
   color: #807f7f;
@@ -462,6 +470,7 @@ svg {
 .studyCont {
   background-color: #0D0D0D;
   padding-block: 3rem;
+  margin-top: 5rem;
 }
 
 .wideStudy {
@@ -497,6 +506,7 @@ svg {
 .redirect {
   background: #EEE3D3 !important;
   border-radius: 12px !important;
+  font-size: 1.15rem !important;
   margin-top: 2rem !important;
   color: #000;
 }
@@ -512,6 +522,9 @@ svg {
 .slider,
 .slider-wrapper {
   height: 100% !important;
+}
+.slide{
+  overflow: hidden;
 }
 
 .footerFlex img {

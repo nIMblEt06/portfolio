@@ -14,7 +14,7 @@ function Home() {
       <Hero />
       <Box width={"90%"} marginInline={"auto"}>
         <Cases />
-        <Flex w="90%" justifyContent="space-between" className="testAndChat">
+        <Flex marginInline={"auto"} w="80%" justifyContent="space-between" className="testAndChat">
           <Testimonials />
           <ChatBot />
         </Flex>
