@@ -17,8 +17,8 @@ function Cases() {
     function goToFlint(){
         navigate(`/studies/flint`)
     }
-    function goToNetflix(){
-        navigate(`/studies/netflix`)
+    function goToMotion(){
+        navigate(`/motionDesign`)
     }
     function goToGaming(){
         navigate(`/studies/tournafest`)
@@ -43,9 +43,9 @@ function Cases() {
                     <Flex justifyContent={"space-between"}>
                         <VStack w="90%" className='studyText' alignItems={"baseline"}>
                             <Image w="2rem" src={netflix} />
-                            <Box className='caseHeading'>Netflix Documentary</Box>
-                            <Box className='caseText'>A Netflix case study</Box>
-                            <Button onClick={goToNetflix} className='redirect'>See the docket &nbsp; <AiOutlineArrowRight /></Button>
+                            <Box className='caseHeading'>Motion Design</Box>
+                            <Box className='caseText'>Some of my favorite motion graphics.</Box>
+                            <Button onClick={goToMotion} className='redirect'>See the docket &nbsp; <AiOutlineArrowRight /></Button>
                         </VStack>
                     </Flex>
                 </GridItem>

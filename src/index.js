@@ -8,7 +8,6 @@ import theme from './Theme';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-
     <ChakraProvider theme={theme}>
       <Fonts />
       <App />
