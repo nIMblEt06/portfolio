@@ -5,10 +5,13 @@ import netflix from "../Assets/netflix.png"
 import gaming from "../Assets/gaming.png"
 import phone from "../Assets/phone.png"
 import phone2 from "../Assets/phone2.png"
-import { AiOutlineArrowRight } from 'react-icons/ai'
+import motion from "../Assets/Motion.json"
+import Lottie from 'lottie-react'
+// import { Arrow } from 'react-icons/ai'
 import { Carousel } from "react-responsive-carousel"
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import HomeCaroItem from './HomeCaroItem'
+import Arrow from './Arrow'
 import { useNavigate } from 'react-router-dom'
 
 function Cases() {
@@ -26,26 +29,27 @@ function Cases() {
     return (
         <Box className='studyCont'>
             <SimpleGrid w="80%" marginInline={"auto"} columns={isSmallerThan1200 ? 2 : 3} gap="8" spacing={"2"}>
-                <GridItem colSpan={2} className='wideStudy'>
+                <GridItem colSpan={2} className='wideStudy' onClick={goToFlint}>
                     <Flex justifyContent={"space-between"}>
                         <VStack w="50%" className='studyText' alignItems={"baseline"}>
                             <Image w="2rem" src={flint} />
-                            <Box className='caseHeading'>Crypto Native</Box>
+                            <Box className='caseHeading'>Flint Money</Box>
                             <Box className='caseText'>A case study about the crypto natives their behavior and understanding</Box>
-                            <Button onClick={goToFlint} className='redirect'>Read case study &nbsp; <AiOutlineArrowRight /></Button>
+                            <Button onClick={goToFlint} className='redirect'>Read case study &nbsp; <Arrow /></Button>
                         </VStack>
                         <Flex alignItems={"flex-end"} mr="3rem">
                             <Image w="14rem" src={phone} />
                         </Flex>
                     </Flex>
                 </GridItem>
-                <GridItem colSpan={1} className='wideStudy'>
+                <GridItem colSpan={1} onClick={goToMotion} className='wideStudy'>
                     <Flex justifyContent={"space-between"}>
-                        <VStack w="90%" className='studyText' alignItems={"baseline"}>
-                            <Image w="2rem" src={netflix} />
+                        <VStack w="90%" className='studyText lottieContainer' alignItems={"baseline"}>
+                            {/* <Image w="2rem" src={netflix} /> */}
+                            <Lottie animationData={motion}/>
                             <Box className='caseHeading'>Motion Design</Box>
                             <Box className='caseText'>Some of my favorite motion graphics.</Box>
-                            <Button onClick={goToMotion} className='redirect'>See the docket &nbsp; <AiOutlineArrowRight /></Button>
+                            <Button onClick={goToMotion} className='redirect'>Browse through &nbsp; <Arrow/></Button>
                         </VStack>
                     </Flex>
                 </GridItem>
@@ -55,13 +59,13 @@ function Cases() {
                         <HomeCaroItem/>
                     </Carousel>
                 </GridItem>
-                <GridItem colSpan={2} className='wideStudy'>
+                <GridItem colSpan={2} onClick={goToGaming} className='wideStudy'>
                     <Flex justifyContent={"space-between"}>
-                        <VStack w="50%" className='studyText' alignItems={"baseline"}>
+                        <VStack w="65%" className='studyText' alignItems={"baseline"}>
                             <Image w="4rem" src={gaming} />
-                            <Box className='caseHeading'>Gaming Arena</Box>
+                            <Box className='caseHeading'>Tournafest</Box>
                             <Box className='caseText'>A case study about the crypto natives their behavior and understanding</Box>
-                            <Button onClick={goToGaming} className='redirect'>Read case study &nbsp; <AiOutlineArrowRight /></Button>
+                            <Button onClick={goToGaming} className='redirect'>Read case study &nbsp; <Arrow /></Button>
                         </VStack>
                         <Flex alignItems={"flex-end"}>
                             <Image w="25rem" src={phone2} />

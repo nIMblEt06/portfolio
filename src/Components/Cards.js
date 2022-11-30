@@ -10,7 +10,7 @@ function Cards(props) {
   let item = useRef(null)
 
   useEffect(()=>{
-    console.log(source);
+    // console.log(source);
     item.style.background= `url(${source})`
     if(hover){
       updateClass();

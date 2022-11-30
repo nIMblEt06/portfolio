@@ -82,21 +82,21 @@ function ChatBot() {
         <Box className='textContainer' ref={el => upper = el}>
           <Box className="awayText">
             <Box className='chatName'>Rahul</Box>
-            <Box className="chatText">want to work together?</Box>
+            <Box className="chatText">Hey there! How can I help you?</Box>
           </Box>
           <Box className='ownText'>
-            <Box className="own chatText">sounds awesome!</Box>
+            <Box className="own chatText">Sounds good!</Box>
           </Box>
           <Box className="awayText">
             <Box className='chatName'>Rahul</Box>
-            <Box className="chatText">what's your name?</Box>
+            <Box className="chatText">Interesting! what's your name?</Box>
           </Box>
           <Box className='ownText'>
             <Box className="own chatText">{userData.name}</Box>
           </Box>
           <Box className="awayText">
             <Box className='chatName'>Rahul</Box>
-            <Box className="chatText">nice to meet you! what did you want to talk about?</Box>
+            <Box className="chatText">nice to meet you! what's your phone number?</Box>
           </Box>
           <Box className='ownText'>
             <Box className="own chatText">{userData.subject}</Box>

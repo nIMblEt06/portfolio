@@ -1,7 +1,9 @@
 import { Box, Flex, Image } from '@chakra-ui/react'
 import React, { useEffect, useRef, useState } from 'react'
 import "../App.css"
-import Globe from "../Assets/Globe.svg"
+// import Globe from "../Assets/Globe.svg"
+import Globe from "../Assets/Globe.json"
+import Lottie from "lottie-react"
 import Cards from './Cards'
 import { images } from "../caroImages"
 import "slick-carousel/slick/slick.css";
@@ -13,6 +15,8 @@ function Hero() {
     // let subHeading = useRef(null)
     let subHeadingBack = useRef(null)
     let headingBack = useRef(null)
+    let greet = useRef(null)
+    let ham = useRef(null)
     let wrapper = useRef(null)
     let carousel = useRef(null)
     // let ham1 = useRef(null)
@@ -81,6 +85,8 @@ function Hero() {
         items.forEach(item => {
             item.classList.add('inactive')
         })
+        greet.classList.add('inactive')
+        ham.classList.add('inactive')
     }
     function toggleMenu() {
         setShowMenu(showMenu => !showMenu)
@@ -116,6 +122,8 @@ function Hero() {
         items.forEach(item => {
             item.classList.remove('inactive')
         })
+        greet.classList.remove('inactive')
+        ham.classList.remove('inactive')
     }
     const cards = images.map(card => {
         return <Cards updateText={updateText} removeClass={removeClass} updateClass={updateClass} source={card.source} heading={card.heading} subHeading={card.subHeading} />
@@ -163,8 +171,8 @@ function Hero() {
             <Box ref={el => wrapper = el} className='heroClipper'>
                 <Box className='heroWrapper clip'>
                     <Flex className='navbar'>
-                        <Flex className='greet'><Image w="25%" display={"inline"} mr="0.4rem" src={Globe} />  <Box color={"#EEE3D3"}>Good evening <br /> from Bangalore.</Box></Flex>
-                        <Box className='ham' onClick={toggleMenu}>
+                        <Flex ref={el => greet = el} className='greet'><Lottie animationData={Globe}/> <Box color={"#EEE3D3"}>Welcome to this corner<br/>of the internet.</Box></Flex>
+                        <Box className='ham' ref={el => ham = el} onClick={toggleMenu}>
                             <Box className='hams one' ref={el => ham4 = el}></Box>
                             <Box className='hams two' ref={el => ham5 = el}></Box>
                             <Box className='hams three' ref={el => ham6 = el}></Box>

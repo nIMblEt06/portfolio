@@ -30,7 +30,7 @@ svg {
 /* Hero */
 
 .hero {
-  min-height: 111vh;
+  /* min-height: 111vh; */
   overflow: hidden;
   position: relative;
 }
@@ -48,7 +48,7 @@ svg {
 }
 
 .heroClipper {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   bottom: 0;
@@ -65,57 +65,80 @@ svg {
   background-color: #0D0D0D;
   color: #EEE3D3;
 }
+
 .motionBox {
   background-color: #0D0D0D;
   color: #EEE3D3;
 }
 
-.motionContainer{
+.motionContainer {
   width: 30%;
   border-radius: 30px;
   background-color: #121212;
   padding: 1rem;
   margin-top: 2rem;
 }
-.videoContainer{
+
+.videoContainer {
   width: 48%;
   border-radius: 30px;
   background-color: #121212;
   margin-top: 2rem;
   overflow: hidden;
 }
-.bigVideoCont{
+
+.bigVideoCont {
   width: 100%;
   border-radius: 30px;
   background-color: #121212;
   margin-top: 2rem;
   overflow: hidden;
 }
-.videoContainer video{
+
+.videoContainer video {
   width: 100%;
   height: 21rem;
 }
 
 
-.motionContainer>div>svg{
+.motionContainer>div>svg {
   width: 75% !important;
   height: 14rem !important;
 }
-.motionContainer>div:first-child{
+
+.motionContainer>div:first-child {
   display: flex;
   justify-content: center;
 }
 
-.titleHeading{ 
+.lottieContainer>div:first-child {
+  display: flex;
+  height: 2.6rem;
+  justify-content: left;
+  transform: translateX(-1.6rem);
+}
+
+.greet>div:first-child {
+  display: flex;
+  height: 3rem;
+  background-color: #EEE3D3;
+  border-radius: 50%;
+  margin-right: 0.4rem;
+  justify-content: left;
+  transform: translateX(-0.4rem);
+}
+
+.titleHeading {
   font-size: 1.4rem;
   font-weight: 600;
 }
+
 .navbar {
   justify-content: space-between;
   align-items: center;
   width: 80%;
   margin-inline: auto;
-  padding-top: 2rem;
+  padding-top: 2.25rem;
 }
 
 .greet {
@@ -180,7 +203,7 @@ svg {
   font-size: 4rem;
   justify-content: center;
   align-items: center;
-  margin-top: 4vw;
+  margin-top: 2.25rem;
 }
 
 .subHeading {
@@ -211,7 +234,8 @@ svg {
   height: 24rem;
   transition: all 0.3s ease;
 }
-.caroItem svg{
+
+.caroItem svg {
   position: absolute;
   top: -65px;
   transform: rotate(-20deg) !important;
@@ -228,14 +252,20 @@ svg {
 
 .caroItem.inactive {
   filter: grayscale();
+  opacity: 10%;
 }
 
-.testimonial{
+.inactive {
+  opacity: 10%;
+}
+
+.testimonial {
   width: 25rem;
-  overflow-x: hidden ;
+  overflow-x: hidden;
   transition: all 0.4s ease-out;
 }
-.testWrapper{
+
+.testWrapper {
   transition: all 0.4s ease-out;
 }
 
@@ -291,19 +321,22 @@ svg {
   padding-block: 1rem;
   transition: all 0.4s ease;
 }
-.navList:hover{
-  color: white; 
+
+.navList:hover {
+  color: white;
   position: relative;
   font-size: 1.3rem;
   margin-left: 2rem;
 }
-.navList.active{
-  color: white; 
+
+.navList.active {
+  color: white;
   position: relative;
   font-size: 1.3rem;
   margin-left: 2rem;
 }
-.navList.active::before{
+
+.navList.active::before {
   content: '';
   position: absolute;
   left: -50px;
@@ -346,6 +379,7 @@ svg {
 
 .chatName {
   color: #807f7f;
+  margin-bottom: 0.2rem;
 }
 
 .awayText {
@@ -433,24 +467,27 @@ svg {
 .wideStudy {
   background: #121212;
   color: #EEE3D3;
+  cursor: pointer;
   overflow: hidden;
   border-radius: 28px;
   transition: all 0.2s ease-in;
 }
 
 .wideStudy:hover {
-  background: #383838;
-  box-shadow: rgb(45, 45, 45) 0px 0px 10px 2px;
+  /* background: #383838; */
+  background: #222222;
+  box-shadow: rgb(45, 45, 45, 0.4) 0px 0px 16px 10px;
+  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 10px 0px 25px rgba(95, 95, 95, 0.14); */
   scale: 1.05;
 }
 
 .caseHeading {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 600;
 }
 
 .caseText {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 .studyText {
@@ -459,7 +496,7 @@ svg {
 
 .redirect {
   background: #EEE3D3 !important;
-  border-radius: 20px;
+  border-radius: 12px !important;
   margin-top: 2rem !important;
   color: #000;
 }
@@ -477,7 +514,7 @@ svg {
   height: 100% !important;
 }
 
-.footerFlex img{
+.footerFlex img {
   margin-inline: 1rem;
   width: 2rem;
   height: 2rem;
