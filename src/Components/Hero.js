@@ -1,4 +1,4 @@
-import { Box, Flex, Image, Link } from '@chakra-ui/react'
+import { Box, Flex, Image, Link, useMediaQuery } from '@chakra-ui/react'
 import React, { useEffect, useRef, useState } from 'react'
 import "../App.css"
 // import Globe from "../Assets/Globe.svg"
@@ -27,6 +27,8 @@ function Hero() {
     let ham6 = useRef(null)
     // let menu1 = useRef(null)
     let menu2 = useRef(null)
+    const [count, setCount] = useState(0)
+    const [isSmallerThan450] = useMediaQuery('(max-width:450px)') 
     const [showMenu, setShowMenu] = useState(false)
     const [items, setItems] = useState(Array.from(document.getElementsByClassName('caroItem')))
     const [mousePos, setMousePos] = useState({});
@@ -67,12 +69,36 @@ function Hero() {
         // }, 0);
     // }, [])
 
+    
+
 
     useEffect(() => {
         // updateText("Super pumped","My eyes glowed when I was in the 7th standard, I wanted to be in the ecosystem.")
         setItems(Array.from(document.getElementsByClassName('caroItem')))
-
     }, [])
+
+    useEffect(()=>{
+        if(isSmallerThan450){
+            setTimeout(() => {
+                carousel.style.transform = "translateX(-25%)"
+            }, 3000);
+            setTimeout(() => {
+                carousel.style.transform = "translateX(-50%)"
+            }, 8000);
+            setTimeout(() => {
+                carousel.style.transform = "translateX(-75%)"
+            }, 13000);
+            setTimeout(() => {
+                carousel.style.transform = "translateX(-50%)"
+            }, 18000);
+            setTimeout(() => {
+                carousel.style.transform = "translateX(-25%)"
+            }, 23000);
+            setTimeout(() => {
+                carousel.style.transform = "translateX(0%)"
+            }, 28000);
+        }
+    })
 
     function updateText(head, subHead) {
         // heading.innerText = head;
@@ -102,7 +128,7 @@ function Hero() {
             // menu1.style.display = "block"
             // menu1.style.opacity = 1
             menu2.style.opacity = 1
-            // menu2.style.display = "block"
+            menu2.style.display = "block"
         }
         else {
             // ham1.style.transform = "rotate(0deg)"
@@ -113,8 +139,8 @@ function Hero() {
             ham5.style.opacity = 1
             // menu1.style.opacity = 0
             menu2.style.opacity = 0
+            menu2.style.display = "none"
             // menu1.style.display = "none"
-            // menu2.style.display = "none"
         }
     }, [showMenu])
 
@@ -171,7 +197,7 @@ function Hero() {
             <Box ref={el => wrapper = el} className='heroClipper'>
                 <Box className='heroWrapper clip'>
                     <Flex className='navbar'>
-                        <Flex ref={el => greet = el} className='greet'><Lottie animationData={Globe}/> <Box color={"#EEE3D3"}>Welcome to this corner<br/>of the internet.</Box></Flex>
+                        <Flex ref={el => greet = el} className='greet'><Lottie animationData={Globe}/> <Box className="greetText" color={"#EEE3D3"}>Welcome to this corner<br/>of the internet.</Box></Flex>
                         <Box className='ham' ref={el => ham = el} onClick={toggleMenu}>
                             <Box className='hams one' ref={el => ham4 = el}></Box>
                             <Box className='hams two' ref={el => ham5 = el}></Box>

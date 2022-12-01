@@ -17,6 +17,7 @@ import { useNavigate } from 'react-router-dom'
 function Cases() {
     const navigate = useNavigate();
     const [isSmallerThan1200] = useMediaQuery('(max-width:1200px)')
+    const [isSmallerThan450] = useMediaQuery('(max-width:450px)')
     function goToFlint(){
         navigate(`/studies/flint`)
     }
@@ -30,19 +31,19 @@ function Cases() {
         <Box className='studyCont'>
             <SimpleGrid w="80%" marginInline={"auto"} columns={isSmallerThan1200 ? 2 : 3} gap="8" spacing={"2"}>
                 <GridItem colSpan={2} className='wideStudy' onClick={goToFlint}>
-                    <Flex justifyContent={"space-between"}>
+                    <Flex justifyContent={"space-between"} className="caseStudyFlex">
                         <VStack w="50%" className='studyText' alignItems={"baseline"}>
                             <Image w="2rem" src={flint} />
                             <Box className='caseHeading'>Flint Money</Box>
                             <Box className='caseText'>Making crypto investing user friendly and less intimidating.</Box>
                             <Button onClick={goToFlint} className='redirect'>Read case study &nbsp; <Arrow /></Button>
                         </VStack>
-                        <Flex alignItems={"flex-end"} mr="3rem">
+                        <Flex className="caseImageContainer" alignItems={"flex-end"} mr="3rem">
                             <Image w="14rem" src={phone} />
                         </Flex>
                     </Flex>
                 </GridItem>
-                <GridItem colSpan={1} onClick={goToMotion} className='wideStudy'>
+                <GridItem colSpan={isSmallerThan450 ? 2 : 1} onClick={goToMotion} className='wideStudy'>
                     <Flex justifyContent={"space-between"}>
                         <VStack w="90%" className='studyText lottieContainer' alignItems={"baseline"}>
                             {/* <Image w="2rem" src={netflix} /> */}
@@ -53,7 +54,7 @@ function Cases() {
                         </VStack>
                     </Flex>
                 </GridItem>
-                <GridItem colSpan={1} className='wideStudy'>
+                <GridItem colSpan={isSmallerThan450 ? 2 : 1} className='wideStudy'>
                     <Carousel showStatus={false} infiniteLoop={true} showIndicators={false}>
                         <HomeCaroItem/>
                         <HomeCaroItem/>

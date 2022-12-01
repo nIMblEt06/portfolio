@@ -1,4 +1,4 @@
-import { Box, Flex, Image, Link } from '@chakra-ui/react'
+import { Box, Flex, Image, Link, useMediaQuery } from '@chakra-ui/react'
 import React from 'react'
 import linkedin from "../Assets/linkedin.png" 
 import twitter from "../Assets/twitter.png" 
@@ -6,8 +6,9 @@ import { BsDot } from 'react-icons/bs'
 
 
 function TestimonialCard(props) {
+  const [isSmallerThan450] = useMediaQuery('(max-width:450px)')
   return (
-    <Box position={"relative"} flexShrink={0} bgColor="#121212" color= "#EEE3D3" padding="1.6rem" borderRadius={"24px"} w="30rem">
+    <Box position={"relative"} flexShrink={0} bgColor="#121212" color= "#EEE3D3" padding="1.6rem" borderRadius={"24px"} w={isSmallerThan450 ? "19rem" : "30rem"}>
         <Image src={props.img} borderRadius="50%" w="5rem" h="5rem"/>
         <Box mt="0.6rem" fontWeight="600" fontSize={"1.6rem"}>{props.name}</Box>
         <Flex fontSize={"1.15rem"} alignItems="center">{props.post} <BsDot fontSize="1.6rem"/> {props.company}</Flex>

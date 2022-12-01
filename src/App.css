@@ -261,7 +261,7 @@ svg {
 
 .heroCarousel {
   justify-content: center;
-  transition: all 3s linear;
+  transition: all 2s linear;
 }
 
 .caroItem {
@@ -663,19 +663,6 @@ svg {
   cursor: none !important;
 }
 
-@media screen and (max-width: 800px) {
-  video {
-    width: 25%;
-  }
-}
-
-@media screen and (max-width: 450px) {
-  video {
-    width: 45%;
-  }
-}
-
-
 /* Loader */
 
 .loaderWrapper{
@@ -697,4 +684,75 @@ svg {
   transform: translateY(40%);
   display: none;
   opacity: 0;
+}
+
+
+/* Responsiveness */
+
+
+@media screen and (max-width: 800px) {
+  video {
+    width: 25%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  video {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 450px){
+  .heading{
+    font-size: 2rem;
+    margin-inline: 0.8rem;
+    text-align: center;
+  }
+  .subHeading{
+    width: 80%;
+    font-size: 1.2rem;
+  }
+  .heroCarousel{
+    width: max-content;
+    margin-top: 4rem !important;
+  }
+  .greetText{
+    font-size: 0.8rem;
+  }
+  .studyText{
+    width: 90% !important;
+  }
+  .caseStudyFlex{
+    flex-direction: column;
+  }
+  .caseImageContainer{
+    margin-right: 0 !important;
+    justify-content: flex-end;
+  }
+  .caseImageContainer>img{
+    width: 70%;
+  }
+  .testAndChat{
+    flex-direction: column;
+  }
+  .testimonial{
+    width: 19rem;
+  }
+  #chatBot{
+    width: 100%;
+    padding-top: 4rem;
+    margin-top: 2rem;
+  }
+  .ownText{
+    padding: 0.5rem;
+  }
+  .awayText{
+    padding: 0.5rem;
+  }
+  .chatText{
+    padding: 0.75rem;
+  }
+  .footerFlex{
+    width: 30%;
+  }
 }

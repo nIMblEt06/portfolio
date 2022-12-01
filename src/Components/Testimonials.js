@@ -1,4 +1,4 @@
-import { Box, Flex } from '@chakra-ui/react'
+import { Box, Flex, useMediaQuery } from '@chakra-ui/react'
 import React, { useEffect, useRef, useState } from 'react'
 import TestimonialCard from './TestimonialCard'
 import chetan from '../Assets/chetan.jpeg'
@@ -12,9 +12,15 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"
 
 function Testimonials() {
   let testimonial = useRef(null)
+  const [isSmallerThan450] = useMediaQuery('(max-width:450px)')
 
   function moveCarousel() {
-    testimonial.style.transform = "translateX(-30rem)"
+    if(isSmallerThan450){
+      testimonial.style.transform = "translateX(-19rem)"
+    }
+    else{
+      testimonial.style.transform = "translateX(-30rem)"
+    }
   }
   useEffect(() => {
     testimonial.addEventListener('transitionend', () => {
