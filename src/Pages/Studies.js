@@ -11,30 +11,31 @@ function Studies() {
   const contents = document.querySelectorAll('.navLink')
   const secHead = Array.from(document.querySelectorAll('.sectionHeading'))
   const [study, setStudy] = useState({})
-  const [counter, setCounter] = useState(0)
-  const [changed, setChanged] = useState(false)
-  let offsets = []
-  secHead.forEach(heading => {
-    offsets.push(heading.getBoundingClientRect().top)
-  });
-
+  
   useEffect(() => {
-    if (!changed) {
-      if (offsets[counter] < window.scrollY) {
-        contents.forEach(element => {
-          element.classList.remove('active')
-        });
-        contents[counter].classList.add('active')
-        setCounter(counter => counter+1);
-        setChanged(true)
+    window.onscroll = () => {
+      var current = 0;
+    
+      secHead.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        if (window.scrollY >= sectionTop -300 ) {
+          current = secHead.indexOf(section); }
+      });
+      if(window.scrollY < 200){
+        console.log("exec");
+        contents[0].classList.remove("active");
       }
-    }
-    // if(offsets[counter]> window.scrollY){
-    //   setChanged(false)
-    // }
-    // contents[counter].classList.add('active')
-
+    
+      if(window.scrollY>200){
+        contents.forEach((li) => {
+          li.classList.remove("active");
+        });
+        contents[current].classList.add("active");
+      };
+      }
   })
+
+
   function setActive(e) {
     contents.forEach(element => {
       element.classList.remove('active')
@@ -113,7 +114,7 @@ function Studies() {
       <Box className='stickyTop'>
         <Box className='head'>CONTENTS</Box>
         <UnorderedList className='nav' listStyleType={"none"} marginInlineStart={0}>
-          <ListItem onClick={setActive} className='navList active'><Link className='navLink' href="#overview"> OVERVIEW</Link></ListItem>
+          <ListItem onClick={setActive} className='navList'><Link className='navLink' href="#overview"> OVERVIEW</Link></ListItem>
           <ListItem onClick={setActive} className='navList'><Link className='navLink' href="#context"> CONTEXT</Link></ListItem>
           <ListItem onClick={setActive} className='navList'><Link className='navLink' href="#research"> RESEARCH</Link></ListItem>
           {study.Features && <ListItem onClick={setActive} className='navList'><Link className='navLink' href="#features"> FEATURES</Link></ListItem>}
