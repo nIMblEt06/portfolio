@@ -13,7 +13,9 @@ function Home() {
 
   useEffect(() => {
     document.addEventListener("readystatechange", () => {
+      console.log("here");
       if (document.readyState === "complete") {
+        console.log("here");
         setTimeout(() => setIsLoaded(true), 2000);
       }
       sessionStorage.setItem('hasLoaded', true)
@@ -22,7 +24,7 @@ function Home() {
 
   return (
     <Box bgColor="#0D0D0D" overflowX={"hidden"}>
-      <Loader isLoaded={isLoaded} />
+      {/* <Loader isLoaded={isLoaded} /> */}
       <Hero />
       <Box width={"90%"} marginInline={"auto"}>
         <Cases />
