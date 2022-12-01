@@ -12,15 +12,17 @@ function Home() {
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
-    document.addEventListener("readystatechange", () => {
-      console.log("here");
+    document.addEventListener("DOMContentLoaded", () => {
       if (document.readyState === "complete") {
-        console.log("here");
         setTimeout(() => setIsLoaded(true), 2000);
+        sessionStorage.setItem('hasLoaded', true)
       }
-      sessionStorage.setItem('hasLoaded', true)
     })
-  });
+    if (document.readyState === "complete") {
+      setTimeout(() => setIsLoaded(true), 2000);
+      sessionStorage.setItem('hasLoaded', true)
+    }
+  },[]);
 
   return (
     <Box bgColor="#0D0D0D" overflowX={"hidden"}>

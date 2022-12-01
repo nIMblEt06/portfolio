@@ -9,13 +9,13 @@ function Studies() {
   const name = params.study;
   const navigate = useNavigate();
   const contents = document.querySelectorAll('.navLink')
-  const secHead = Array.from(document.querySelectorAll('.sectionHeading'))
   const [study, setStudy] = useState({})
+  const [secHead, setSecHead] = useState([])
 
   useEffect(() => {
     window.onscroll = () => {
       var current = 0;
-
+      setSecHead(Array.from(document.querySelectorAll('.sectionHeading')))
       secHead.forEach((section) => {
         const sectionTop = section.offsetTop;
         if (window.scrollY >= sectionTop - 300) {

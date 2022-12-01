@@ -22,6 +22,9 @@ function Loader(props) {
 			loader.style.transform = "translateY(-100%)"
 		}
 	})
+	useEffect(()=>{
+		setArray(Array.from(document.getElementsByClassName('word')))
+	},[])
 
 
 	useEffect(() => {
@@ -30,7 +33,6 @@ function Loader(props) {
 				loader.style.transform = "translateY(-100%)"
 			}, 3000);
 		}
-		setArray(Array.from(document.getElementsByClassName('word')))
 
 	}, [isLoaded])
 
