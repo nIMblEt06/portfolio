@@ -16,11 +16,20 @@ import gift from "../Assets/Gift.json"
 import nft from "../Assets/NFT.mov"
 import teaser from "../Assets/Teaser.mov"
 import final from "../Assets/FINAL.mov"
+import Loader from '../Components/Loader'
 
 function MotionDesign() {
     let vid1 = useRef(null)
     let vid2 = useRef(null)
+    // const [isLoaded, setIsLoaded] = useState(false)
 
+    // useEffect(() => {
+    //   document.addEventListener("readystatechange", () => {
+    //     if (document.readyState === "complete") {
+    //       setTimeout(() => setIsLoaded(true), 2000);
+    //     }
+    //   });
+    // }, []);
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -36,6 +45,7 @@ function MotionDesign() {
 
     return (
         <Box className='motionBox'>
+        {/* <Loader isLoaded = {isLoaded}/> */}
             <Box className='motionWrapper clip'>
                 <Flex className="heading motion">
                     Motion design

@@ -24,7 +24,6 @@ function Studies() {
 
       });
       if (window.scrollY < 200) {
-        console.log("exec");
         contents[0].classList.remove("active");
       }
 
@@ -38,12 +37,12 @@ function Studies() {
   })
 
 
-  function setActive(e) {
-    contents.forEach(element => {
-      element.classList.remove('active')
-    });
-    e.target.classList.add('active')
-  }
+  // function setActive(e) {
+  //   contents.forEach(element => {
+  //     element.classList.remove('active')
+  //   });
+  //   e.target.classList.add('active')
+  // }
 
 
   useEffect(() => {

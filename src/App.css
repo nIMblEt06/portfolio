@@ -671,3 +671,27 @@ svg {
     width: 45%;
   }
 }
+
+
+/* Loader */
+
+.loaderWrapper{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #121212;
+  z-index: 100;
+  transition: all 1s ease-out;
+  justify-content: center;
+  align-items: center;
+  color: #EEE3D3;
+}
+
+.loaderWrapper>div{
+  font-size: 5rem;
+  transform: translateY(40%);
+  display: none;
+  opacity: 0;
+}
