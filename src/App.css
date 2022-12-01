@@ -379,6 +379,11 @@ svg {
   width: 30%;
 }
 
+.points>li{
+  font-size: 1.3rem;
+  line-height: 2rem;
+}
+
 .stickyTop {
   position: sticky;
   top: 150px;
@@ -590,9 +595,12 @@ svg {
   background: #EEE3D3 !important;
   border-radius: 12px !important;
   font-size: 1.15rem !important;
+  font-weight: 500 !important;
   margin-top: 2rem !important;
   color: #000;
 }
+
+
 
 /* Case Study Carousel */
 

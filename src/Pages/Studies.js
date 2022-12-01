@@ -142,13 +142,10 @@ function Studies() {
               <Box className='info studies'>{study.Vision2}</Box>
             </Box>
           </Flex>
-          <Box className="solution">
-            <Box className='name study'>Solution </Box>
+          {/* <Box className="solution">
             <Box className='head studies'>HOW DID WE SOLVE OUR PROBLEM?</Box>
-            {/* <Box fontSize={"3rem"} fontWeight="700" mt="1rem">{study.Solution}</Box> */}
-          </Box>
-          {study.heroImage && <video className='roundVideo' src={study.heroImage} autoPlay={true} muted={true}></video>}
-          {/* Context */}
+            <Box fontSize={"3rem"} fontWeight="700" mt="1rem">{study.Solution}</Box>
+          </Box> */}
           <Box className='sectionHeading' id="context">Context</Box>
 
           {study.Background && <Box className="about">
@@ -168,28 +165,31 @@ function Studies() {
               <Box className='info studies'>{study.Opportunity}</Box>
             </Box>
           </Flex>
-          <Box className="solution">
-            <Box className='name study'>Challenge </Box>
-            <Box fontSize={"3rem"} fontWeight="700" mt="1rem">{study.Challenge}</Box>
-          </Box>
-          <Image marginBlock={"3rem"} src={nft} />
+          {study.heroImage && <video className='roundVideo' src={study.heroImage} autoPlay={true} muted={true}></video>}
+          {/* Context */}
 
           {/* Research */}
-          <Box className='sectionHeading' id="research">Research</Box>
+          {/* <Box >Research</Box> */}
+          {study.Challenge && <Box className="solution">
+            <Box className='sectionHeading' id="research" fontSize={"3rem"} fontWeight="700" mt="1rem">{study.Challenge}</Box>
+          </Box>}
 
           <Box className="about">
             <Box className='name study'>{study.ResearchHead}</Box>
             <Box className='info single studies'>{study.Research1} <br />
               {study.ResearchCont}</Box>
+            {study.image1 && <Image src={study.image1} w="30%"/>}
             {study.Research2 && <Box className='name study'>{study.ResearchHead2}</Box>}
             {study.Research2 && <Box className='info single studies'>{study.Research2}</Box>}
+            {study.image2 && <Image src={study.image2} w="30%" marginBlock={"4rem"}/>}
             {study.Research3 && <Box className='name study'>{study.ResearchHead3}</Box>}
             {study.Research3 && <Box className='info single studies'>{study.Research3}</Box>}
+            {study.image3 && <Image src={study.image3} w="30%" marginBlock={"4rem"}/>}
           </Box>
           <Flex className="aboutVision">
             {study.Head1 && <Box className="vision">
               <Box className='name study'>{study.Head1}</Box>
-              <UnorderedList width={"90%"} marginBlock="1rem">
+              <UnorderedList className="points" width={"90%"} marginBlock="1rem">
                 <ListItem>{study.Discover1}</ListItem>
                 <ListItem>{study.Discover2}</ListItem>
                 <ListItem>{study.Discover3}</ListItem>
@@ -197,7 +197,7 @@ function Studies() {
             </Box>}
             {study.Head2 && <Box className="vision">
               <Box className='name study'>{study.Head2}</Box>
-              <UnorderedList width={"90%"} marginBlock="1rem">
+              <UnorderedList className="points" width={"90%"} marginBlock="1rem">
                 <ListItem>{study.Minimal1}</ListItem>
                 <ListItem>{study.Minimal2}</ListItem>
                 <ListItem>{study.Minimal3}</ListItem>
@@ -207,7 +207,7 @@ function Studies() {
           <Flex className="aboutVision">
             {study.Head3 && <Box className="vision">
               <Box className='name study'>{study.Head3}</Box>
-              <UnorderedList width={"90%"} marginBlock="1rem">
+              <UnorderedList className="points" width={"90%"} marginBlock="1rem">
                 <ListItem>{study.Education1}</ListItem>
                 <ListItem>{study.Education2}</ListItem>
                 <ListItem>{study.Education3}</ListItem>
@@ -215,7 +215,7 @@ function Studies() {
             </Box>}
             {study.Head4 && <Box className="vision">
               <Box className='name study'>{study.Head4}</Box>
-              <UnorderedList width={"90%"} marginBlock="1rem">
+              <UnorderedList className="points" width={"90%"} marginBlock="1rem">
                 <ListItem>{study.Security1}</ListItem>
                 <ListItem>{study.Security2}</ListItem>
                 <ListItem>{study.Security3}</ListItem>

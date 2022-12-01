@@ -34,7 +34,7 @@ function Cases() {
                         <VStack w="50%" className='studyText' alignItems={"baseline"}>
                             <Image w="2rem" src={flint} />
                             <Box className='caseHeading'>Flint Money</Box>
-                            <Box className='caseText'>A case study about the crypto natives their behavior and understanding</Box>
+                            <Box className='caseText'>Making crypto ivesting user friendly and less intimidating.</Box>
                             <Button onClick={goToFlint} className='redirect'>Read case study &nbsp; <Arrow /></Button>
                         </VStack>
                         <Flex alignItems={"flex-end"} mr="3rem">
@@ -48,7 +48,7 @@ function Cases() {
                             {/* <Image w="2rem" src={netflix} /> */}
                             <Lottie animationData={motion}/>
                             <Box className='caseHeading'>Motion Design</Box>
-                            <Box className='caseText'>Some of my favorite motion graphics.</Box>
+                            <Box className='caseText'>Conveying more visually by bringing icons to life.</Box>
                             <Button onClick={goToMotion} className='redirect'>Browse through &nbsp; <Arrow/></Button>
                         </VStack>
                     </Flex>
@@ -64,7 +64,7 @@ function Cases() {
                         <VStack w="65%" className='studyText' alignItems={"baseline"}>
                             <Image w="4rem" src={gaming} />
                             <Box className='caseHeading'>Tournafest</Box>
-                            <Box className='caseText'>A case study about the crypto natives their behavior and understanding</Box>
+                            <Box className='caseText'>A one stop destination for gamers and organisers.</Box>
                             <Button onClick={goToGaming} className='redirect'>Read case study &nbsp; <Arrow /></Button>
                         </VStack>
                         <Flex alignItems={"flex-end"}>
