@@ -109,7 +109,7 @@ function MotionDesign() {
                     <video src={teaser} controls ></video>
                     <Box pt="3rem" pl="2rem" className='titleHeading'>Flint 2.0 Launch Video</Box>
                     <Box pl="2rem" className='info'>Walking users through the revamped app and all its features.</Box>
-                    <Flex alignItems={"center"} pl="2rem" className='info'>Tools: <Image paddingInline="0.6rem" src={ae} /> <Image src={blend} marginRight="2rem" /> Collaborators: <Link target="_blank" marginInline="1.2rem" textDecor={"underline"} href='https://linkedin.com'>Aadesh</Link> <Link target="_blank" textDecor={"underline"} href='https://linkedin.com'>Garvdeep</Link> </Flex>
+                    <Flex alignItems={"center"} pl="2rem" className='info'>Tools: <Image paddingInline="0.6rem" src={ae} /> <Image src={blend} marginRight="2rem" /> Collaborators: <Link target="_blank" marginInline="1.2rem" textDecor={"underline"} href='https://www.linkedin.com/in/kansalaadeesh'>Aadeesh</Link> <Link target="_blank" textDecor={"underline"} href='https://www.linkedin.com/in/garvdeep-singh-a19703123/'>Garvdeep</Link> </Flex>
                 </Box>
             </Flex>
             <Footer />

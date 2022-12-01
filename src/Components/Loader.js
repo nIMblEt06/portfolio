@@ -19,7 +19,9 @@ function Loader(props) {
 
 	useEffect(()=>{
 		if(sessionStorage.getItem('hasLoaded')){
-			loader.style.transform = "translateY(-100%)"
+			setTimeout(() => {
+				loader.style.transform = "translateY(-100%)"
+			}, 2000);
 		}
 	})
 	useEffect(()=>{
