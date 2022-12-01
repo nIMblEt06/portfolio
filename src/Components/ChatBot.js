@@ -11,6 +11,7 @@ function ChatBot() {
   let subject = useRef(null)
   let phone = useRef(null)
   let email = useRef(null)
+  let sendButton = useRef(null)
   const [clicked, setClicked] = useState(false)
   const [count, setCount] = useState(1)
   const [number, setNumber] = useState(0)
@@ -60,6 +61,7 @@ function ChatBot() {
       }
       else if (count == 2) {
         subject.style.display = "none"
+        sendButton.style.display = "none"
         subject.style.opacity = 0
         upper.style.transform = `translateY(-${15 * count}rem)`
         // phone.style.display = "block"
@@ -126,7 +128,7 @@ function ChatBot() {
               <Input ref={el => subject = el} id="subject" name="subject" onChange={handleChange} placeholder='iMessage'></Input>
               <Input ref={el => phone = el} id="phone" name="phone" onChange={handleChange} placeholder='iMessage'></Input>
               <Input ref={el => email = el} id="email" name="email" onChange={handleChange} placeholder='iMessage'></Input>
-              <Box className='sendButton' onClick={handleSubmit}><ArrowTop/></Box>
+              <Box ref={el => sendButton = el} className='sendButton' onClick={handleSubmit}><ArrowTop/></Box>
             </Flex>
           </FormControl>
         </Box>

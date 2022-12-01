@@ -14,20 +14,16 @@ function Loader(props) {
 	let word7 = useRef(null)
 	let word8 = useRef(null)
 	let word9 = useRef(null)
-	const [array, setArray] = useState([])
 	const { isLoaded } = props;
+	const [count, setCount] = useState(0)
 
-	useEffect(()=>{
-		if(sessionStorage.getItem('hasLoaded')){
+	useEffect(() => {
+		if (sessionStorage.getItem('hasLoaded')) {
 			setTimeout(() => {
 				loader.style.transform = "translateY(-100%)"
 			}, 2000);
 		}
 	})
-	useEffect(()=>{
-		setArray(Array.from(document.getElementsByClassName('word')))
-	},[])
-
 
 	useEffect(() => {
 		if (isLoaded) {
@@ -40,31 +36,36 @@ function Loader(props) {
 
 	//GSAP code for animations
 
-	const showText = (node1,node2,node3,node4,node5,node6,node7,node8,node9) => {
-		gsap.to([node1,node2,node3,node4,node5,node6,node7,node8,node9], {
-			duration: 0.6,
+	const showText = (node1, node2, node3, node4, node5, node6, node7, node8, node9) => {
+		gsap.to([node1, node2, node3, node4, node5, node6, node7, node8, node9], {
+			duration: 0.3,
 			opacity: 1,
 			y: 0,
 			display: "block",
-			stagger: { amount: 14 },
+			stagger: { amount: 6 },
 			ease: Power4.easeInOut,
 		});
 	};
-	const removeText = (node1,node2,node3,node4,node5,node6,node7,node8,node9) => {
-		gsap.to([node1,node2,node3,node4,node5,node6,node7,node8,node9], {
-			duration: 0.6,
+	const removeText = (node1, node2, node3, node4, node5, node6, node7, node8, node9) => {
+		gsap.to([node1, node2, node3, node4, node5, node6, node7, node8, node9], {
+			duration: 0.3,
 			opacity: 0,
 			y: 40,
-			delay: 1,
+			delay: 0.3,
 			display: "none",
-			stagger: { amount: 14 },
+			stagger: { amount: 6 },
 			ease: Power4.easeInOut,
 		});
 	};
 	useEffect(() => {
-		showText(word1,word2,word3,word4,word5,word6,word7,word8,word9)
-		removeText(word1,word2,word3,word4,word5,word6,word7,word8,word9)
-	}, [])
+		// setInterval(() => {
+			showText(word1, word2, word3, word4, word5, word6, word7, word8, word9)
+			removeText(word1, word2, word3, word4, word5, word6, word7, word8, word9)
+			setTimeout(() => {
+				setCount(count => count+1)
+			}, 7000);
+		// }, 9);
+	}, [count])
 
 	return (
 		<Flex ref={el => loader = el} className="loaderWrapper">
