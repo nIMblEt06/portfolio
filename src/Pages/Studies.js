@@ -78,31 +78,30 @@ function Studies() {
       >
         <GridItem colSpan={2}>
           <Box className='head'>DURATION</Box>
-          <Box className='info studies'>December 20, 2021 - January 3, 2022</Box>
+          <Box className='info studies'>{study.Duration}</Box>
         </GridItem>
         <GridItem colSpan={1}>
           <Box className='head'>STAKEHOLDER</Box>
           <Box className='info studies'>
-            <Box>Robinhood</Box>
-            <Box>Perkins</Box>
+            <Box>{study.Stakeholder}</Box>
           </Box>
         </GridItem>
         <GridItem colSpan={1}>
-          <Box className='head'>TEAM</Box>
+          <Box className='head'>AUTHOR</Box>
           <Box className='info studies'>
-            <Box>Dimitri Knight</Box>
-            <Box>Resham Khanna</Box>
+            <Box>{study.Author}</Box>
           </Box>
         </GridItem>
         <GridItem colSpan={2}>
           <Box className='head'>ROLE</Box>
-          <Box className='info studies'>I designed the visual identity for this project, drawing inspiration from Robinhood's current design system. I developed the crypto and business research plan. And, I designed a user interface and experience of the Robinhood NFT marketplace</Box>
+          <Box className='info studies'>{study.Role}</Box>
         </GridItem>
         <GridItem colSpan={1}>
           <Box className='head'>SKILLS</Box>
           <Box className='info studies'>
             <Box>UX Design</Box>
             <Box>UX Research</Box>
+            <Box>Motion Design</Box>
           </Box>
         </GridItem>
         <GridItem colSpan={1}>
@@ -110,6 +109,7 @@ function Studies() {
           <Box className='info studies'>
             <Box>Figma</Box>
             <Box>Photoshop</Box>
+            <Box>After Effects</Box>
           </Box>
         </GridItem>
       </Grid>
