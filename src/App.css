@@ -177,18 +177,24 @@ svg {
   border-radius: 1rem;
   transition: all 0.3s ease-in;
   background-color: #373737;
+  width: 11rem;
   color: rgb(237, 237, 237);
 }
 
-.menu>div {
+.menu>a {
   border-radius: 0.5rem;
-  padding-right: 4rem;
+  text-decoration: none;
+  /* padding-right: 2rem; */
+  width: 100%;
+  display: block;
+
   padding-left: 0.7rem;
   padding-block: 0.6rem;
   transition: all 0.1s ease-in;
 }
 
-.menu>div:hover {
+.menu>a:hover {
+  text-decoration: none;
   background-color: #707070;
 }
 
@@ -535,10 +541,12 @@ svg {
   overflow: hidden;
 }
 
-.footerFlex img {
-  margin-inline: 1rem;
-  width: 2rem;
-  height: 2rem;
+.footerFlex {
+  width: 15%;
+  margin-inline: auto;
+}
+.footerFlex svg{
+  cursor: pointer;
 }
 
 

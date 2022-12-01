@@ -1,4 +1,4 @@
-import { Box, Flex, FormControl, Image, Input } from '@chakra-ui/react'
+import { Box, Flex, FormControl, Image, Input, Link } from '@chakra-ui/react'
 import React, { useEffect, useRef, useState } from 'react'
 import { AiOutlineArrowUp } from 'react-icons/ai'
 import ArrowTop from "./ArrowTop"
@@ -61,17 +61,18 @@ function ChatBot() {
       else if (count == 2) {
         subject.style.display = "none"
         subject.style.opacity = 0
-        phone.style.display = "block"
-        phone.style.opacity = 1
-        phone.focus()
+        upper.style.transform = `translateY(-${15 * count}rem)`
+        // phone.style.display = "block"
+        // phone.style.opacity = 1
+        // phone.focus()
       }
-      else if (count == 3) {
-        phone.style.display = "none"
-        phone.style.opacity = 0
-        email.style.display = "block"
-        email.style.opacity = 1
-        email.focus()
-      }
+      // else if (count == 3) {
+      //   phone.style.display = "none"
+      //   phone.style.opacity = 0
+      //   email.style.display = "block"
+      //   email.style.opacity = 1
+      //   email.focus()
+      // }
       setCount(count => count + 1);
     }
   }
@@ -85,29 +86,30 @@ function ChatBot() {
             <Box className="chatText">Hey there! How can I help you?</Box>
           </Box>
           <Box className='ownText'>
-            <Box className="own chatText">Sounds good!</Box>
+            <Box className="own chatText">There's this one thing I could use some help with!</Box>
           </Box>
           <Box className="awayText">
             <Box className='chatName'>Rahul</Box>
-            <Box className="chatText">Interesting! what's your name?</Box>
+            <Box className="chatText">Interesting! What's your name?</Box>
           </Box>
           <Box className='ownText'>
             <Box className="own chatText">{userData.name}</Box>
           </Box>
           <Box className="awayText">
             <Box className='chatName'>Rahul</Box>
-            <Box className="chatText">nice to meet you! what's your phone number?</Box>
+            <Box className="chatText">Nice to meet you! What's the help you need?</Box>
           </Box>
           <Box className='ownText'>
             <Box className="own chatText">{userData.subject}</Box>
           </Box>
           <Box className="awayText">
             <Box className='chatName'>Rahul</Box>
-            <Box className="chatText">i see 👀! what's your phone number?</Box>
+            <Box className="chatText">Got it. Please book a slot with me here.</Box>
+            <Box mt="1rem" className="chatText"><Link textDecoration={"underline"} href="https://calendly.com/rahul-187/30min" target={"_blank"}>Meet me on Calendly</Link></Box>
           </Box>
-          <Box className='ownText'>
+          {/* <Box className='ownText'>
             <Box className="own chatText">{userData.phone}</Box>
-          </Box>
+          </Box> */}
         </Box>
       </Box>
       <Box className='lowerBox'>

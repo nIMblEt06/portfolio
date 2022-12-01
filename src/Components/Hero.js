@@ -1,4 +1,4 @@
-import { Box, Flex, Image } from '@chakra-ui/react'
+import { Box, Flex, Image, Link } from '@chakra-ui/react'
 import React, { useEffect, useRef, useState } from 'react'
 import "../App.css"
 // import Globe from "../Assets/Globe.svg"
@@ -177,9 +177,10 @@ function Hero() {
                             <Box className='hams two' ref={el => ham5 = el}></Box>
                             <Box className='hams three' ref={el => ham6 = el}></Box>
                             <Box className='menu' ref={el => menu2 = el}>
-                                <Box>Home</Box>
-                                <Box>About</Box>
-                                <Box>Contact</Box>
+                            <Link target={"_blank"} href="https://rahuljaiswal.me">Home</Link>
+                            <Link target={"_blank"} href="https://read.cv/rahul.design">Resume</Link>
+                            <Link target={"_blank"} href="https://rahuljaiswal.me/motionDesign">Motion Design</Link>
+                            <Link target={"_blank"} cursor="help" pointerEvents="none" opacity="50%">NFT-Upcoming</Link>
                             </Box>
                         </Box>
 
