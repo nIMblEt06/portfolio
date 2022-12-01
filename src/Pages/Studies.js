@@ -1,4 +1,4 @@
-import { Box, Link, Flex, Grid, GridItem, Image, ListItem, UnorderedList } from '@chakra-ui/react'
+import { Box, Link, Flex, Grid, GridItem, Image, ListItem, UnorderedList, useMediaQuery } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import nftImage from "../Assets/NFT.svg"
 import nft from "../Assets/image.svg"
@@ -11,6 +11,8 @@ function Studies() {
   const contents = document.querySelectorAll('.navLink')
   const [study, setStudy] = useState({})
   const [secHead, setSecHead] = useState([])
+  const [isSmallerThan450] = useMediaQuery('(max-width:450px)')
+
 
   useEffect(() => {
     window.onscroll = () => {
@@ -72,7 +74,7 @@ function Studies() {
       </Box>
       <Grid className='caseInfo'
         templateRows='repeat(2, 1fr)'
-        templateColumns='repeat(4, 1fr)'
+        templateColumns={isSmallerThan450 ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)'}
         gap={6}
       >
         <GridItem colSpan={2}>
@@ -121,8 +123,8 @@ function Studies() {
           <ListItem className='navList'><Link className='navLink' href="#reflection"> REFLECTION</Link></ListItem>
         </UnorderedList>
       </Box>
-      <Grid marginLeft={"16rem"} className='caseInfo cases'
-        templateColumns='repeat(6, 1fr)'
+      <Grid marginLeft={isSmallerThan450 ? "0" : "16rem"} className='caseInfo cases'
+        templateColumns={isSmallerThan450 ? 'repeat(4, 1fr)' : 'repeat(6, 1fr)'}
         gap={6}
       >
         <GridItem colSpan={5}>

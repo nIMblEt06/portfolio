@@ -755,4 +755,39 @@ svg {
   .footerFlex{
     width: 30%;
   }
+  .lottieWrapper{
+    flex-direction: column;
+  }
+  .motionContainer{
+    width: 100%;
+  }
+  .videoContainer{
+    width: 100%;
+  }
+  .bigVideoCont video{
+    width: 100%;
+  }
+  .stickyTop{
+    display: none;
+  }
+  .aboutVision{
+    flex-direction: column;
+  }
+  .about{
+    width: fit-content;
+  }
+  .info.single.studies{
+    width: 100%;
+  }
+  .roundVideo{
+    width: 100%;
+    border-radius: 20px;
+  }
+  #research{
+    font-size: 2rem;
+    width: 100%;
+  }
+  .about img{
+    width: 100%;
+  }
 }

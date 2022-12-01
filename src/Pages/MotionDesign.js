@@ -1,4 +1,4 @@
-import { Box, Flex, Image, Link } from '@chakra-ui/react'
+import { Box, Flex, Image, Link, useMediaQuery } from '@chakra-ui/react'
 import React, { useEffect, useRef, useState } from 'react'
 import ae from "../Assets/AE.svg"
 import blend from "../Assets/Blender.svg"
@@ -19,6 +19,7 @@ import final from "../Assets/FINAL.mov"
 import Loader from '../Components/Loader'
 
 function MotionDesign() {
+    const [isSmallerThan450] = useMediaQuery('(max-width:450px)')
     let vid1 = useRef(null)
     let vid2 = useRef(null)
     // const [isLoaded, setIsLoaded] = useState(false)
@@ -45,7 +46,7 @@ function MotionDesign() {
 
     return (
         <Box className='motionBox'>
-        {/* <Loader isLoaded = {isLoaded}/> */}
+            {/* <Loader isLoaded = {isLoaded}/> */}
             <Box className='motionWrapper clip'>
                 <Flex className="heading motion">
                     Motion design
@@ -54,7 +55,7 @@ function MotionDesign() {
                     A video dump of some of my favorite motion graphics I've made.
                 </Flex>
             </Box>
-            <Flex mt="8rem" flexWrap={"wrap"} w="70%" marginInline={"auto"} justifyContent="space-between">
+            <Flex mt="8rem" className='lottieWrapper' flexWrap={"wrap"} w="70%" marginInline={"auto"} justifyContent="space-between">
                 <Box className='motionContainer'>
                     <Lottie animationData={experts} />
                     <MotionSVG />
@@ -107,9 +108,9 @@ function MotionDesign() {
                 </Box>
                 <Box className='bigVideoCont'>
                     <video src={teaser} controls ></video>
-                    <Box pt="3rem" pl="2rem" className='titleHeading'>Flint 2.0 Launch Video</Box>
-                    <Box pl="2rem" className='info'>Walking users through the revamped app and all its features.</Box>
-                    <Flex alignItems={"center"} pl="2rem" className='info'>Tools: <Image paddingInline="0.6rem" src={ae} /> <Image src={blend} marginRight="2rem" /> Collaborators: <Link target="_blank" marginInline="1.2rem" textDecor={"underline"} href='https://www.linkedin.com/in/kansalaadeesh'>Aadeesh</Link> <Link target="_blank" textDecor={"underline"} href='https://www.linkedin.com/in/garvdeep-singh-a19703123/'>Garvdeep</Link> </Flex>
+                    <Box pt="3rem" pl={isSmallerThan450 ? "1rem" : "2rem"} className='titleHeading'>Flint 2.0 Launch Video</Box>
+                    <Box pl={isSmallerThan450 ? "1rem" : "2rem"} className='info'>Walking users through the revamped app and all its features.</Box>
+                    <Flex alignItems={isSmallerThan450 ? "baseline" : "center"} flexDir={isSmallerThan450 ? "column" : "row"} pl={isSmallerThan450 ? "1rem" : "2rem"} className='info'><Flex alignItems={"center"}>Tools: <Image paddingInline="0.6rem" src={ae} /> <Image src={blend} marginRight="2rem" /></Flex> <Box mt={isSmallerThan450 ? "1rem" : "0"}>Collaborators: {isSmallerThan450 ? <br/> : ""} <Link target="_blank" marginInline={isSmallerThan450 ? "0" : "1.2rem"} textDecor={"underline"} href='https://www.linkedin.com/in/kansalaadeesh'>Aadeesh</Link> <Link target="_blank" textDecor={"underline"} href='https://www.linkedin.com/in/garvdeep-singh-a19703123/'>Garvdeep</Link></Box> </Flex>
                 </Box>
             </Flex>
             <Footer />
