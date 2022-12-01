@@ -11,28 +11,30 @@ function Studies() {
   const contents = document.querySelectorAll('.navLink')
   const secHead = Array.from(document.querySelectorAll('.sectionHeading'))
   const [study, setStudy] = useState({})
-  
+
   useEffect(() => {
     window.onscroll = () => {
       var current = 0;
-    
+
       secHead.forEach((section) => {
         const sectionTop = section.offsetTop;
-        if (window.scrollY >= sectionTop -300 ) {
-          current = secHead.indexOf(section); }
+        if (window.scrollY >= sectionTop - 300) {
+          current = secHead.indexOf(section);
+        }
+
       });
-      if(window.scrollY < 200){
+      if (window.scrollY < 200) {
         console.log("exec");
         contents[0].classList.remove("active");
       }
-    
-      if(window.scrollY>200){
+
+      if (window.scrollY > 200) {
         contents.forEach((li) => {
           li.classList.remove("active");
         });
         contents[current].classList.add("active");
       };
-      }
+    }
   })
 
 
@@ -45,7 +47,7 @@ function Studies() {
 
 
   useEffect(() => {
-    window.scrollTo(0, 0)
+    // window.scrollTo(0, 0)
 
 
 
@@ -121,53 +123,53 @@ function Studies() {
         </UnorderedList>
       </Box>
       <Grid marginLeft={"16rem"} className='caseInfo cases'
-        templateColumns='repeat(4, 1fr)'
+        templateColumns='repeat(6, 1fr)'
         gap={6}
       >
-        <GridItem colSpan={3}>
+        <GridItem colSpan={5}>
           {/* Overview */}
           <Box className='sectionHeading' id="overview">Overview</Box>
           <Flex className="aboutVision">
             <Box className="about">
-              <Box className='name'>About</Box>
-              <Box className='head'>WHAT WAS THIS PROJECT?</Box>
+              <Box className='name study'>About</Box>
+              <Box className='head studies'>WHAT WAS THIS PROJECT?</Box>
               <Box className='info studies'>{study.About}</Box>
             </Box>
             <Box className="vision">
-              <Box className='name'>Product Vision</Box>
-              <Box className='head'>WHAT DID WE IMAGINE?</Box>
+              <Box className='name study'>Product Vision</Box>
+              <Box className='head studies'>WHAT DID WE IMAGINE?</Box>
               <Box className='info studies'>{study.Vision}</Box>
               <Box className='info studies'>{study.Vision2}</Box>
             </Box>
           </Flex>
           <Box className="solution">
-            <Box className='name'>Solution </Box>
-            <Box className='head'>HOW DID WE SOLVE OUR PROBLEM?</Box>
-            <Box fontSize={"3rem"} fontWeight="700" mt="1rem">{study.Solution}</Box>
+            <Box className='name study'>Solution </Box>
+            <Box className='head studies'>HOW DID WE SOLVE OUR PROBLEM?</Box>
+            {/* <Box fontSize={"3rem"} fontWeight="700" mt="1rem">{study.Solution}</Box> */}
           </Box>
-          {study.heroImage && <video src={study.heroImage} loop={true} autoPlay={true} muted={true}></video>}
+          {study.heroImage && <video className='roundVideo' src={study.heroImage} autoPlay={true} muted={true}></video>}
           {/* Context */}
           <Box className='sectionHeading' id="context">Context</Box>
 
           {study.Background && <Box className="about">
-            <Box className='name'>Background</Box>
-            <Box className='head'>WHAT'S GOING ON?</Box>
-            <Box className='info studies'>{study.Background}</Box>
+            <Box className='name study'>Background</Box>
+            <Box className='head studies'>WHAT'S GOING ON?</Box>
+            <Box className='info single studies'>{study.Background}</Box>
           </Box>}
           <Flex className="aboutVision">
             <Box className="vision">
-              <Box className='name'>Problem</Box>
-              <Box className='head'>WHAT DID WE IMAGINE?</Box>
+              <Box className='name study'>Problem</Box>
+              <Box className='head studies'>WHAT DID WE IMAGINE?</Box>
               <Box className='info studies'>{study.Problem}</Box>
             </Box>
             <Box className="vision">
-              <Box className='name'>Opportunity</Box>
-              <Box className='head'>WHERE CAN WE GO TO?</Box>
+              <Box className='name study'>Opportunity</Box>
+              <Box className='head studies'>WHERE CAN WE GO TO?</Box>
               <Box className='info studies'>{study.Opportunity}</Box>
             </Box>
           </Flex>
           <Box className="solution">
-            <Box className='name'>Challenge </Box>
+            <Box className='name study'>Challenge </Box>
             <Box fontSize={"3rem"} fontWeight="700" mt="1rem">{study.Challenge}</Box>
           </Box>
           <Image marginBlock={"3rem"} src={nft} />
@@ -176,17 +178,17 @@ function Studies() {
           <Box className='sectionHeading' id="research">Research</Box>
 
           <Box className="about">
-            <Box className='name'>{study.ResearchHead}</Box>
-            <Box className='info studies'>{study.Research1} <br />
+            <Box className='name study'>{study.ResearchHead}</Box>
+            <Box className='info single studies'>{study.Research1} <br />
               {study.ResearchCont}</Box>
-            {study.Research2 && <Box className='name'>{study.ResearchHead2}</Box>}
+            {study.Research2 && <Box className='name study'>{study.ResearchHead2}</Box>}
             {study.Research2 && <Box className='info studies'>{study.Research2}</Box>}
-            {study.Research3 && <Box className='name'>{study.ResearchHead3}</Box>}
+            {study.Research3 && <Box className='name study'>{study.ResearchHead3}</Box>}
             {study.Research3 && <Box className='info studies'>{study.Research3}</Box>}
           </Box>
           <Flex className="aboutVision">
             {study.Head1 && <Box className="vision">
-              <Box className='name'>{study.Head1}</Box>
+              <Box className='name study'>{study.Head1}</Box>
               <UnorderedList width={"90%"} marginBlock="1rem">
                 <ListItem>{study.Discover1}</ListItem>
                 <ListItem>{study.Discover2}</ListItem>
@@ -194,7 +196,7 @@ function Studies() {
               </UnorderedList>
             </Box>}
             {study.Head2 && <Box className="vision">
-              <Box className='name'>{study.Head2}</Box>
+              <Box className='name study'>{study.Head2}</Box>
               <UnorderedList width={"90%"} marginBlock="1rem">
                 <ListItem>{study.Minimal1}</ListItem>
                 <ListItem>{study.Minimal2}</ListItem>
@@ -204,7 +206,7 @@ function Studies() {
           </Flex>
           <Flex className="aboutVision">
             {study.Head3 && <Box className="vision">
-              <Box className='name'>{study.Head3}</Box>
+              <Box className='name study'>{study.Head3}</Box>
               <UnorderedList width={"90%"} marginBlock="1rem">
                 <ListItem>{study.Education1}</ListItem>
                 <ListItem>{study.Education2}</ListItem>
@@ -212,7 +214,7 @@ function Studies() {
               </UnorderedList>
             </Box>}
             {study.Head4 && <Box className="vision">
-              <Box className='name'>{study.Head4}</Box>
+              <Box className='name study'>{study.Head4}</Box>
               <UnorderedList width={"90%"} marginBlock="1rem">
                 <ListItem>{study.Security1}</ListItem>
                 <ListItem>{study.Security2}</ListItem>
@@ -224,12 +226,12 @@ function Studies() {
           {/* Features */}
           {study.Features && <Box className='sectionHeading' id="features">Features</Box>}
           {study.Features && <Box className="about">
-            <Box className='name'>{study.FeatureHead}</Box>
+            <Box className='name study'>{study.FeatureHead}</Box>
             <Box className='info studies'>{study.Feature1} <br /> <br />
               {study.ResearchCont}</Box>
-            {study.Feature2 && <Box className='name'>{study.FeatureHead2}</Box>}
+            {study.Feature2 && <Box className='name study'>{study.FeatureHead2}</Box>}
             {study.Feature2 && <Box className='info studies'>{study.Feature2}</Box>}
-            {study.Feature3 && <Box className='name'>{study.FeatureHead3}</Box>}
+            {study.Feature3 && <Box className='name study'>{study.FeatureHead3}</Box>}
             {study.Feature3 && <Box className='info studies'>{study.Feature3}</Box>}
           </Box>}
 
@@ -238,21 +240,21 @@ function Studies() {
 
           <Flex className="aboutVision">
             <Box className="vision">
-              <Box className='name'>{study.Reflection1}</Box>
+              <Box className='name study'>{study.Reflection1}</Box>
               <Box className='info studies'>{study.Reflection1Text}</Box>
             </Box>
             {/* <Box className="vision">
-              <Box className='name'>What would I have done differently?</Box>
+              <Box className='name study'>What would I have done differently?</Box>
               <Box className='info studies'>I wouldn’t have overworked myself. We likely would have completed this project faster if I hadn’t pulled all-nighters on the first two days. Also, we were pretty scattered with our research plan, mainly owing to our lack of experience doing such an expansive project. Moving forward, I believe we have a solid basis for Crypto research and case study presentation.</Box>
             </Box> */}
           </Flex>
           {/* <Flex className="aboutVision">
             <Box className="vision">
-              <Box className='name'>What did I learn about each other from this project?</Box>
-              <Box className='info studies'>I felt invigorated working on such an exciting, impactful project. We were overwhelmed with the amount of work we had ahead of us. And, at times, I even overworked myself to the point of suffering from COVID for an entire week. Nonetheless, I’m incredibly proud to have made an entire case study encompassing a whole app design and supporting research.</Box>
+              <Box className='name study'>What did I learn about each other from this project?</Box>
+              <Box className='info studies'>I felt invigorated working on such an exciting, impactful project. We were overwhelmed with the amount of work we had ahead studies of us. And, at times, I even overworked myself to the point of suffering from COVID for an entire week. Nonetheless, I’m incredibly proud to have made an entire case study encompassing a whole app design and supporting research.</Box>
             </Box>
             <Box className="vision">
-              <Box className='name'>What did I learn about myself from this project?</Box>
+              <Box className='name study'>What did I learn about myself from this project?</Box>
               <Box className='info studies'>I wouldn’t have overworked myself. We likely would have completed this project faster if I hadn’t pulled all-nighters on the first two days. Also, we were pretty scattered with our research plan, mainly owing to our lack of experience doing such an expansive project. Moving forward, I believe we have a solid basis for Crypto research and case study presentation.</Box>
             </Box>
           </Flex> */}

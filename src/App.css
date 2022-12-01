@@ -336,13 +336,31 @@ svg {
   font-size: 1.2rem;
   padding-left: 0.35rem;
 }
+.head.studies{
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: 0.04rem;
+
+}
 
 .name {
   font-size: 1.6rem;
 }
+.name.study{
+  font-size: 2.5rem;
+  padding-left: 0.35rem;
+  font-weight: 500;
+}
 
 .aboutVision {
   margin-top: 3rem;
+}
+.about{
+  width: 300%;
+}
+.roundVideo{
+  margin-top: 2rem;
+  border-radius: 50px;
 }
 
 .info {
@@ -354,7 +372,11 @@ svg {
 }
 .info.studies{
   font-size: 1.3rem;
-
+  line-height: 2rem;
+  margin-top: 2rem;
+}
+.info.single.studies{
+  width: 30%;
 }
 
 .stickyTop {
