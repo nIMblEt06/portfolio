@@ -115,11 +115,11 @@ function Studies() {
       </Grid>
       <Box className='stickyTop'>
         <UnorderedList className='nav' listStyleType={"none"} marginInlineStart={0}>
-          <ListItem onClick={setActive} className='navList'><Link className='navLink' href="#overview"> OVERVIEW</Link></ListItem>
-          <ListItem onClick={setActive} className='navList'><Link className='navLink' href="#context"> CONTEXT</Link></ListItem>
-          <ListItem onClick={setActive} className='navList'><Link className='navLink' href="#research"> RESEARCH</Link></ListItem>
-          {study.Features && <ListItem onClick={setActive} className='navList'><Link className='navLink' href="#features"> FEATURES</Link></ListItem>}
-          <ListItem onClick={setActive} className='navList'><Link className='navLink' href="#reflection"> REFLECTION</Link></ListItem>
+          <ListItem className='navList'><Link className='navLink' href="#overview"> OVERVIEW</Link></ListItem>
+          <ListItem className='navList'><Link className='navLink' href="#context"> CONTEXT</Link></ListItem>
+          <ListItem className='navList'><Link className='navLink' href="#research"> RESEARCH</Link></ListItem>
+          {study.Features && <ListItem className='navList'><Link className='navLink' href="#features"> FEATURES</Link></ListItem>}
+          <ListItem className='navList'><Link className='navLink' href="#reflection"> REFLECTION</Link></ListItem>
         </UnorderedList>
       </Box>
       <Grid marginLeft={"16rem"} className='caseInfo cases'
@@ -182,9 +182,9 @@ function Studies() {
             <Box className='info single studies'>{study.Research1} <br />
               {study.ResearchCont}</Box>
             {study.Research2 && <Box className='name study'>{study.ResearchHead2}</Box>}
-            {study.Research2 && <Box className='info studies'>{study.Research2}</Box>}
+            {study.Research2 && <Box className='info single studies'>{study.Research2}</Box>}
             {study.Research3 && <Box className='name study'>{study.ResearchHead3}</Box>}
-            {study.Research3 && <Box className='info studies'>{study.Research3}</Box>}
+            {study.Research3 && <Box className='info single studies'>{study.Research3}</Box>}
           </Box>
           <Flex className="aboutVision">
             {study.Head1 && <Box className="vision">
@@ -227,12 +227,12 @@ function Studies() {
           {study.Features && <Box className='sectionHeading' id="features">Features</Box>}
           {study.Features && <Box className="about">
             <Box className='name study'>{study.FeatureHead}</Box>
-            <Box className='info studies'>{study.Feature1} <br /> <br />
+            <Box className='info single studies'>{study.Feature1} <br /> <br />
               {study.ResearchCont}</Box>
             {study.Feature2 && <Box className='name study'>{study.FeatureHead2}</Box>}
-            {study.Feature2 && <Box className='info studies'>{study.Feature2}</Box>}
+            {study.Feature2 && <Box className='info single studies'>{study.Feature2}</Box>}
             {study.Feature3 && <Box className='name study'>{study.FeatureHead3}</Box>}
-            {study.Feature3 && <Box className='info studies'>{study.Feature3}</Box>}
+            {study.Feature3 && <Box className='info single studies'>{study.Feature3}</Box>}
           </Box>}
 
           {/* REFLECTION */}
