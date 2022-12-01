@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, GridItem, Image, ListItem, UnorderedList } from '@chakra-ui/react'
+import { Box, Link, Flex, Grid, GridItem, Image, ListItem, UnorderedList } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import nftImage from "../Assets/NFT.svg"
 import nft from "../Assets/image.svg"
@@ -8,23 +8,39 @@ function Studies() {
   const params = useParams();
   const name = params.study;
   const navigate = useNavigate();
-  const contents = document.querySelectorAll('.navList')
+  const contents = document.querySelectorAll('.navLink')
   const secHead = Array.from(document.querySelectorAll('.sectionHeading'))
   const [study, setStudy] = useState({})
   const [counter, setCounter] = useState(0)
+  const [changed, setChanged] = useState(false)
   let offsets = []
   secHead.forEach(heading => {
     offsets.push(heading.getBoundingClientRect().top)
   });
 
   useEffect(() => {
+    if (!changed) {
+      if (offsets[counter] < window.scrollY) {
+        contents.forEach(element => {
+          element.classList.remove('active')
+        });
+        contents[counter].classList.add('active')
+        setCounter(counter => counter+1);
+        setChanged(true)
+      }
+    }
+    // if(offsets[counter]> window.scrollY){
+    //   setChanged(false)
+    // }
+    // contents[counter].classList.add('active')
+
+  })
+  function setActive(e) {
     contents.forEach(element => {
       element.classList.remove('active')
     });
-    // contents[counter].classList.add('active')
-
-  }, [counter])
-
+    e.target.classList.add('active')
+  }
 
 
   useEffect(() => {
@@ -97,11 +113,11 @@ function Studies() {
       <Box className='stickyTop'>
         <Box className='head'>CONTENTS</Box>
         <UnorderedList className='nav' listStyleType={"none"} marginInlineStart={0}>
-          <ListItem className='navList'>OVERVIEW</ListItem>
-          <ListItem className='navList'>CONTEXT</ListItem>
-          <ListItem className='navList'>RESEARCH</ListItem>
-          <ListItem className='navList'>FEATURES</ListItem>
-          <ListItem className='navList'>REFLECTION</ListItem>
+          <ListItem onClick={setActive} className='navList active'><Link className='navLink' href="#overview"> OVERVIEW</Link></ListItem>
+          <ListItem onClick={setActive} className='navList'><Link className='navLink' href="#context"> CONTEXT</Link></ListItem>
+          <ListItem onClick={setActive} className='navList'><Link className='navLink' href="#research"> RESEARCH</Link></ListItem>
+          {study.Features && <ListItem onClick={setActive} className='navList'><Link className='navLink' href="#features"> FEATURES</Link></ListItem>}
+          <ListItem onClick={setActive} className='navList'><Link className='navLink' href="#reflection"> REFLECTION</Link></ListItem>
         </UnorderedList>
       </Box>
       <Grid marginLeft={"16rem"} className='caseInfo'
@@ -110,7 +126,7 @@ function Studies() {
       >
         <GridItem colSpan={3}>
           {/* Overview */}
-          <Box className='sectionHeading'>Overview</Box>
+          <Box className='sectionHeading' id="overview">Overview</Box>
           <Flex className="aboutVision">
             <Box className="about">
               <Box className='name'>About</Box>
@@ -131,7 +147,7 @@ function Studies() {
           </Box>
           {study.heroImage && <video src={study.heroImage} loop={true} autoPlay={true} muted={true}></video>}
           {/* Context */}
-          <Box className='sectionHeading'>Context</Box>
+          <Box className='sectionHeading' id="context">Context</Box>
 
           {study.Background && <Box className="about">
             <Box className='name'>Background</Box>
@@ -157,7 +173,7 @@ function Studies() {
           <Image marginBlock={"3rem"} src={nft} />
 
           {/* Research */}
-          <Box className='sectionHeading'>Research</Box>
+          <Box className='sectionHeading' id="research">Research</Box>
 
           <Box className="about">
             <Box className='name'>{study.ResearchHead}</Box>
@@ -206,7 +222,7 @@ function Studies() {
           </Flex>
 
           {/* Features */}
-          {study.Features && <Box className='sectionHeading'>Features</Box>}
+          {study.Features && <Box className='sectionHeading' id="features">Features</Box>}
           {study.Features && <Box className="about">
             <Box className='name'>{study.FeatureHead}</Box>
             <Box className='info'>{study.Feature1} <br /> <br />
@@ -218,7 +234,7 @@ function Studies() {
           </Box>}
 
           {/* REFLECTION */}
-          <Box className='sectionHeading'>Reflection</Box>
+          <Box className='sectionHeading' id="reflection">Reflection</Box>
 
           <Flex className="aboutVision">
             <Box className="vision">

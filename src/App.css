@@ -4,7 +4,9 @@
   padding: 0;
   user-select: none;
 }
-
+html{
+  scroll-behavior: smooth;
+}
 body {
   background-color: #0D0D0D;
   overflow-X: hidden;
@@ -318,6 +320,10 @@ svg {
 }
 
 .navList {
+  transition: all 0.4s ease;
+  padding-block: 1rem;
+}
+.navLink{
   padding-block: 1rem;
   transition: all 0.4s ease;
 }
@@ -329,23 +335,22 @@ svg {
   margin-left: 2rem;
 }
 
-.navList.active {
+.navLink.active {
+  transition: all 0.4s ease;
   color: white;
   position: relative;
   font-size: 1.3rem;
-  margin-left: 2rem;
 }
 
-.navList.active::before {
+.navLink.active::before {
   content: '';
   position: absolute;
-  left: -50px;
-  top: 30px;
-  width: 40px;
+  left: -40px;
+  top: 25px;
+  width: 30px;
   height: 2px;
   background-color: white;
   border-radius: 40px;
-  transform-origin: left;
 }
 
 .nav {
@@ -383,6 +388,9 @@ svg {
 }
 .sendButton path{
   transform: translate(-1px, -1px) scale(0.7);
+}
+.navList a:hover{
+  text-decoration: none;
 }
 
 .chatName {
