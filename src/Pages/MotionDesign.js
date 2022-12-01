@@ -7,7 +7,9 @@ import MotionSVG from "../Components/MotionSVG"
 import experts from "../Assets/Experts.json"
 import Footer from "../Components/Footer"
 import watch from "../Assets/Watchlist.json"
-import splash from "../Assets/Splash.json"
+import splash from "../Assets/Splash2.json"
+// import splash from "../Assets/splash.lottie"
+// import splash from "../Assets/Splash.json"
 import shield from "../Assets/Shield.json"
 import loader from "../Assets/Loader.json"
 import gift from "../Assets/Gift.json"
@@ -16,9 +18,21 @@ import teaser from "../Assets/Teaser.mov"
 import final from "../Assets/FINAL.mov"
 
 function MotionDesign() {
-    // useEffect(() => {
-    //     window.scrollTo(0, 0)
-    // }, [])
+    let vid1 = useRef(null)
+    let vid2 = useRef(null)
+
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+        vid1.currentTime = 1
+        vid2.currentTime = 1
+        vid1.play()
+        vid2.play()
+        setTimeout(() => {
+            vid1.pause()
+            vid2.pause()
+        });
+    }, [])
 
     return (
         <Box className='motionBox'>
@@ -31,7 +45,7 @@ function MotionDesign() {
                 </Flex>
             </Box>
             <Flex mt="8rem" flexWrap={"wrap"} w="70%" marginInline={"auto"} justifyContent="space-between">
-                <Box className='motionContainer' >
+                <Box className='motionContainer'>
                     <Lottie animationData={experts} />
                     <MotionSVG />
                     <Box className='titleHeading'>Expert recommendations</Box>
@@ -69,14 +83,14 @@ function MotionDesign() {
                 </Box>
                 <Box className='videoContainer' >
                     <Flex className='videoFlex' overflow={"hidden"} h="18rem">
-                        <video onMouseOver={event => event.target.play()} onMouseOut={event => event.target.pause()} src={nft} loop={true}></video>
+                        <video ref={el => vid1 = el} onMouseOver={event => event.target.play()} onMouseOut={event => event.target.pause()} src={nft} loop={true}></video>
                     </Flex>
                     <Box pt="3rem" pl="1rem" className='titleHeading'>NFT Airdrop</Box>
                     <Box pl="1rem" className='info' w="80%">Creating hype around the product by distributing unique digital art.</Box>
                     <Flex alignItems={"center"} pl="1rem" className='info'>Tools: <Image paddingInline="0.6rem" src={ae} /> <Image src={blend} /> </Flex>
                 </Box>
                 <Box className='videoContainer'>
-                    <video onMouseOver={event => event.target.play()} onMouseOut={event => event.target.pause()} src={final} loop={true}></video>
+                    <video ref={el => vid2 = el} onMouseOver={event => event.target.play()} onMouseOut={event => event.target.pause()} src={final} loop={true}></video>
                     <Box pt="3rem" pl="1rem" className='titleHeading'>Feature Teaser</Box>
                     <Box pl="1rem" className='info' w="80%">Informing users to a new product feature via a short video.</Box>
                     <Flex alignItems={"center"} pl="1rem" className='info'>Tools: <Image paddingInline="0.6rem" src={ae} /> <Image src={blend} /> </Flex>
@@ -85,7 +99,7 @@ function MotionDesign() {
                     <video src={teaser} controls ></video>
                     <Box pt="3rem" pl="2rem" className='titleHeading'>Flint 2.0 Launch Video</Box>
                     <Box pl="2rem" className='info'>Walking users through the revamped app and all its features.</Box>
-                    <Flex alignItems={"center"} pl="2rem" className='info'>Tools: <Image paddingInline="0.6rem" src={ae} /> <Image src={blend} marginRight="2rem"/> Collaborators: <Link marginInline="1.2rem" textDecor={"underline"} href='https://linkedin.com'>Aadesh</Link> <Link textDecor={"underline"} href='https://linkedin.com'>Garvdeep</Link> </Flex>
+                    <Flex alignItems={"center"} pl="2rem" className='info'>Tools: <Image paddingInline="0.6rem" src={ae} /> <Image src={blend} marginRight="2rem" /> Collaborators: <Link target="_blank" marginInline="1.2rem" textDecor={"underline"} href='https://linkedin.com'>Aadesh</Link> <Link target="_blank" textDecor={"underline"} href='https://linkedin.com'>Garvdeep</Link> </Flex>
                 </Box>
             </Flex>
             <Footer />
@@ -94,3 +108,4 @@ function MotionDesign() {
 }
 
 export default MotionDesign
+{/* <link rel="shortcut icon" href="logo.png" type="image/x-icon" /> */ }

@@ -179,7 +179,7 @@ function Hero() {
                             <Box className='menu' ref={el => menu2 = el}>
                             <Link target={"_blank"} href="https://rahuljaiswal.me">Home</Link>
                             <Link target={"_blank"} href="https://read.cv/rahul.design">Resume</Link>
-                            <Link target={"_blank"} href="https://rahuljaiswal.me/motionDesign">Motion Design</Link>
+                            <Link target={"_blank"} href="/motionDesign">Motion Design</Link>
                             <Link target={"_blank"} cursor="help" pointerEvents="none" opacity="50%">NFT-Upcoming</Link>
                             </Box>
                         </Box>
