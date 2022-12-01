@@ -26,7 +26,7 @@ function Home() {
 
   return (
     <Box bgColor="#0D0D0D" overflowX={"hidden"}>
-      {/* <Loader isLoaded={isLoaded} /> */}
+      <Loader isLoaded={isLoaded} />
       <Hero />
       <Box width={"90%"} marginInline={"auto"}>
         <Cases />
