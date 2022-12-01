@@ -14,7 +14,6 @@ function Loader(props) {
 	let word7 = useRef(null)
 	let word8 = useRef(null)
 	let word9 = useRef(null)
-	let word10 = useRef(null)
 	const [array, setArray] = useState([])
 	const { isLoaded } = props;
 
@@ -37,8 +36,8 @@ function Loader(props) {
 
 	//GSAP code for animations
 
-	const showText = (node1,node2,node3,node4,node5,node6,node7,node8,node9,node10) => {
-		gsap.to([node1,node2,node3,node4,node5,node6,node7,node8,node9,node10], {
+	const showText = (node1,node2,node3,node4,node5,node6,node7,node8,node9) => {
+		gsap.to([node1,node2,node3,node4,node5,node6,node7,node8,node9], {
 			duration: 0.6,
 			opacity: 1,
 			y: 0,
@@ -47,8 +46,8 @@ function Loader(props) {
 			ease: Power4.easeInOut,
 		});
 	};
-	const removeText = (node1,node2,node3,node4,node5,node6,node7,node8,node9,node10) => {
-		gsap.to([node1,node2,node3,node4,node5,node6,node7,node8,node9,node10], {
+	const removeText = (node1,node2,node3,node4,node5,node6,node7,node8,node9) => {
+		gsap.to([node1,node2,node3,node4,node5,node6,node7,node8,node9], {
 			duration: 0.6,
 			opacity: 0,
 			y: 40,
@@ -59,8 +58,8 @@ function Loader(props) {
 		});
 	};
 	useEffect(() => {
-		showText(word1,word2,word3,word4,word5,word6,word7,word8,word9,word10)
-		removeText(word1,word2,word3,word4,word5,word6,word7,word8,word9,word10)
+		showText(word1,word2,word3,word4,word5,word6,word7,word8,word9)
+		removeText(word1,word2,word3,word4,word5,word6,word7,word8,word9)
 	}, [])
 
 	return (
@@ -72,9 +71,8 @@ function Loader(props) {
 			<Box className='word' ref={el => word5 = el}>Olá</Box>
 			<Box className='word' ref={el => word6 = el}>おい</Box>
 			<Box className='word' ref={el => word7 = el}>Hallå</Box>
-			<Box className='word' ref={el => word8 = el}>Hallå</Box>
-			<Box className='word' ref={el => word9 = el}>Guten tag</Box>
-			<Box className='word' ref={el => word10 = el}>Hallo</Box>
+			<Box className='word' ref={el => word8 = el}>Guten tag</Box>
+			<Box className='word' ref={el => word9 = el}>Hallo</Box>
 
 		</Flex>
 	)

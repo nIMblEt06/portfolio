@@ -34,7 +34,7 @@ function Cases() {
                         <VStack w="50%" className='studyText' alignItems={"baseline"}>
                             <Image w="2rem" src={flint} />
                             <Box className='caseHeading'>Flint Money</Box>
-                            <Box className='caseText'>Making crypto ivesting user friendly and less intimidating.</Box>
+                            <Box className='caseText'>Making crypto investing user friendly and less intimidating.</Box>
                             <Button onClick={goToFlint} className='redirect'>Read case study &nbsp; <Arrow /></Button>
                         </VStack>
                         <Flex alignItems={"flex-end"} mr="3rem">

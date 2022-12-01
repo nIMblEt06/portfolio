@@ -138,6 +138,7 @@ svg {
 .greet>div:first-child {
   display: flex;
   height: 3rem;
+  width: 3rem;
   background-color: #EEE3D3;
   border-radius: 50%;
   margin-right: 0.4rem;
@@ -618,6 +619,7 @@ svg {
 
 .slide {
   overflow: hidden;
+  border-radius: 28px;
 }
 
 .footerFlex {

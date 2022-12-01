@@ -189,7 +189,7 @@ function Hero() {
                         Hey, I'm Rahul
                     </Flex>
                     <Flex ref={el => subHeadingBack = el} className='subHeading'>
-                        I am a designer, story teller and a lover of airplane window seats ✈️
+                        I am a designer, storyteller and a lover of airplane window seats ✈️
                     </Flex>
                     {/* <Slider {...settings}>
                         {cards}

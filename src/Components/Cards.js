@@ -28,7 +28,7 @@ function Cards(props) {
     
   }
   function leave(){
-    updateText("Hey, I'm Rahul", "I am a designer, story teller and a lover of airplane window seats ✈️")
+    updateText("Hey, I'm Rahul", "I am a designer, storyteller and a lover of airplane window seats ✈️")
     setHover(false)
   }
 
