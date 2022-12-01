@@ -47,7 +47,7 @@ function Studies() {
 
 
   useEffect(() => {
-    // window.scrollTo(0, 0)
+    window.scrollTo(0, 0)
 
 
 
@@ -170,21 +170,22 @@ function Studies() {
 
           {/* Research */}
           {/* <Box >Research</Box> */}
-          {study.Challenge && <Box className="solution">
+          <Box className="solution">
             <Box className='sectionHeading' id="research" fontSize={"3rem"} fontWeight="700" mt="1rem">{study.Challenge}</Box>
-          </Box>}
+          </Box>
 
           <Box className="about">
             <Box className='name study'>{study.ResearchHead}</Box>
+            {study.image1 && <Image src={study.image1} w="30%" />}
             <Box className='info single studies'>{study.Research1} <br />
               {study.ResearchCont}</Box>
-            {study.image1 && <Image src={study.image1} w="30%"/>}
             {study.Research2 && <Box className='name study'>{study.ResearchHead2}</Box>}
+            {study.image2 && <Image src={study.image2} w="30%" marginBlock={"2rem"} />}
             {study.Research2 && <Box className='info single studies'>{study.Research2}</Box>}
-            {study.image2 && <Image src={study.image2} w="30%" marginBlock={"4rem"}/>}
-            {study.Research3 && <Box className='name study'>{study.ResearchHead3}</Box>}
+            {study.Link && <Link textUnderlineOffset={"0.2rem"} textDecoration={"underline"} className='info single studies' href={study.Link}>Link to Figma File</Link>}
+            {study.Research3 && <Box paddingTop="2rem" className='name study'>{study.ResearchHead3}</Box>}
+            {study.image3 && <Image src={study.image3} w="30%" marginBlock={"2rem"} />}
             {study.Research3 && <Box className='info single studies'>{study.Research3}</Box>}
-            {study.image3 && <Image src={study.image3} w="30%" marginBlock={"4rem"}/>}
           </Box>
           <Flex className="aboutVision">
             {study.Head1 && <Box className="vision">
