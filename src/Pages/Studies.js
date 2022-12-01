@@ -76,43 +76,42 @@ function Studies() {
       >
         <GridItem colSpan={2}>
           <Box className='head'>DURATION</Box>
-          <Box className='info'>December 20, 2021 - January 3, 2022</Box>
+          <Box className='info studies'>December 20, 2021 - January 3, 2022</Box>
         </GridItem>
         <GridItem colSpan={1}>
           <Box className='head'>STAKEHOLDER</Box>
-          <Box className='info'>
+          <Box className='info studies'>
             <Box>Robinhood</Box>
             <Box>Perkins</Box>
           </Box>
         </GridItem>
         <GridItem colSpan={1}>
           <Box className='head'>TEAM</Box>
-          <Box className='info'>
+          <Box className='info studies'>
             <Box>Dimitri Knight</Box>
             <Box>Resham Khanna</Box>
           </Box>
         </GridItem>
         <GridItem colSpan={2}>
           <Box className='head'>ROLE</Box>
-          <Box className='info'>I designed the visual identity for this project, drawing inspiration from Robinhood's current design system. I developed the crypto and business research plan. And, I designed a user interface and experience of the Robinhood NFT marketplace</Box>
+          <Box className='info studies'>I designed the visual identity for this project, drawing inspiration from Robinhood's current design system. I developed the crypto and business research plan. And, I designed a user interface and experience of the Robinhood NFT marketplace</Box>
         </GridItem>
         <GridItem colSpan={1}>
           <Box className='head'>SKILLS</Box>
-          <Box className='info'>
+          <Box className='info studies'>
             <Box>UX Design</Box>
             <Box>UX Research</Box>
           </Box>
         </GridItem>
         <GridItem colSpan={1}>
           <Box className='head'>TOOLS</Box>
-          <Box className='info'>
+          <Box className='info studies'>
             <Box>Figma</Box>
             <Box>Photoshop</Box>
           </Box>
         </GridItem>
       </Grid>
       <Box className='stickyTop'>
-        <Box className='head'>CONTENTS</Box>
         <UnorderedList className='nav' listStyleType={"none"} marginInlineStart={0}>
           <ListItem onClick={setActive} className='navList'><Link className='navLink' href="#overview"> OVERVIEW</Link></ListItem>
           <ListItem onClick={setActive} className='navList'><Link className='navLink' href="#context"> CONTEXT</Link></ListItem>
@@ -121,7 +120,7 @@ function Studies() {
           <ListItem onClick={setActive} className='navList'><Link className='navLink' href="#reflection"> REFLECTION</Link></ListItem>
         </UnorderedList>
       </Box>
-      <Grid marginLeft={"16rem"} className='caseInfo'
+      <Grid marginLeft={"16rem"} className='caseInfo cases'
         templateColumns='repeat(4, 1fr)'
         gap={6}
       >
@@ -132,13 +131,13 @@ function Studies() {
             <Box className="about">
               <Box className='name'>About</Box>
               <Box className='head'>WHAT WAS THIS PROJECT?</Box>
-              <Box className='info'>{study.About}</Box>
+              <Box className='info studies'>{study.About}</Box>
             </Box>
             <Box className="vision">
               <Box className='name'>Product Vision</Box>
               <Box className='head'>WHAT DID WE IMAGINE?</Box>
-              <Box className='info'>{study.Vision}</Box>
-              <Box className='info'>{study.Vision2}</Box>
+              <Box className='info studies'>{study.Vision}</Box>
+              <Box className='info studies'>{study.Vision2}</Box>
             </Box>
           </Flex>
           <Box className="solution">
@@ -153,18 +152,18 @@ function Studies() {
           {study.Background && <Box className="about">
             <Box className='name'>Background</Box>
             <Box className='head'>WHAT'S GOING ON?</Box>
-            <Box className='info'>{study.Background}</Box>
+            <Box className='info studies'>{study.Background}</Box>
           </Box>}
           <Flex className="aboutVision">
             <Box className="vision">
               <Box className='name'>Problem</Box>
               <Box className='head'>WHAT DID WE IMAGINE?</Box>
-              <Box className='info'>{study.Problem}</Box>
+              <Box className='info studies'>{study.Problem}</Box>
             </Box>
             <Box className="vision">
               <Box className='name'>Opportunity</Box>
               <Box className='head'>WHERE CAN WE GO TO?</Box>
-              <Box className='info'>{study.Opportunity}</Box>
+              <Box className='info studies'>{study.Opportunity}</Box>
             </Box>
           </Flex>
           <Box className="solution">
@@ -178,12 +177,12 @@ function Studies() {
 
           <Box className="about">
             <Box className='name'>{study.ResearchHead}</Box>
-            <Box className='info'>{study.Research1} <br />
+            <Box className='info studies'>{study.Research1} <br />
               {study.ResearchCont}</Box>
             {study.Research2 && <Box className='name'>{study.ResearchHead2}</Box>}
-            {study.Research2 && <Box className='info'>{study.Research2}</Box>}
+            {study.Research2 && <Box className='info studies'>{study.Research2}</Box>}
             {study.Research3 && <Box className='name'>{study.ResearchHead3}</Box>}
-            {study.Research3 && <Box className='info'>{study.Research3}</Box>}
+            {study.Research3 && <Box className='info studies'>{study.Research3}</Box>}
           </Box>
           <Flex className="aboutVision">
             {study.Head1 && <Box className="vision">
@@ -226,12 +225,12 @@ function Studies() {
           {study.Features && <Box className='sectionHeading' id="features">Features</Box>}
           {study.Features && <Box className="about">
             <Box className='name'>{study.FeatureHead}</Box>
-            <Box className='info'>{study.Feature1} <br /> <br />
+            <Box className='info studies'>{study.Feature1} <br /> <br />
               {study.ResearchCont}</Box>
             {study.Feature2 && <Box className='name'>{study.FeatureHead2}</Box>}
-            {study.Feature2 && <Box className='info'>{study.Feature2}</Box>}
+            {study.Feature2 && <Box className='info studies'>{study.Feature2}</Box>}
             {study.Feature3 && <Box className='name'>{study.FeatureHead3}</Box>}
-            {study.Feature3 && <Box className='info'>{study.Feature3}</Box>}
+            {study.Feature3 && <Box className='info studies'>{study.Feature3}</Box>}
           </Box>}
 
           {/* REFLECTION */}
@@ -240,21 +239,21 @@ function Studies() {
           <Flex className="aboutVision">
             <Box className="vision">
               <Box className='name'>{study.Reflection1}</Box>
-              <Box className='info'>{study.Reflection1Text}</Box>
+              <Box className='info studies'>{study.Reflection1Text}</Box>
             </Box>
             {/* <Box className="vision">
               <Box className='name'>What would I have done differently?</Box>
-              <Box className='info'>I wouldn’t have overworked myself. We likely would have completed this project faster if I hadn’t pulled all-nighters on the first two days. Also, we were pretty scattered with our research plan, mainly owing to our lack of experience doing such an expansive project. Moving forward, I believe we have a solid basis for Crypto research and case study presentation.</Box>
+              <Box className='info studies'>I wouldn’t have overworked myself. We likely would have completed this project faster if I hadn’t pulled all-nighters on the first two days. Also, we were pretty scattered with our research plan, mainly owing to our lack of experience doing such an expansive project. Moving forward, I believe we have a solid basis for Crypto research and case study presentation.</Box>
             </Box> */}
           </Flex>
           {/* <Flex className="aboutVision">
             <Box className="vision">
               <Box className='name'>What did I learn about each other from this project?</Box>
-              <Box className='info'>I felt invigorated working on such an exciting, impactful project. We were overwhelmed with the amount of work we had ahead of us. And, at times, I even overworked myself to the point of suffering from COVID for an entire week. Nonetheless, I’m incredibly proud to have made an entire case study encompassing a whole app design and supporting research.</Box>
+              <Box className='info studies'>I felt invigorated working on such an exciting, impactful project. We were overwhelmed with the amount of work we had ahead of us. And, at times, I even overworked myself to the point of suffering from COVID for an entire week. Nonetheless, I’m incredibly proud to have made an entire case study encompassing a whole app design and supporting research.</Box>
             </Box>
             <Box className="vision">
               <Box className='name'>What did I learn about myself from this project?</Box>
-              <Box className='info'>I wouldn’t have overworked myself. We likely would have completed this project faster if I hadn’t pulled all-nighters on the first two days. Also, we were pretty scattered with our research plan, mainly owing to our lack of experience doing such an expansive project. Moving forward, I believe we have a solid basis for Crypto research and case study presentation.</Box>
+              <Box className='info studies'>I wouldn’t have overworked myself. We likely would have completed this project faster if I hadn’t pulled all-nighters on the first two days. Also, we were pretty scattered with our research plan, mainly owing to our lack of experience doing such an expansive project. Moving forward, I believe we have a solid basis for Crypto research and case study presentation.</Box>
             </Box>
           </Flex> */}
         </GridItem>

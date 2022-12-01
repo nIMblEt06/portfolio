@@ -1,7 +1,5 @@
 import { Box, Flex, Image, Link } from '@chakra-ui/react'
 import React from 'react'
-import rahulImage from "../Assets/rahulImage.png" 
-import pins from "../Assets/pins.png" 
 import linkedin from "../Assets/linkedin.png" 
 import twitter from "../Assets/twitter.png" 
 import { BsDot } from 'react-icons/bs'

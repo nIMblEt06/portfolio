@@ -108,4 +108,3 @@ function MotionDesign() {
 }
 
 export default MotionDesign
-{/* <link rel="shortcut icon" href="logo.png" type="image/x-icon" /> */ }
