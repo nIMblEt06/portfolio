@@ -12,7 +12,7 @@ function Home() {
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
-    document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("readystatechange", () => {
       if (document.readyState === "complete") {
         setTimeout(() => setIsLoaded(true), 2000);
         sessionStorage.setItem('hasLoaded', true)
