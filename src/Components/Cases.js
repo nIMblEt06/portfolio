@@ -61,7 +61,7 @@ function Cases() {
                     </Carousel>
                 </GridItem>
                 <GridItem colSpan={2} onClick={goToGaming} className='wideStudy'>
-                    <Flex justifyContent={"space-between"}>
+                    <Flex justifyContent={"space-between"} className="caseStudyFlex">
                         <VStack w="65%" className='studyText' alignItems={"baseline"}>
                             <Image w="4rem" src={gaming} />
                             <Box className='caseHeading'>Tournafest</Box>

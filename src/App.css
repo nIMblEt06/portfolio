@@ -736,7 +736,7 @@ svg {
     flex-direction: column;
   }
   .testimonial{
-    width: 19rem;
+    width: 22rem;
   }
   #chatBot{
     width: 100%;
@@ -789,5 +789,11 @@ svg {
   }
   .about img{
     width: 100%;
+  }
+  .studyCont>div{
+    width: 90%;
+  }
+  .testAndChat{
+    width: 90%;
   }
 }

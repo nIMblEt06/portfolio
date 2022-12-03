@@ -215,7 +215,7 @@ function Hero() {
                         Hey, I'm Rahul
                     </Flex>
                     <Flex ref={el => subHeadingBack = el} className='subHeading'>
-                        I am a designer, storyteller and a lover of airplane window seats ✈️
+                    I design, tell stories, and only take the window seat while flying ✈️
                     </Flex>
                     {/* <Slider {...settings}>
                         {cards}

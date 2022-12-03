@@ -52,7 +52,7 @@ function MotionDesign() {
                     Motion design
                 </Flex>
                 <Flex className='subHeading'>
-                    A video dump of some of my favorite motion graphics I've made.
+                I created the following animations from scratch to simplify the special buttons and features on the Flint app.
                 </Flex>
             </Box>
             <Flex mt="8rem" className='lottieWrapper' flexWrap={"wrap"} w="70%" marginInline={"auto"} justifyContent="space-between">

@@ -16,7 +16,7 @@ function Testimonials() {
 
   function moveCarousel() {
     if(isSmallerThan450){
-      testimonial.style.transform = "translateX(-19rem)"
+      testimonial.style.transform = "translateX(-22rem)"
     }
     else{
       testimonial.style.transform = "translateX(-30rem)"
