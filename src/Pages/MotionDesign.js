@@ -8,6 +8,8 @@ import experts from "../Assets/Experts.json"
 import Footer from "../Components/Footer"
 import watch from "../Assets/Watchlist.json"
 import splash from "../Assets/Splash2.json"
+import cardPoster from "../Assets/cardPoster.png"
+import revealPoster from "../Assets/revealPoster.png"
 // import splash from "../Assets/splash.lottie"
 // import splash from "../Assets/Splash.json"
 import shield from "../Assets/Shield.json"
@@ -94,14 +96,14 @@ function MotionDesign() {
                 </Box>
                 <Box className='videoContainer' >
                     <Flex className='videoFlex' overflow={"hidden"} h="18rem">
-                        <video ref={el => vid1 = el} onMouseOver={event => event.target.play()} onMouseOut={event => event.target.pause()} src={nft} loop={true}></video>
+                        <video poster={cardPoster} ref={el => vid1 = el} onMouseOver={event => event.target.play()} onMouseOut={event => event.target.pause()} src={nft} loop={true}></video>
                     </Flex>
                     <Box pt="3rem" pl="1rem" className='titleHeading'>NFT Airdrop</Box>
                     <Box pl="1rem" className='info' w="80%">Creating hype around the product by distributing unique digital art.</Box>
                     <Flex alignItems={"center"} pl="1rem" className='info'>Tools: <Image paddingInline="0.6rem" src={ae} /> <Image src={blend} /> </Flex>
                 </Box>
                 <Box className='videoContainer'>
-                    <video ref={el => vid2 = el} onMouseOver={event => event.target.play()} onMouseOut={event => event.target.pause()} src={final} loop={true}></video>
+                    <video poster={revealPoster} ref={el => vid2 = el} onMouseOver={event => event.target.play()} onMouseOut={event => event.target.pause()} src={final} loop={true}></video>
                     <Box pt="3rem" pl="1rem" className='titleHeading'>Feature Teaser</Box>
                     <Box pl="1rem" className='info' w="80%">Informing users to a new product feature via a short video.</Box>
                     <Flex alignItems={"center"} pl="1rem" className='info'>Tools: <Image paddingInline="0.6rem" src={ae} /> <Image src={blend} /> </Flex>

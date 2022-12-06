@@ -250,14 +250,55 @@ svg {
   width: 40%;
   margin-inline: auto;
   font-size: 1.6rem;
+  height: 4rem;
   text-align: center;
   margin-top: 3vw;
 }
 
 .slick-slider {
-  margin-block: 3rem;
+  /* margin-block: 3rem; */
   /* animation: marquee 80s infinite; */
 }
+.slick-dots{
+  bottom: 20px !important;
+  right: -150px !important;
+}
+.slick-dots>li{
+  margin: 0 !important;
+}
+.slick-dots li button:before{
+    color: #EEE3D3 !important;
+   font-size: 0.8rem !important;
+}
+.slick-prev, .slick-next{
+  z-index: 2;
+  top: 50% !important;
+  height: 95% !important;
+}
+.slick-arrow{
+  transition: all 0.3s ease;
+  border-radius: 24px;
+}
+.slick-arrow:hover{
+  background-color: #eee3d306 !important;
+  box-shadow: -10px 0px 5px 10px #eee3d306;
+  filter: blur(2px);
+  cursor: e-resize;
+}
+.slick-prev:hover{
+  box-shadow: 10px 0px 5px 10px #eee3d306;
+
+}
+.slick-arrow::before{
+  content: '' !important;
+}
+.slick-prev{
+  left: 0 !important;
+}
+.slick-next{
+  right: 0 !important;
+}
+
 
 .heroCarousel {
   justify-content: center;
@@ -298,7 +339,7 @@ svg {
 }
 
 .testimonial {
-  width: 30rem;
+  width: 40%;
   overflow-x: hidden;
   transition: all 0.4s ease-out;
 }
@@ -347,6 +388,11 @@ svg {
 .name {
   font-size: 1.6rem;
 }
+.name.feature{
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+
 .name.study{
   font-size: 2.5rem;
   padding-left: 0.35rem;
@@ -458,12 +504,17 @@ svg {
   border-radius: 20px;
   padding-top: 7rem;
 }
+.chatText>div>svg{
+  width: 50px !important;
+  height: 15px !important;
+  scale: 10 !important;
+}
 
 .sendButton {
   cursor: pointer;
   position: absolute;
   border-radius: 50%;
-  top: 7px;
+  top: 14px;
   right: 9px;
 }
 
@@ -536,6 +587,7 @@ svg {
   background-color: #000;
   border: 2.01838px solid rgba(84, 84, 88, 0.65);
   border-radius: 61.835px;
+  margin-top: 0.5rem;
 }
 
 .upperBox {
@@ -602,6 +654,18 @@ svg {
   color: #000;
 }
 
+.featureHeading{
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-left: 0.4rem;
+}
+.featureInfo{
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  margin-left: 0.4rem;
+  margin-top: 0.4rem;
+}
+
 
 
 /* Case Study Carousel */
@@ -631,7 +695,10 @@ svg {
 .footerFlex svg {
   cursor: pointer;
 }
-
+.navbar{
+  width: 90%;
+  padding-top: 1.25rem;
+}
 
 
 
@@ -691,14 +758,26 @@ svg {
 
 
 @media screen and (max-width: 800px) {
-  video {
-    width: 25%;
-  }
-}
-
-@media screen and (max-width: 450px) {
-  video {
+  .motionContainer{
     width: 45%;
+  }
+  .subHeading{
+    width: 70%;
+    height: 6rem;
+  }
+  .heading{
+    font-size: 3rem;
+  }
+  .testAndChat{
+    flex-direction: column;
+  }
+  #chatBot{
+    width: 100%;
+    padding-top: 4rem;
+    margin-top: 2rem;
+  }
+  .testimonial{
+    width: 100%;
   }
 }
 
@@ -716,6 +795,9 @@ svg {
     width: max-content;
     margin-top: 4rem !important;
   }
+  .container{
+    padding-left: 1.5rem;
+  }
   .greetText{
     font-size: 0.8rem;
   }
@@ -731,23 +813,21 @@ svg {
   }
   .caseImageContainer>img{
     width: 70%;
+    height: 8rem;
+    object-fit: cover;
+    object-position: 0rem -1.4rem;
   }
   .testAndChat{
     flex-direction: column;
-  }
-  .testimonial{
-    width: 22rem;
-  }
-  #chatBot{
-    width: 100%;
-    padding-top: 4rem;
-    margin-top: 2rem;
   }
   .ownText{
     padding: 0.5rem;
   }
   .awayText{
     padding: 0.5rem;
+  }
+  .slick-dots{
+    bottom: -25px !important;
   }
   .chatText{
     padding: 0.75rem;
@@ -757,6 +837,7 @@ svg {
   }
   .lottieWrapper{
     flex-direction: column;
+    width: 85% !important;
   }
   .motionContainer{
     width: 100%;

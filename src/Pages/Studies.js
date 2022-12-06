@@ -4,6 +4,7 @@ import nftImage from "../Assets/NFT.svg"
 import nft from "../Assets/image.svg"
 import { studies } from '../studyContent'
 import { useNavigate, useParams } from 'react-router-dom';
+import Features from '../Components/Features'
 function Studies() {
   const params = useParams();
   const name = params.study;
@@ -236,6 +237,8 @@ function Studies() {
             {study.Feature3 && <Box className='name study'>{study.FeatureHead3}</Box>}
             {study.Feature3 && <Box className='info single studies'>{study.Feature3}</Box>}
           </Box>}
+          {/* Flint Features */}
+          {/* {study.Name == "Flint Money" && <Features/>} */}
 
           {/* REFLECTION */}
           <Box className='sectionHeading' id="reflection">Reflection</Box>

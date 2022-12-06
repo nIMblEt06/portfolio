@@ -5,6 +5,11 @@ import netflix from "../Assets/netflix.png"
 import gaming from "../Assets/gaming.png"
 import phone from "../Assets/phone.png"
 import phone2 from "../Assets/phone2.png"
+import picone from "../Assets/1.jpeg"
+import pictwo from "../Assets/2.jpeg"
+import picthree from "../Assets/3.jpeg"
+import picfour from "../Assets/4.jpeg"
+import picfive from "../Assets/5.png"
 import motion from "../Assets/Motion.json"
 import Lottie from 'lottie-react'
 // import { Arrow } from 'react-icons/ai'
@@ -56,8 +61,11 @@ function Cases() {
                 </GridItem>
                 <GridItem colSpan={isSmallerThan450 ? 2 : 1} className='wideStudy'>
                     <Carousel showStatus={false} infiniteLoop={true} showIndicators={false}>
-                        <HomeCaroItem/>
-                        <HomeCaroItem/>
+                        <HomeCaroItem img={picone}/>
+                        <HomeCaroItem img={pictwo}/>
+                        <HomeCaroItem img={picthree}/>
+                        <HomeCaroItem img={picfour}/>
+                        <HomeCaroItem img={picfive}/>
                     </Carousel>
                 </GridItem>
                 <GridItem colSpan={2} onClick={goToGaming} className='wideStudy'>
