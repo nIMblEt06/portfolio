@@ -3,7 +3,9 @@
   margin: 0;
   padding: 0;
   user-select: none;
+  -webkit-user-drag: none;
 }
+
 
 html {
   scroll-behavior: smooth;
@@ -391,6 +393,9 @@ svg {
 .name.feature{
   font-weight: 500;
   font-size: 1.8rem;
+}
+.name.feature.right{
+  justify-content: space-between;
 }
 
 .name.study{
