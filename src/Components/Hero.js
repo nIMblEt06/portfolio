@@ -28,7 +28,7 @@ function Hero() {
     // let menu1 = useRef(null)
     let menu2 = useRef(null)
     const [count, setCount] = useState(0)
-    const [isSmallerThan450] = useMediaQuery('(max-width:450px)') 
+    const [isSmallerThan450] = useMediaQuery('(max-width:450px)')
     const [showMenu, setShowMenu] = useState(false)
     const [items, setItems] = useState(Array.from(document.getElementsByClassName('caroItem')))
     const [mousePos, setMousePos] = useState({});
@@ -56,20 +56,20 @@ function Hero() {
     // })
     // useEffect(() => {
     //     const caro = document.querySelector('.heroCarousel')
-        // setInterval(() => {
-        //     caro.style.transform = "translateX(-24%)"
-        // caro.addEventListener('transitionend', () => {
-        //     caro.appendChild(caro.firstElementChild)
-        //     caro.style.transition = 'none'
-        //     caro.style.transform = "translateX(0)"
-        //     setTimeout(() => {
-        //         caro.style.transition = 'all 3s linear'
-        //     })
-        // })
-        // }, 0);
+    // setInterval(() => {
+    //     caro.style.transform = "translateX(-24%)"
+    // caro.addEventListener('transitionend', () => {
+    //     caro.appendChild(caro.firstElementChild)
+    //     caro.style.transition = 'none'
+    //     caro.style.transform = "translateX(0)"
+    //     setTimeout(() => {
+    //         caro.style.transition = 'all 3s linear'
+    //     })
+    // })
+    // }, 0);
     // }, [])
 
-    
+
 
 
     useEffect(() => {
@@ -77,8 +77,8 @@ function Hero() {
         setItems(Array.from(document.getElementsByClassName('caroItem')))
     }, [])
 
-    useEffect(()=>{
-        if(isSmallerThan450){
+    useEffect(() => {
+        if (isSmallerThan450) {
             setTimeout(() => {
                 carousel.style.transform = "translateX(-25%)"
             }, 3000);
@@ -103,16 +103,23 @@ function Hero() {
     function updateText(head, subHead) {
         // heading.innerText = head;
         // subHeading.innerText = subHead;
-        subHeadingBack.innerText = subHead;
-        headingBack.innerText = head;
+        if (!isSmallerThan450) {
+            subHeadingBack.innerText = subHead;
+            headingBack.innerText = head;
+        }
     }
 
     function updateClass() {
-        items.forEach(item => {
-            item.classList.add('inactive')
-        })
-        greet.classList.add('inactive')
-        ham.classList.add('inactive')
+        if (!isSmallerThan450) {
+            items.forEach(item => {
+                item.classList.add('inactive')
+            })
+            greet.classList.add('inactive')
+            ham.classList.add('inactive')
+            Array.from(document.getElementsByClassName('studyCont')).forEach(element => {
+                element.classList.add('inactive')
+            });
+        }
     }
     function toggleMenu() {
         setShowMenu(showMenu => !showMenu)
@@ -145,11 +152,16 @@ function Hero() {
     }, [showMenu])
 
     function removeClass() {
-        items.forEach(item => {
-            item.classList.remove('inactive')
-        })
-        greet.classList.remove('inactive')
-        ham.classList.remove('inactive')
+        if (!isSmallerThan450) {
+            items.forEach(item => {
+                item.classList.remove('inactive')
+            })
+            greet.classList.remove('inactive')
+            Array.from(document.getElementsByClassName('studyCont')).forEach(element => {
+                element.classList.remove('inactive')
+            });
+            ham.classList.remove('inactive')
+        }
     }
     const cards = images.map(card => {
         return <Cards updateText={updateText} removeClass={removeClass} updateClass={updateClass} source={card.source} heading={card.heading} subHeading={card.subHeading} />
@@ -197,16 +209,16 @@ function Hero() {
             <Box ref={el => wrapper = el} className='heroClipper'>
                 <Box className='heroWrapper clip'>
                     <Flex className='navbar'>
-                        <Flex ref={el => greet = el} className='greet'><Lottie animationData={Globe}/> <Box className="greetText" color={"#EEE3D3"}>Welcome to this corner<br/>of the internet.</Box></Flex>
+                        <Flex ref={el => greet = el} className='greet'><Lottie animationData={Globe} /> <Box className="greetText" color={"#EEE3D3"}>Welcome to this corner<br />of the internet.</Box></Flex>
                         <Box className='ham' ref={el => ham = el} onClick={toggleMenu}>
                             <Box className='hams one' ref={el => ham4 = el}></Box>
                             <Box className='hams two' ref={el => ham5 = el}></Box>
                             <Box className='hams three' ref={el => ham6 = el}></Box>
                             <Box className='menu' ref={el => menu2 = el}>
-                            <Link target={"_blank"} href="https://rahuljaiswal.me">Home</Link>
-                            <Link target={"_blank"} href="https://read.cv/rahul.design">Resume</Link>
-                            <Link href="/motionDesign">Motion Design</Link>
-                            <Link target={"_blank"} cursor="help" pointerEvents="none" opacity="50%">NFT-Upcoming</Link>
+                                <Link target={"_blank"} href="https://rahuljaiswal.me">Home</Link>
+                                <Link target={"_blank"} href="https://read.cv/rahul.design">Resume</Link>
+                                <Link href="/motionDesign">Motion Design</Link>
+                                <Link target={"_blank"} cursor="help" pointerEvents="none" opacity="50%">NFT-Upcoming</Link>
                             </Box>
                         </Box>
 
@@ -215,7 +227,7 @@ function Hero() {
                         Hey, I'm Rahul
                     </Flex>
                     <Flex ref={el => subHeadingBack = el} className='subHeading'>
-                    I design, tell stories, and only take the window seat while flying ✈️
+                        I design, tell stories, and only take the window seat while flying ✈️
                     </Flex>
                     {/* <Slider {...settings}>
                         {cards}

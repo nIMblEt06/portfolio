@@ -564,6 +564,7 @@ svg {
 .chatText.own {
   color: #000;
   background-color: #EEE3D3;
+  max-width: 80%;
 }
 
 .lowerBox {
@@ -827,7 +828,8 @@ svg {
     padding: 0.5rem;
   }
   .slick-dots{
-    bottom: -25px !important;
+    bottom: 20px !important;
+    left: -75px !important;
   }
   .chatText{
     padding: 0.75rem;

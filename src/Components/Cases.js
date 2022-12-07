@@ -59,7 +59,7 @@ function Cases() {
                         </VStack>
                     </Flex>
                 </GridItem>
-                <GridItem colSpan={isSmallerThan450 ? 2 : 1} className='wideStudy'>
+                {!isSmallerThan450 ? <GridItem colSpan={1} className='wideStudy'>
                     <Carousel showStatus={false} infiniteLoop={true} showIndicators={false}>
                         <HomeCaroItem img={picone}/>
                         <HomeCaroItem img={pictwo}/>
@@ -67,7 +67,7 @@ function Cases() {
                         <HomeCaroItem img={picfour}/>
                         <HomeCaroItem img={picfive}/>
                     </Carousel>
-                </GridItem>
+                </GridItem> : ""}
                 <GridItem colSpan={2} onClick={goToGaming} className='wideStudy'>
                     <Flex justifyContent={"space-between"} className="caseStudyFlex">
                         <VStack w="65%" className='studyText' alignItems={"baseline"}>
@@ -76,11 +76,20 @@ function Cases() {
                             <Box className='caseText'>A one stop destination for gamers and organisers.</Box>
                             <Button onClick={goToGaming} className='redirect'>Read case study &nbsp; <Arrow /></Button>
                         </VStack>
-                        <Flex alignItems={"flex-end"}>
-                            <Image w="25rem" src={phone2} />
+                        <Flex alignItems={"flex-end"} justifyContent="right">
+                            <Image w={isSmallerThan450 ? "90%" : "25rem"} src={phone2} objectFit={isSmallerThan450 ? "cover" : ""} height={isSmallerThan450 ? "8rem" : ""} objectPosition={isSmallerThan450 ? "0rem -2rem" : ""}/>
                         </Flex>
                     </Flex>
                 </GridItem>
+                {isSmallerThan450 ? <GridItem colSpan={2} className='wideStudy'>
+                    <Carousel showStatus={false} infiniteLoop={true} showIndicators={false}>
+                        <HomeCaroItem img={picone}/>
+                        <HomeCaroItem img={pictwo}/>
+                        <HomeCaroItem img={picthree}/>
+                        <HomeCaroItem img={picfour}/>
+                        <HomeCaroItem img={picfive}/>
+                    </Carousel>
+                </GridItem> : ""}
             </SimpleGrid>
         </Box>
     )
