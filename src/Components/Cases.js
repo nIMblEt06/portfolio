@@ -61,11 +61,11 @@ function Cases() {
                 </GridItem>
                 {!isSmallerThan450 ? <GridItem colSpan={1} className='wideStudy'>
                     <Carousel showStatus={false} infiniteLoop={true} showIndicators={false}>
-                        <HomeCaroItem img={picone}/>
-                        <HomeCaroItem img={pictwo}/>
-                        <HomeCaroItem img={picthree}/>
-                        <HomeCaroItem img={picfour}/>
-                        <HomeCaroItem img={picfive}/>
+                        <HomeCaroItem place="Best Photographer" where="National photography day" when="2020" img={picone}/>
+                        <HomeCaroItem place="SCIMUN" where="Scindia" when="2019" img={pictwo}/>
+                        <HomeCaroItem place="India in Black" where="NGO Non profit" when="2018" img={picthree}/>
+                        {/* <HomeCaroItem img={picfour}/> */}
+                        <HomeCaroItem place="Istanbul Blockchain.." where="Turkey" when="2022" img={picfive}/>
                     </Carousel>
                 </GridItem> : ""}
                 <GridItem colSpan={2} onClick={goToGaming} className='wideStudy'>

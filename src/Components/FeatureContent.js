@@ -7,7 +7,7 @@ function FeatureContent(props) {
             <Box w="20%">
                 <Image w="3.5rem" h="3.5rem" loading='lazy' mt="0.4rem" src={props.img} borderRadius={"10px"} />
             </Box>
-            <Box w="100%">
+            <Box w="100%" className='featureContent'>
                 <Box className='featureHeading'>{props.heading}</Box>
                 <Box className='featureInfo'>{props.text}</Box>
             </Box>

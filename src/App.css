@@ -519,6 +519,7 @@ svg {
   cursor: pointer;
   position: absolute;
   border-radius: 50%;
+  z-index: 3;
   top: 14px;
   right: 9px;
 }
@@ -671,6 +672,7 @@ svg {
   margin-left: 0.4rem;
   margin-top: 0.4rem;
 }
+
 
 
 
@@ -870,6 +872,15 @@ svg {
   .roundVideo{
     width: 100%;
     border-radius: 20px;
+  }
+  .featureFlex{
+    flex-direction: column-reverse;
+  }
+  .featureFlexReverse{
+    flex-direction: column;
+  }
+  .featureContent{
+    margin-left: 1rem;
   }
   #research{
     font-size: 2rem;
