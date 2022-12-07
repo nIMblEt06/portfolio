@@ -23,6 +23,7 @@ function ChatBot() {
   const [count, setCount] = useState(1)
   const [number, setNumber] = useState(0)
   const [array, setArray] = useState([])
+  const [offset, setOffset] = useState(null)
   const [userData, setUserData] = useState({
     name: "",
     subject: "",
@@ -33,6 +34,7 @@ function ChatBot() {
     if (!clicked) {
       upper.style.transform = "translateY(-1.5rem)"
       hideChat(chat1, text1)
+      name.focus()
       setClicked(true)
     }
   }
@@ -47,6 +49,18 @@ function ChatBot() {
     upper.style.transform = "translateY(6rem)"
   }, [])
 
+  useEffect(() => {
+    setOffset(bot.getBoundingClientRect().top)
+  })
+
+  useEffect(() => {
+    console.log(offset);
+    if (offset > 0) {
+      if (window.scrollY > offset - 300) {
+        check()
+      }
+    }
+  })
 
   function handleChange(event) {
     const { name, value } = event.target
