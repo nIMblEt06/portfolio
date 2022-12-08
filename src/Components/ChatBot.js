@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import message from "../Assets/message.json"
 import Lottie from "lottie-react"
 import ArrowTop from "./ArrowTop"
+import audio from "../Assets/received.mp3"
 
 function ChatBot() {
 
@@ -19,6 +20,7 @@ function ChatBot() {
   let text3 = useRef(null)
   let chat2 = useRef(null)
   let chat3 = useRef(null)
+  let sound = useRef(null)
   const [clicked, setClicked] = useState(false)
   const [count, setCount] = useState(1)
   const [number, setNumber] = useState(0)
@@ -34,6 +36,7 @@ function ChatBot() {
     if (!clicked) {
       upper.style.transform = "translateY(-1.5rem)"
       hideChat(chat1, text1)
+      sound.play()
       name.focus()
       setClicked(true)
     }
@@ -42,6 +45,7 @@ function ChatBot() {
     setTimeout(() => {
       lottie.style.display = "none"
       text.style.display = "block"
+
     }, 1000);
   }
   useEffect(() => {
@@ -54,7 +58,7 @@ function ChatBot() {
   })
 
   useEffect(() => {
-    console.log(offset);
+    // console.log(offset);
     if (offset > 0) {
       if (window.scrollY > offset - 300) {
         check()
@@ -82,6 +86,7 @@ function ChatBot() {
       if (count == 1) {
         // upper.style.transform = `translateY(-${9*count}rem)`
         hideChat(chat2, text2)
+        sound.play()
         name.style.display = "none"
         name.style.opacity = 0
         subject.style.display = "block"
@@ -90,6 +95,7 @@ function ChatBot() {
       }
       else if (count == 2) {
         hideChat(chat3, text3)
+        sound.play()
         subject.style.display = "none"
         sendButton.style.display = "none"
         subject.style.opacity = 0
@@ -111,6 +117,9 @@ function ChatBot() {
 
   return (
     <Box id="chatBot" ref={el => bot = el} onClick={check}>
+      <audio ref={el => sound = el}>
+        <source src={audio} type="audio/mp3" />
+      </audio>
       <Box className='upperBox' >
         <Box className='textContainer' ref={el => upper = el}>
           <Box className="awayText">

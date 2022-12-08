@@ -5,6 +5,7 @@ import nft from "../Assets/image.svg"
 import { studies } from '../studyContent'
 import { useNavigate, useParams } from 'react-router-dom';
 import Features from '../Components/Features'
+import FeatureTournafest from '../Components/FeatureTournafest'
 
 function Studies() {
   const params = useParams();
@@ -176,7 +177,6 @@ function Studies() {
           <Box className="solution">
             <Box className='sectionHeading' id="research" fontSize={"3rem"} fontWeight="700" mt="1rem">{study.Challenge}</Box>
           </Box>
-
           <Box className="about">
             <Box className='name study'>{study.ResearchHead}</Box>
             {study.image1 && <Image src={study.image1} w="30%" />}
@@ -190,7 +190,7 @@ function Studies() {
             {study.image3 && <Image src={study.image3} w="30%" marginBlock={"2rem"} />}
             {study.Research3 && <Box className='info single studies'>{study.Research3}</Box>}
           </Box>
-          {name == "tournafest" && <Flex className="aboutVision">
+          {/* {name == "tournafest" && <Flex className="aboutVision">
             {study.Head1 && <Box className="vision">
               <Box className='name study'>{study.Head1}</Box>
               <UnorderedList className="points" width={"90%"} marginBlock="1rem">
@@ -224,11 +224,11 @@ function Studies() {
                 <ListItem>{study.Security2}</ListItem>
                 <ListItem>{study.Security3}</ListItem>
               </UnorderedList>
-            </Box>}
+            </Box>} 
           </Flex>}
 
-          {/* Features */}
-          {study.Features && <Box className='sectionHeading' id="features">Features</Box>}
+           Features 
+           <Box className='sectionHeading' id="features">Features</Box> 
           {study.Features && <Box className="about">
             <Box className='name study'>{study.FeatureHead}</Box>
             <Box className='info single studies'>{study.Feature1} <br /> <br />
@@ -237,9 +237,9 @@ function Studies() {
             {study.Feature2 && <Box className='info single studies'>{study.Feature2}</Box>}
             {study.Feature3 && <Box className='name study'>{study.FeatureHead3}</Box>}
             {study.Feature3 && <Box className='info single studies'>{study.Feature3}</Box>}
-          </Box>}
+          </Box>}*/}
           {/* Flint Features */}
-          {study.Name == "Flint Money" && <Features />}
+          {study.Name == "Flint Money" ? <Features /> : <FeatureTournafest/>}
 
           {/* REFLECTION */}
           <Box className='sectionHeading' id="reflection">Reflection</Box>
