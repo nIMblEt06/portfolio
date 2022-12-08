@@ -21,6 +21,8 @@ function Testimonials() {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
     // arrows: false,
     dots: true,
     slidesToScroll: 1

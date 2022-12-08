@@ -1,7 +1,7 @@
 import { Box, Flex, Image, Link, useMediaQuery } from '@chakra-ui/react'
 import React from 'react'
-import linkedin from "../Assets/linkedin.png" 
-import twitter from "../Assets/twitter.png" 
+import linkedin from "../Assets/linked.svg" 
+// import twitter from "../Assets/twitter.png" 
 import { BsDot } from 'react-icons/bs'
 
 

@@ -276,6 +276,7 @@ svg {
   z-index: 2;
   top: 50% !important;
   height: 95% !important;
+  width: 20% !important;
 }
 .slick-arrow{
   transition: all 0.3s ease;
@@ -289,7 +290,7 @@ svg {
 }
 .slick-prev:hover{
   box-shadow: 10px 0px 5px 10px #eee3d306;
-
+  cursor: w-resize;
 }
 .slick-arrow::before{
   content: '' !important;

@@ -190,7 +190,7 @@ function Studies() {
             {study.image3 && <Image src={study.image3} w="30%" marginBlock={"2rem"} />}
             {study.Research3 && <Box className='info single studies'>{study.Research3}</Box>}
           </Box>
-          <Flex className="aboutVision">
+          {name == "tournafest" && <Flex className="aboutVision">
             {study.Head1 && <Box className="vision">
               <Box className='name study'>{study.Head1}</Box>
               <UnorderedList className="points" width={"90%"} marginBlock="1rem">
@@ -207,8 +207,8 @@ function Studies() {
                 <ListItem>{study.Minimal3}</ListItem>
               </UnorderedList>
             </Box>}
-          </Flex>
-          <Flex className="aboutVision">
+          </Flex>}
+          {name == "tournafest" && <Flex className="aboutVision">
             {study.Head3 && <Box className="vision">
               <Box className='name study'>{study.Head3}</Box>
               <UnorderedList className="points" width={"90%"} marginBlock="1rem">
@@ -225,7 +225,7 @@ function Studies() {
                 <ListItem>{study.Security3}</ListItem>
               </UnorderedList>
             </Box>}
-          </Flex>
+          </Flex>}
 
           {/* Features */}
           {study.Features && <Box className='sectionHeading' id="features">Features</Box>}
@@ -239,7 +239,7 @@ function Studies() {
             {study.Feature3 && <Box className='info single studies'>{study.Feature3}</Box>}
           </Box>}
           {/* Flint Features */}
-          {study.Name == "Flint Money" && <Features/>}
+          {study.Name == "Flint Money" && <Features />}
 
           {/* REFLECTION */}
           <Box className='sectionHeading' id="reflection">Reflection</Box>
