@@ -156,7 +156,7 @@ svg {
 .progress{
   position: fixed;
   height: 5px;
-  background-color: #6de573;
+  background-color: #EEE3D3;
   transition: 0.1s ease;
   width: 0;
   top:0;
@@ -392,7 +392,7 @@ svg {
 /* Case Study Page */
 
 .container {
-  background-color: #0D0D0D;
+  background-color: #0c0c0c;
   color: #EEE3D3;
   /* padding-left: 3rem; */
   padding-bottom: 3rem;
@@ -846,11 +846,11 @@ svg {
     width: max-content;
     margin-top: 4rem !important;
   }
-  .container{
-    padding-left: 1.5rem;
-  }
   .greetText{
     font-size: 0.8rem;
+  }
+  .caseInfo{
+    padding-left: 1.5rem;
   }
   .studyText{
     width: 90% !important;
@@ -868,11 +868,19 @@ svg {
     object-fit: cover;
     object-position: 0rem -1.4rem;
   }
+  .studyHeader{
+    flex-direction: column;
+  }
   .testAndChat{
     flex-direction: column;
   }
   .ownText{
     padding: 0.5rem;
+  }
+  .caseHead{
+    font-size: 2rem;
+    padding-left:1.5rem;
+    padding-top: 5rem;
   }
   .awayText{
     padding: 0.5rem;
@@ -931,6 +939,9 @@ svg {
   }
   .about img{
     width: 100%;
+  }
+  .navbar.studies{
+    padding-left:1.5rem;
   }
   .studyCont>div{
     width: 90%;

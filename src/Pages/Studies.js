@@ -101,14 +101,12 @@ function Studies() {
 
     if (name === 'flint') {
       setStudy(studies[0])
-      progress.style.backgroundColor = "#6de573"
     }
     else if (name == 'netflix') {
       setStudy(studies[2])
     }
     else if (name == 'tournafest') {
       setStudy(studies[1])
-      progress.style.backgroundColor = "#ecd9ff"
     }
     else {
       navigate('/')
@@ -133,16 +131,16 @@ function Studies() {
           </Box>
         </Box>
       </Flex>
-      <Flex>
+      <Flex className="studyHeader">
         <Box>
-          <Box pl="3rem" mt="6rem" className='head studies'>CASE STUDY</Box>
-          <Box pl="3rem" pt="2rem" fontSize={"2.4rem"} className='caseHead'>{study.Heading}</Box>
+          <Box pl={isSmallerThan450 ? "1.5rem" : "3rem"} mt="6rem" className='head studies'>CASE STUDY</Box>
+          <Box pl={isSmallerThan450 ? "1.5rem" : "3rem"} pt="2rem" fontSize={"2.4rem"} className='caseHead'>{study.Heading}</Box>
         </Box>
-        <Box w="60%">
+        <Box w={isSmallerThan450 ? "100%" : "60%"}>
         <video src={name=="flint" ? flintVid : tourna} autoPlay={true} loop={true} muted={true}></video>
         </Box>
       </Flex>
-      <Flex className='arrowHead' mt="-3rem" ml="3rem"><Image w="50%" src={arrow2} /></Flex>
+      <Flex className='arrowHead' mt={isSmallerThan450 ? "1rem" :"-3rem"} ml="3rem"><Image w="50%" src={arrow2} /></Flex>
       <Box className='caseHead'>
         {study.Name}
       </Box>
