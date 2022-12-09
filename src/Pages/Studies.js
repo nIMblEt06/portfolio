@@ -1,7 +1,10 @@
-import { Box, Link, Flex, Grid, GridItem, Image, ListItem, UnorderedList, useMediaQuery } from '@chakra-ui/react'
-import React, { useEffect, useState } from 'react'
+import { Box, Link, Flex, Grid, GridItem, Image, ListItem, UnorderedList, useMediaQuery, Progress } from '@chakra-ui/react'
+import React, { useEffect, useRef, useState } from 'react'
 import nftImage from "../Assets/NFT.svg"
-import nft from "../Assets/image.svg"
+import arrow from "../Assets/arrowLeft.svg"
+import arrow2 from "../Assets/arrowDiagonal.svg"
+import tourna from "../Assets/tournafest.mp4"
+import flintVid from "../Assets/flint.mp4"
 import { studies } from '../studyContent'
 import { useNavigate, useParams } from 'react-router-dom';
 import Features from '../Components/Features'
@@ -14,7 +17,14 @@ function Studies() {
   const contents = document.querySelectorAll('.navLink')
   const [study, setStudy] = useState({})
   const [secHead, setSecHead] = useState([])
+  const [showMenu, setShowMenu] = useState(false)
   const [isSmallerThan450] = useMediaQuery('(max-width:450px)')
+  let ham4 = useRef(null)
+  let ham5 = useRef(null)
+  let ham6 = useRef(null)
+  let ham = useRef(null)
+  let menu2 = useRef(null)
+  let progress = useRef(null)
 
 
   useEffect(() => {
@@ -40,7 +50,11 @@ function Studies() {
       };
     }
   })
-
+  useEffect(() => {
+    progress.style.width = `${window.scrollY / document.body.offsetHeight * 110}vw`
+    console.log(window.scrollY);
+    console.log(document.body.offsetHeight);
+  })
 
   // function setActive(e) {
   //   contents.forEach(element => {
@@ -48,21 +62,53 @@ function Studies() {
   //   });
   //   e.target.classList.add('active')
   // }
+  function toggleMenu() {
+    setShowMenu(showMenu => !showMenu)
+  }
+  useEffect(() => {
+    if (showMenu) {
+      // ham1.style.transform = "rotate(45deg) translate(4px, 4px)"
+      ham4.style.transform = "rotate(45deg) translate(4px, 4px)"
+      // ham3.style.transform = "rotate(-45deg) translate(3px, -3px)"
+      ham6.style.transform = "rotate(-45deg) translate(3px, -3px)"
+      // ham2.style.opacity = 0
+      ham5.style.opacity = 0
+      // menu1.style.display = "block"
+      // menu1.style.opacity = 1
+      menu2.style.opacity = 1
+      menu2.style.display = "block"
+    }
+    else {
+      // ham1.style.transform = "rotate(0deg)"
+      // ham3.style.transform = "rotate(0deg)"
+      // ham2.style.opacity = 1
+      ham4.style.transform = "rotate(0deg)"
+      ham6.style.transform = "rotate(0deg)"
+      ham5.style.opacity = 1
+      // menu1.style.opacity = 0
+      menu2.style.opacity = 0
+      menu2.style.display = "none"
+      // menu1.style.display = "none"
+    }
+  }, [showMenu])
+  function backToHome() {
+    navigate('/')
+  }
 
 
   useEffect(() => {
     window.scrollTo(0, 0)
 
-
-
     if (name === 'flint') {
       setStudy(studies[0])
+      progress.style.backgroundColor = "#6de573"
     }
     else if (name == 'netflix') {
       setStudy(studies[2])
     }
     else if (name == 'tournafest') {
       setStudy(studies[1])
+      progress.style.backgroundColor = "#ecd9ff"
     }
     else {
       navigate('/')
@@ -72,6 +118,31 @@ function Studies() {
 
   return (
     <Box className='container'>
+      <Box ref={el => progress = el} className="progress"></Box>
+      <Flex className='navbar studies'>
+        <Flex className='greet studies' onClick={backToHome}><Image src={arrow} /></Flex>
+        <Box className='ham studies' ref={el => ham = el} onClick={toggleMenu}>
+          <Box className='hams one' ref={el => ham4 = el}></Box>
+          <Box className='hams two' ref={el => ham5 = el}></Box>
+          <Box className='hams three' ref={el => ham6 = el}></Box>
+          <Box className='menu' ref={el => menu2 = el}>
+            <Link target={"_blank"} href="https://rahuljaiswal.me">Home</Link>
+            <Link target={"_blank"} href="https://read.cv/rahul.design">Resume</Link>
+            <Link href="/motionDesign">Motion Design</Link>
+            <Link target={"_blank"} cursor="help" pointerEvents="none" opacity="50%">NFT-Upcoming</Link>
+          </Box>
+        </Box>
+      </Flex>
+      <Flex>
+        <Box>
+          <Box pl="3rem" mt="6rem" className='head studies'>CASE STUDY</Box>
+          <Box pl="3rem" pt="2rem" fontSize={"2.4rem"} className='caseHead'>{study.Heading}</Box>
+        </Box>
+        <Box w="60%">
+        <video src={name=="flint" ? flintVid : tourna} autoPlay={true} loop={true} muted={true}></video>
+        </Box>
+      </Flex>
+      <Flex className='arrowHead' mt="-3rem" ml="3rem"><Image w="50%" src={arrow2} /></Flex>
       <Box className='caseHead'>
         {study.Name}
       </Box>
@@ -239,7 +310,7 @@ function Studies() {
             {study.Feature3 && <Box className='info single studies'>{study.Feature3}</Box>}
           </Box>}*/}
           {/* Flint Features */}
-          {study.Name == "Flint Money" ? <Features /> : <FeatureTournafest/>}
+          {study.Name == "Flint Money" ? <Features /> : <FeatureTournafest />}
 
           {/* REFLECTION */}
           <Box className='sectionHeading' id="reflection">Reflection</Box>

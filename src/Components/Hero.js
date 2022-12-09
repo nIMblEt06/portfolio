@@ -221,7 +221,6 @@ function Hero() {
                                 <Link target={"_blank"} cursor="help" pointerEvents="none" opacity="50%">NFT-Upcoming</Link>
                             </Box>
                         </Box>
-
                     </Flex>
                     <Flex ref={el => headingBack = el} className="heading">
                         Hey, I'm Rahul

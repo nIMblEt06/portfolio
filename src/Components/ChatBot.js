@@ -60,7 +60,7 @@ function ChatBot() {
   useEffect(() => {
     // console.log(offset);
     if (offset > 0) {
-      if (window.scrollY > offset - 300) {
+      if (window.scrollY > offset - 100) {
         check()
       }
     }
