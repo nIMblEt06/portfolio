@@ -176,6 +176,7 @@ svg {
 }
 .ham.studies{
   margin-left: -4rem;
+  z-index: 3;
 }
 .arrowHead{
   width: 5rem;
@@ -242,6 +243,10 @@ svg {
   padding-left: 0.7rem;
   padding-block: 0.6rem;
   transition: all 0.1s ease-in;
+}
+.link{
+  text-decoration: none;
+  background-color: #474747;
 }
 
 .menu>a:hover {

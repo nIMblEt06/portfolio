@@ -215,7 +215,7 @@ function Hero() {
                             <Box className='hams two' ref={el => ham5 = el}></Box>
                             <Box className='hams three' ref={el => ham6 = el}></Box>
                             <Box className='menu' ref={el => menu2 = el}>
-                                <Link target={"_blank"} href="https://rahuljaiswal.me">Home</Link>
+                                <Link className='link' target={"_blank"} href="https://rahuljaiswal.me">Home</Link>
                                 <Link target={"_blank"} href="https://read.cv/rahul.design">Resume</Link>
                                 <Link href="/motionDesign">Motion Design</Link>
                                 <Link target={"_blank"} cursor="help" pointerEvents="none" opacity="50%">NFT-Upcoming</Link>
