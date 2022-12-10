@@ -155,11 +155,20 @@ svg {
 }
 .progress{
   position: fixed;
-  height: 5px;
+  height: 2px;
   background-color: #EEE3D3;
   transition: 0.1s ease;
   width: 0;
   top:0;
+}
+.progress.bottom{
+  position: absolute;
+  bottom: 0;
+  top: auto;
+}
+
+.heroVideo{
+  mix-blend-mode: revert;
 }
 
 .navbar {
@@ -171,7 +180,7 @@ svg {
 }
 .navbar.studies{
   width: 90%;
-  padding-left: 3rem;
+  padding-left: 5rem;
   margin-inline: 0;
 }
 .ham.studies{
@@ -394,21 +403,21 @@ svg {
 .container {
   background-color: #0c0c0c;
   color: #EEE3D3;
-  /* padding-left: 3rem; */
+  position: relative;  /* padding-left: 3rem; */
   padding-bottom: 3rem;
 }
 
 .caseHead {
-  padding-top: 15rem;
+  padding-top: 0rem;
   width: 80%;
-  padding-left: 3rem;
+  padding-left: 5rem;
   font-weight: 700;
   font-size: 3rem;
 }
 
 .caseInfo {
   margin-top: 5rem;
-  padding-left: 3rem;
+  padding-left: 5rem;
   width: 90%;
   padding-bottom: 8rem;
 }

@@ -25,6 +25,7 @@ function Studies() {
   let ham = useRef(null)
   let menu2 = useRef(null)
   let progress = useRef(null)
+  let progress2 = useRef(null)
 
 
   useEffect(() => {
@@ -52,6 +53,7 @@ function Studies() {
   })
   useEffect(() => {
     progress.style.width = `${window.scrollY / document.body.offsetHeight * 110}vw`
+    progress2.style.width = `${window.scrollY / document.body.offsetHeight * 110}vw`
     console.log(window.scrollY);
     console.log(document.body.offsetHeight);
   })
@@ -133,16 +135,17 @@ function Studies() {
       </Flex>
       <Flex className="studyHeader">
         <Box>
-          <Box pl={isSmallerThan450 ? "1.5rem" : "3rem"} mt="6rem" className='head studies'>CASE STUDY</Box>
-          <Box pl={isSmallerThan450 ? "1.5rem" : "3rem"} pt="2rem" fontSize={"2.4rem"} className='caseHead'>{study.Heading}</Box>
+          <Box pl={isSmallerThan450 ? "1.5rem" : "5rem"} mt="6rem" className='head studies'>CASE STUDY</Box>
+          <Box pl={isSmallerThan450 ? "1.5rem" : "5rem"} pt="2rem" fontSize={"2.4rem"} w="100%" className='caseHead'>{study.Heading}</Box>
         </Box>
-        <Box w={isSmallerThan450 ? "100%" : "60%"}>
-        <video src={name=="flint" ? flintVid : tourna} autoPlay={true} loop={true} muted={true}></video>
+        <Box w={isSmallerThan450 ? "100%" : "80%"}>
+          <video className='heroVideo' src={name == "flint" ? flintVid : tourna} autoPlay={true} loop={true} muted={true}></video>
         </Box>
       </Flex>
-      <Flex className='arrowHead' mt={isSmallerThan450 ? "1rem" :"-3rem"} ml="3rem"><Image w="50%" src={arrow2} /></Flex>
-      <Box className='caseHead'>
-        {study.Name}
+      {/* <Flex className='arrowHead' mt={isSmallerThan450 ? "1rem" :"-3rem"} ml="3rem"><Image w="50%" src={arrow2} /></Flex> */}
+      <Box className='caseHead' mt="-7rem">
+        <Box className='head'>DURATION</Box>
+        <Box className='info studies'>{study.Duration}</Box>
       </Box>
       <Grid className='caseInfo'
         templateRows='repeat(2, 1fr)'
@@ -150,13 +153,13 @@ function Studies() {
         gap={6}
       >
         <GridItem colSpan={2}>
-          <Box className='head'>DURATION</Box>
-          <Box className='info studies'>{study.Duration}</Box>
+          <Box className='head'>ROLE</Box>
+          <Box className='info studies'>{study.Role}</Box>
         </GridItem>
         <GridItem colSpan={1}>
           <Box className='head'>STAKEHOLDER</Box>
           <Box className='info studies'>
-            <Box>{study.Stakeholder}</Box>
+            <Link textDecor={"underline"} target="_blank" href={name=="flint" ? "https://flint.money" : "https://tournafest.com"} textUnderlineOffset="0.3rem"><Box>{study.Stakeholder}</Box></Link>
           </Box>
         </GridItem>
         <GridItem colSpan={1}>
@@ -166,8 +169,8 @@ function Studies() {
           </Box>
         </GridItem>
         <GridItem colSpan={2}>
-          <Box className='head'>ROLE</Box>
-          <Box className='info studies'>{study.Role}</Box>
+          {/* <Box className='head'>ROLE</Box> */}
+          {/* <Box className='info studies'>{study.Role}</Box> */}
         </GridItem>
         <GridItem colSpan={1}>
           <Box className='head'>SKILLS</Box>
@@ -197,7 +200,7 @@ function Studies() {
       </Box>
       <Grid marginLeft={isSmallerThan450 ? "0" : "16rem"} className='caseInfo cases'
         templateColumns={isSmallerThan450 ? 'repeat(4, 1fr)' : 'repeat(6, 1fr)'}
-        gap={6}
+        gap={6} marginTop={isSmallerThan450? "" : "-2rem"}
       >
         <GridItem colSpan={5}>
           {/* Overview */}
@@ -227,7 +230,7 @@ function Studies() {
             <Box className='info single studies'>{study.Background}</Box>
           </Box>}
           <Flex className="aboutVision">
-            <Box className="vision">
+            <Box className="about">
               <Box className='name study'>Problem</Box>
               <Box className='head studies'>WHAT DID WE IMAGINE?</Box>
               <Box className='info studies'>{study.Problem}</Box>
@@ -335,6 +338,7 @@ function Studies() {
           </Flex> */}
         </GridItem>
       </Grid>
+      <Box ref={el => progress2 = el} className="progress bottom"></Box>
     </Box>
   )
 }
