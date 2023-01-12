@@ -6,6 +6,7 @@ import Lottie from "lottie-react"
 import MotionSVG from "../Components/MotionSVG"
 import experts from "../Assets/Experts.json"
 import Footer from "../Components/Footer"
+import Globe from "../Assets/Globe.json"
 import watch from "../Assets/Watchlist.json"
 import splash from "../Assets/Splash2.json"
 import cardPoster from "../Assets/cardPoster.png"
@@ -17,6 +18,7 @@ import loader from "../Assets/Loader.json"
 import gift from "../Assets/Gift.json"
 import nft from "../Assets/NFT.mov"
 import teaser from "../Assets/Teaser.mov"
+import { useNavigate } from 'react-router-dom';
 import final from "../Assets/FINAL.mov"
 import Loader from '../Components/Loader'
 
@@ -24,6 +26,15 @@ function MotionDesign() {
     const [isSmallerThan450] = useMediaQuery('(max-width:450px)')
     let vid1 = useRef(null)
     let vid2 = useRef(null)
+    let greet = useRef(null)
+    let ham = useRef(null)
+    let ham4 = useRef(null)
+    let ham5 = useRef(null)
+    const [showMenu, setShowMenu] = useState(false)
+    let ham6 = useRef(null)
+    let menu2 = useRef(null)
+    const navigate = useNavigate()
+
     // const [isLoaded, setIsLoaded] = useState(false)
 
     // useEffect(() => {
@@ -46,10 +57,57 @@ function MotionDesign() {
         });
     }, [])
 
+    function toggleMenu() {
+        setShowMenu(showMenu => !showMenu)
+      }
+      useEffect(() => {
+        if (showMenu) {
+          // ham1.style.transform = "rotate(45deg) translate(4px, 4px)"
+          ham4.style.transform = "rotate(45deg) translate(4px, 4px)"
+          // ham3.style.transform = "rotate(-45deg) translate(3px, -3px)"
+          ham6.style.transform = "rotate(-45deg) translate(3px, -3px)"
+          // ham2.style.opacity = 0
+          ham5.style.opacity = 0
+          // menu1.style.display = "block"
+          // menu1.style.opacity = 1
+          menu2.style.opacity = 1
+          menu2.style.display = "block"
+        }
+        else {
+          // ham1.style.transform = "rotate(0deg)"
+          // ham3.style.transform = "rotate(0deg)"
+          // ham2.style.opacity = 1
+          ham4.style.transform = "rotate(0deg)"
+          ham6.style.transform = "rotate(0deg)"
+          ham5.style.opacity = 1
+          // menu1.style.opacity = 0
+          menu2.style.opacity = 0
+          menu2.style.display = "none"
+          // menu1.style.display = "none"
+        }
+      }, [showMenu])
+      function backToHome() {
+        navigate('/')
+      }
+
     return (
         <Box className='motionBox'>
             {/* <Loader isLoaded = {isLoaded}/> */}
             <Box className='motionWrapper clip'>
+            <Flex className='navbar'>
+                        <Flex ref={el => greet = el} className='greet'><Lottie animationData={Globe} /> <Box className="greetText" color={"#EEE3D3"}>Welcome to this corner<br />of the internet.</Box></Flex>
+                        <Box className='ham' ref={el => ham = el} onClick={toggleMenu}>
+                            <Box className='hams one' ref={el => ham4 = el}></Box>
+                            <Box className='hams two' ref={el => ham5 = el}></Box>
+                            <Box className='hams three' ref={el => ham6 = el}></Box>
+                            <Box className='menu' ref={el => menu2 = el}>
+                                <Link target={"_blank"} href="https://rahuljaiswal.me">Home</Link>
+                                <Link target={"_blank"} href="https://read.cv/rahul.design">Resume</Link>
+                                <Link className='link' href="/motionDesign">Motion Design ●</Link>
+                                <Link target={"_blank"} cursor="help" pointerEvents="none" opacity="50%">NFT-Upcoming</Link>
+                            </Box>
+                        </Box>
+                    </Flex>
                 <Flex className="heading motion">
                     Motion design
                 </Flex>

@@ -59,7 +59,7 @@ function Cases() {
                         </VStack>
                     </Flex>
                 </GridItem>
-                {!isSmallerThan450 ? <GridItem colSpan={1} className='wideStudy'>
+                {!isSmallerThan450 ? <GridItem colSpan={1} className='wideStudy carousel'>
                     <Carousel showStatus={false} infiniteLoop={true} showIndicators={false}>
                         <HomeCaroItem place="Istanbul Blockchain.." where="Turkey" when="2022" img={picfive}/>
                         <HomeCaroItem place="India in Black" where="NGO Non profit" when="2018" img={picthree}/>

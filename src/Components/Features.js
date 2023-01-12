@@ -37,7 +37,7 @@ function Features() {
       <Flex className='name feature right' mt="10rem">{isSmallerThan450
       ? "" :<Box> </Box>}<Box w="45%">Security</Box></Flex>
       <Flex className='featureFlexReverse' justifyContent={"space-between"} mt="1rem">
-        <Flex mt="-3rem" w={isSmallerThan450 ? "100%" : "70%"} ml={isSmallerThan450 ? "0" : "-10rem"} justifyContent={"right"}>
+        <Flex mt={isSmallerThan450 ? "0rem" : "-3rem"} w={isSmallerThan450 ? "100%" : "70%"} ml={isSmallerThan450 ? "0" : "-10rem"} justifyContent={"right"}>
           <Image src={security} w="95%" />
         </Flex>
         <Box w={isSmallerThan450 ? "100%" : "45%"}>
@@ -60,7 +60,7 @@ function Features() {
         </Flex>
       </Flex>
       <Flex className='name feature right' mt="10rem">{isSmallerThan450
-      ? "" :<Box> </Box>}<Box w="45%">Discoverability</Box></Flex>
+      ? "" :<Box> </Box>}<Box w={isSmallerThan450 ? "70%" : "45%"}>Discoverability</Box></Flex>
       <Flex className='featureFlexReverse' justifyContent={"space-between"} mt="1rem">
         <Flex mt={isSmallerThan450 ? "0rem" : "-6rem"} w={isSmallerThan450 ? "100%" : "55%"} justifyContent={"center"}>
           <Image src={discover} h="80%" />

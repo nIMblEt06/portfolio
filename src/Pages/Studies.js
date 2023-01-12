@@ -5,6 +5,7 @@ import arrow from "../Assets/arrowLeft.svg"
 import arrow2 from "../Assets/arrowDiagonal.svg"
 import tourna from "../Assets/tournafest.mp4"
 import flintVid from "../Assets/flint.mp4"
+import Footer from "../Components/Footer"
 import { studies } from '../studyContent'
 import { useNavigate, useParams } from 'react-router-dom';
 import Features from '../Components/Features'
@@ -25,7 +26,6 @@ function Studies() {
   let ham = useRef(null)
   let menu2 = useRef(null)
   let progress = useRef(null)
-  let progress2 = useRef(null)
 
 
   useEffect(() => {
@@ -53,7 +53,6 @@ function Studies() {
   })
   useEffect(() => {
     progress.style.width = `${window.scrollY / document.body.offsetHeight * 110}vw`
-    progress2.style.width = `${window.scrollY / document.body.offsetHeight * 110}vw`
     console.log(window.scrollY);
     console.log(document.body.offsetHeight);
   })
@@ -138,7 +137,7 @@ function Studies() {
           <Box pl={isSmallerThan450 ? "1.5rem" : "5rem"} mt="6rem" className='head studies'>CASE STUDY</Box>
           <Box pl={isSmallerThan450 ? "1.5rem" : "5rem"} pt="2rem" fontSize={"2.4rem"} w="100%" className='caseHead'>{study.Heading}</Box>
         </Box>
-        <Box w={isSmallerThan450 ? "100%" : "80%"}>
+        <Box w={isSmallerThan450 ? "90%" : "80%"} h={isSmallerThan450 ? "100%" : "40vw"}>
           <video className='heroVideo' src={name == "flint" ? flintVid : tourna} autoPlay={true} loop={true} muted={true}></video>
         </Box>
       </Flex>
@@ -172,7 +171,7 @@ function Studies() {
           {/* <Box className='head'>ROLE</Box> */}
           {/* <Box className='info studies'>{study.Role}</Box> */}
         </GridItem>
-        <GridItem colSpan={1}>
+        <GridItem colSpan={1} mt={isSmallerThan450 ? "-20rem" : "0"}>
           <Box className='head'>SKILLS</Box>
           <Box className='info studies'>
             <Box>UX Design</Box>
@@ -180,7 +179,7 @@ function Studies() {
             <Box>Motion Design</Box>
           </Box>
         </GridItem>
-        <GridItem colSpan={1}>
+        <GridItem colSpan={1} mt={isSmallerThan450 ? "-20rem" : "0"}>
           <Box className='head'>TOOLS</Box>
           <Box className='info studies'>
             <Box>Figma</Box>
@@ -338,7 +337,7 @@ function Studies() {
           </Flex> */}
         </GridItem>
       </Grid>
-      <Box ref={el => progress2 = el} className="progress bottom"></Box>
+      <Footer/>
     </Box>
   )
 }

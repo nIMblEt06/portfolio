@@ -161,11 +161,6 @@ svg {
   width: 0;
   top:0;
 }
-.progress.bottom{
-  position: absolute;
-  bottom: 0;
-  top: auto;
-}
 
 .heroVideo{
   mix-blend-mode: revert;
@@ -179,9 +174,11 @@ svg {
   padding-top: 2.25rem;
 }
 .navbar.studies{
+  justify-content: space-between;
+  align-items: center;
   width: 90%;
-  padding-left: 5rem;
-  margin-inline: 0;
+  margin-inline: auto;
+  padding-top: 2.25rem;
 }
 .ham.studies{
   margin-left: -4rem;
@@ -281,7 +278,7 @@ svg {
 
 .heading.motion {
   margin-top: 0;
-  padding-top: 6.25rem;
+  padding-top: 2.25rem;
 }
 
 .motionContainer>svg {
@@ -401,10 +398,10 @@ svg {
 /* Case Study Page */
 
 .container {
-  background-color: #0c0c0c;
+  background-color: #0b0b0b;
   color: #EEE3D3;
   position: relative;  /* padding-left: 3rem; */
-  padding-bottom: 3rem;
+  /* padding-bottom: 3rem; */
 }
 
 .caseHead {
@@ -689,6 +686,9 @@ svg {
   /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 10px 0px 25px rgba(95, 95, 95, 0.14); */
   scale: 1.05;
 }
+.wideStudy.carousel:hover{
+  scale: 1 !important;
+}
 
 .caseHeading {
   font-size: 1.6rem;
@@ -847,6 +847,9 @@ svg {
     width: 90%;
     padding-top: 1.25rem;
   }
+  .caseInfo{
+    padding-bottom: 0rem;
+  }
   .subHeading{
     width: 80%;
     font-size: 1.2rem;
@@ -902,7 +905,7 @@ svg {
     padding: 0.75rem;
   }
   .footerFlex{
-    width: 30%;
+    width: 50%;
   }
   .lottieWrapper{
     flex-direction: column;
@@ -948,9 +951,6 @@ svg {
   }
   .about img{
     width: 100%;
-  }
-  .navbar.studies{
-    padding-left:1.5rem;
   }
   .studyCont>div{
     width: 90%;
