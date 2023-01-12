@@ -20,6 +20,7 @@ function Studies() {
   const [secHead, setSecHead] = useState([])
   const [showMenu, setShowMenu] = useState(false)
   const [isSmallerThan450] = useMediaQuery('(max-width:450px)')
+  const [isSmallerThan1200] = useMediaQuery('(max-width:1200px)')
   let ham4 = useRef(null)
   let ham5 = useRef(null)
   let ham6 = useRef(null)
@@ -171,7 +172,7 @@ function Studies() {
           {/* <Box className='head'>ROLE</Box> */}
           {/* <Box className='info studies'>{study.Role}</Box> */}
         </GridItem>
-        <GridItem colSpan={1} mt={isSmallerThan450 ? "-20rem" : "0"}>
+        <GridItem colSpan={1} mt={isSmallerThan1200 ? "-15rem" : "0"}>
           <Box className='head'>SKILLS</Box>
           <Box className='info studies'>
             <Box>UX Design</Box>
@@ -179,7 +180,7 @@ function Studies() {
             <Box>Motion Design</Box>
           </Box>
         </GridItem>
-        <GridItem colSpan={1} mt={isSmallerThan450 ? "-20rem" : "0"}>
+        <GridItem colSpan={1} mt={isSmallerThan1200 ? "-15rem" : "0"}>
           <Box className='head'>TOOLS</Box>
           <Box className='info studies'>
             <Box>Figma</Box>

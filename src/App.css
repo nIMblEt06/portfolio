@@ -812,6 +812,16 @@ svg {
 
 /* Responsiveness */
 
+@media screen and (max-width: 1400px) {
+  .slick-dots{
+    right: -130px !important;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .slick-dots{
+    right: -80px !important;
+  }
+}
 
 @media screen and (max-width: 800px) {
   .motionContainer{
@@ -820,6 +830,9 @@ svg {
   .subHeading{
     width: 70%;
     height: 6rem;
+  }
+  .slick-dots{
+    right: -180px !important;
   }
   .heading{
     font-size: 3rem;
