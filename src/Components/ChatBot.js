@@ -4,6 +4,7 @@ import message from "../Assets/message.json"
 import Lottie from "lottie-react"
 import ArrowTop from "./ArrowTop"
 import audio from "../Assets/received.mp3"
+import axios from 'axios'
 
 function ChatBot() {
 
@@ -26,12 +27,37 @@ function ChatBot() {
   const [number, setNumber] = useState(0)
   const [array, setArray] = useState([])
   const [offset, setOffset] = useState(null)
+  const POST_URL = "https://api.airtable.com/v0/appc50b2mF57586in/Chatbot";
+  const [post, setPost] = useState(false)
   const [userData, setUserData] = useState({
     name: "",
-    subject: "",
-    phone: "",
-    email: "",
+    subject: ""
   })
+
+  const headers_ = {
+    'Authorization': 'Bearer keyTP7ElSGIF8at4w',
+    'Content-Type': 'application/json'
+  };
+
+  // When the form is submitted...
+  if (post) {
+    axios.post(POST_URL,
+      {
+        "fields": {
+          "Name": userData.name,
+          "Subject": userData.subject
+        }
+      }, { headers: headers_ }
+    )
+      .then((resp) => {
+        console.log("success!")
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+      setPost(false)
+  }
+
   function check() {
     if (!clicked) {
       upper.style.transform = "translateY(-1.5rem)"
@@ -77,7 +103,7 @@ function ChatBot() {
   }
 
   function handleSubmit(e) {
-    // console.log(array[number].value != undefined) 
+    // console.log(array[number].value != undefined)
     // console.log(array[number].value) 
     // console.log(number);
     if (array[number].value != "") {
@@ -100,6 +126,7 @@ function ChatBot() {
         sendButton.style.display = "none"
         subject.style.opacity = 0
         upper.style.transform = `translateY(-${15 * count}rem)`
+        setPost(true)
         // phone.style.display = "block"
         // phone.style.opacity = 1
         // phone.focus()
